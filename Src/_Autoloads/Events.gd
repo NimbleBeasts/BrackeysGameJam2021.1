@@ -12,6 +12,8 @@ const DEBUG_OUTPUT_ON_SIGNAL_CONNECT = false
 signal new_game()
 
 #Dungeon Master. Turns, world events, etc.
+signal game_lost()
+const GAME_LOST = "game_lost"
 signal turn_ended()
 const TURN_ENDED = "turn_ended"
 signal turn_started()

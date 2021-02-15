@@ -2,13 +2,35 @@ extends Node
 
 
 onready var puh = $PlayerUnitHandler
+onready var res = $Resources
 
-#Start the turn at the beginning of the game.
+onready var turn_ended_processing = [res]
+
+func _game_lost() -> void :
+	get_tree().quit()
+
 var ready_already_done : bool = false
 func _ready():
-	if not ready_already_done :
-		ready_already_done = true
-		Events.emit_signal(Events.TURN_STARTED)
+	if ready_already_done :
+		return
+	ready_already_done = true
+	
+	#Let everything know the game has begun.
+	#I might need to call_deferred this.
+	Events.emit_signal(Events.TURN_STARTED)
+	
+	Events.connect(Events.TURN_ENDED, self, "_turn_ended")
+	Events.connect(Events.GAME_LOST, self, "_game_lost")
+
+func _turn_ended() -> void :
+	#Go through nodes that need to finish processing
+	#and see if they complete succesfully. If not succesful, game ends.
+	for node in turn_ended_processing :
+		if not node.turn_end_test() :
+			Events.emit_signal(Events.GAME_LOST)
+	 
+	#All tests succeeded. Start next turn.
+	Events.emit_signal(Events.TURN_STARTED)
 
 func get_unit_count() -> int :
 	return puh.get_unit_count()

@@ -13,11 +13,8 @@ var faith : int = 1000
 var food : int = 1000
 var water : int = 1000
 
-func _ready():
-	Events.connect(Events.TURN_ENDED, self, "_turn_ended")
-
 #Calculate how much food is used based on unit amount.
-func _turn_ended() -> void :
+func turn_end_test() -> bool :
 	#Subtract from water and food based on number of units.
 	var units : int = dm.get_unit_count()
 	food -= units * unit_food_cost
@@ -27,7 +24,9 @@ func _turn_ended() -> void :
 	var present = dm.get_units_present()
 	faith += (unit_faith_gained * present) * 0.5
 	
-	print(str(food) + " " + str("water"))
-	print(str(faith))
-
+	#Check that no resource is below 0.
+	if food <= 0 || water <= 0 :
+		return false
 	
+	#Let dungeon master know I am finished processing turn end.
+	return true
