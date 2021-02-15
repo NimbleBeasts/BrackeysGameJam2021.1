@@ -11,6 +11,10 @@ const DEBUG_OUTPUT_ON_SIGNAL_CONNECT = false
 # Level Management
 signal new_game()
 
+#Unit and resource handling
+signal add_unit()
+const ADD_UNIT = "add_unit"
+
 # Sound
 signal play_sound(sound, volume, pos)
 
