@@ -11,6 +11,9 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Frame" type="TextureRect" parent="."]
 margin_right = 720.0
@@ -144,6 +147,7 @@ position = Vector2( 15, 12 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 centered = false
+offset = Vector2( 0.4, 0 )
 hframes = 3
 frame = 2
 
