@@ -184,6 +184,9 @@ margin_top = 152.0
 margin_right = 200.0
 margin_bottom = 192.0
 text = "End Turn"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_up" from="ButtonBack" to="." method="_on_ButtonBack_button_up"]
 [connection signal="button_up" from="ButtonMusic" to="." method="_on_ButtonMusic_button_up"]
 [connection signal="button_up" from="ButtonSound" to="." method="_on_ButtonSound_button_up"]

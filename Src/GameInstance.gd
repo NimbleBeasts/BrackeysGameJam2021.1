@@ -2,7 +2,8 @@ extends Control
 
 # This will be used for save/load game
 var gameState = {
-	resources = { water = 20, food = 41, faith = 80 }
+	resources = { water = 20, food = 41, faith = 80 },
+	turn = 0
 	
 }
 
@@ -13,6 +14,7 @@ var gameState = {
 
 func _ready():
 	initDebug()
+	$Label.set_text("Turn: " + str(gameState.turn))
 
 func initDebug():
 	var cat = Debug.addCategory("Resources")
@@ -53,6 +55,9 @@ func updateResourceGui(resourceType, val): #Types.ResourceType
 		_:
 			print("GameInstance.gd: Invalid Resource Type")
 
+func endTurn():
+	gameState.turn += 1
+	$Label.set_text("Turn: " + str(gameState.turn))
 
 
 ###############################################################################
@@ -83,4 +88,4 @@ func _on_MoveButton_button_up():
 
 
 func _on_TurnButton_button_up():
-	pass # Replace with function body.
+	endTurn()
