@@ -24,6 +24,14 @@ const TURN_STARTED = "turn_started"
 #Unit and resource handling
 signal add_unit()
 const ADD_UNIT = "add_unit"
+signal energy_changed(int_new_energy_value)
+const ENERGY_CHANGED = "energy_changed"
+signal faith_changed(int_new_faith_value)
+const FAITH_CHANGED = "faith_changed"
+signal food_changed(int_new_food_value)
+const FOOD_CHANGED = "food_changed"
+signal water_changed(int_new_water_value)
+const WATER_CHANGED = "water_changed"
 
 # Sound
 signal play_sound(sound, volume, pos)

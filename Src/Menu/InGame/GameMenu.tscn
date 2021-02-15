@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Src/GameInstance.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ui/TopBar/Bg_3x.png" type="Texture" id=2]
@@ -6,6 +6,17 @@
 [ext_resource path="res://Assets/Ui/TopBar/Icons.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Ui/MapDummy3x.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Ui/Frame3x.png" type="Texture" id=6]
+[ext_resource path="res://Src/Menu/InGame/WaterLabel.gd" type="Script" id=7]
+[ext_resource path="res://Src/Menu/InGame/FaithLabel.gd" type="Script" id=8]
+[ext_resource path="res://Src/Menu/InGame/FoodLabel.gd" type="Script" id=9]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Button
+
+
+func _pressed():
+	Events.emit_signal(Events.TURN_ENDED)
+"
 
 [node name="GameMenu" type="Control"]
 anchor_right = 1.0
@@ -106,9 +117,10 @@ hframes = 3
 margin_left = 8.0
 margin_right = 56.0
 margin_bottom = 32.0
-text = "50"
+text = "1000"
 align = 1
 valign = 1
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -130,9 +142,10 @@ frame = 1
 margin_left = 8.0
 margin_right = 56.0
 margin_bottom = 32.0
-text = "50"
+text = "1000"
 align = 1
 valign = 1
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -155,9 +168,10 @@ frame = 2
 margin_left = 8.0
 margin_right = 56.0
 margin_bottom = 32.0
-text = "50"
+text = "1000"
 align = 1
 valign = 1
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -185,6 +199,7 @@ margin_top = 152.0
 margin_right = 200.0
 margin_bottom = 192.0
 text = "End Turn"
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
