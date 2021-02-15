@@ -37,7 +37,7 @@ const NB_PLUGIN_CONFIG = {
 
 # Level Array
 const levels = [
-	"res://Src/Levels/Level0.tscn",
+	"res://Src/GameInstance.tscn",
 ]
 
 # Debug Settings
