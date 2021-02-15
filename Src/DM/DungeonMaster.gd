@@ -17,10 +17,16 @@ func _ready():
 	
 	#Let everything know the game has begun.
 	#I might need to call_deferred this.
+	#Emit this before connection so that game 2 and beyond logic
+	#is not performed.
 	Events.emit_signal(Events.TURN_STARTED)
 	
 	Events.connect(Events.TURN_ENDED, self, "_turn_ended")
 	Events.connect(Events.GAME_LOST, self, "_game_lost")
+	
+	#Generate a new location
+	var new_location = $GatheringExpeditions.generate_expedition()
+	Events.emit_signal(Events.NEW_LOCATION_REACHED, new_location)
 
 func _turn_ended() -> void :
 	#Go through nodes that need to finish processing

@@ -14,6 +14,8 @@ signal new_game()
 #Dungeon Master. Turns, world events, etc.
 signal game_lost()
 const GAME_LOST = "game_lost"
+signal new_location_reached(new_location)
+const NEW_LOCATION_REACHED = "new_location_reached"
 signal turn_ended()
 const TURN_ENDED = "turn_ended"
 signal turn_started()
@@ -25,6 +27,10 @@ const ADD_UNIT = "add_unit"
 
 # Sound
 signal play_sound(sound, volume, pos)
+
+#Hud related. Think in game menu.
+signal expedition_started()
+const EXPEDITION_STARTED = "expedition_started"
 
 # Menu Related
 signal menu_back()
