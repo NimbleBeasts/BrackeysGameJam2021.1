@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Src/GameInstance.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Ui/Frame3x.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Ui/Sceneries/Scene_Dune_3x.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Ui/MapDummy3x.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Ui/TopBar/Bg_3x.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Ui/TopBar/Icons.png" type="Texture" id=6]
 
 [node name="GameInstance" type="Control"]
 anchor_right = 1.0
@@ -10,43 +15,178 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="Frame" type="TextureRect" parent="."]
 margin_right = 40.0
-margin_bottom = 14.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scenery" type="TextureRect" parent="."]
+margin_left = 24.0
+margin_top = 21.0
+margin_right = 696.0
+margin_bottom = 237.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MapDummy" type="TextureRect" parent="."]
+margin_left = 258.0
+margin_top = 255.0
+margin_right = 693.0
+margin_bottom = 453.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 256.0
+margin_top = 240.0
+margin_right = 328.0
+margin_bottom = 254.0
 text = "Hello Level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonBack" type="Button" parent="."]
-margin_left = 336.0
-margin_top = 8.0
-margin_right = 400.0
-margin_bottom = 28.0
+margin_left = 384.0
+margin_top = 64.0
+margin_right = 448.0
+margin_bottom = 84.0
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonMusic" type="Button" parent="."]
-margin_left = 512.0
-margin_top = 8.0
-margin_right = 608.0
-margin_bottom = 28.0
+margin_left = 560.0
+margin_top = 64.0
+margin_right = 656.0
+margin_bottom = 84.0
 text = "ToggleMusic"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonSound" type="Button" parent="."]
-margin_left = 408.0
-margin_top = 8.0
-margin_right = 504.0
-margin_bottom = 28.0
+margin_left = 456.0
+margin_top = 64.0
+margin_right = 552.0
+margin_bottom = 84.0
 text = "ToggleSound"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TopBar" type="Control" parent="."]
+anchor_right = 1.0
+margin_bottom = 56.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Water" type="Sprite" parent="TopBar"]
+position = Vector2( 48, 0 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Icon" type="Sprite" parent="TopBar/Water"]
+position = Vector2( 15, 12 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+centered = false
+hframes = 3
+
+[node name="Label" type="Label" parent="TopBar/Water"]
+margin_left = 8.0
+margin_right = 56.0
+margin_bottom = 32.0
+text = "50"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Food" type="Sprite" parent="TopBar"]
+position = Vector2( 114, 0 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Icon" type="Sprite" parent="TopBar/Food"]
+position = Vector2( 15, 12 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+centered = false
+hframes = 3
+frame = 1
+
+[node name="Label" type="Label" parent="TopBar/Food"]
+margin_left = 8.0
+margin_right = 56.0
+margin_bottom = 32.0
+text = "50"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Faith" type="Sprite" parent="TopBar"]
+position = Vector2( 180, 0 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Icon" type="Sprite" parent="TopBar/Faith"]
+position = Vector2( 15, 12 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+centered = false
+hframes = 3
+frame = 2
+
+[node name="Label" type="Label" parent="TopBar/Faith"]
+margin_left = 8.0
+margin_right = 56.0
+margin_bottom = 32.0
+text = "50"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Control" parent="."]
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 256.0
+margin_right = 232.0
+margin_bottom = -32.0
+
+[node name="ExpButton" type="Button" parent="Menu"]
+margin_right = 200.0
+margin_bottom = 40.0
+text = "Expedition"
+
+[node name="MoveButton" type="Button" parent="Menu"]
+margin_top = 48.0
+margin_right = 200.0
+margin_bottom = 88.0
+text = "Move"
+
+[node name="TurnButton" type="Button" parent="Menu"]
+margin_top = 152.0
+margin_right = 200.0
+margin_bottom = 192.0
+text = "End Turn"
 [connection signal="button_up" from="ButtonBack" to="." method="_on_ButtonBack_button_up"]
 [connection signal="button_up" from="ButtonMusic" to="." method="_on_ButtonMusic_button_up"]
 [connection signal="button_up" from="ButtonSound" to="." method="_on_ButtonSound_button_up"]
+[connection signal="button_up" from="Menu/ExpButton" to="." method="_on_ExpButton_button_up"]
+[connection signal="button_up" from="Menu/MoveButton" to="." method="_on_MoveButton_button_up"]
+[connection signal="button_up" from="Menu/TurnButton" to="." method="_on_TurnButton_button_up"]
