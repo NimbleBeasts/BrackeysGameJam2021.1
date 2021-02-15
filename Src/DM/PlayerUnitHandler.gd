@@ -1,10 +1,10 @@
 extends Node
 
 #How many units you have in total.
-var unit_count : int = 0
+var unit_count : int = 20 setget ,get_unit_count
 
 #How many units you have that are not occupied.
-var available_units : int = 0
+var available_units : int = 20
 
 #Listen for units being added.
 var already_ready : bool = false
@@ -14,7 +14,12 @@ func _ready() -> void :
 		Events.connect(Events.ADD_UNIT, self, "add_unit")
 
 func add_unit() -> void :
-	print(str(unit_count))
 	unit_count += 1
 	available_units += 1
-	print(str(unit_count))
+
+func get_unit_count() -> int :
+	return unit_count
+
+#Return number of units not away from camp. Either available or sleeping.
+func get_units_present() -> int :
+	return available_units

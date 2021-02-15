@@ -11,6 +11,12 @@ const DEBUG_OUTPUT_ON_SIGNAL_CONNECT = false
 # Level Management
 signal new_game()
 
+#Dungeon Master. Turns, world events, etc.
+signal turn_ended()
+const TURN_ENDED = "turn_ended"
+signal turn_started()
+const TURN_STARTED = "turn_started"
+
 #Unit and resource handling
 signal add_unit()
 const ADD_UNIT = "add_unit"
