@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Src/WindowManager/WindowBase.gd" type="Script" id=1]
+
+[node name="WindowBase" type="Control"]
+margin_right = 420.0
+margin_bottom = 240.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="NinePatchRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="DummyBg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+color = Color( 0.376471, 0.443137, 0.494118, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DummyTitlebar" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -217.0
+color = Color( 0.239216, 0.239216, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="Button" type="Button" parent="."]
+margin_left = 22.0
+margin_top = 69.0
+margin_right = 164.0
+margin_bottom = 132.0
+text = "test"
+[connection signal="gui_input" from="." to="." method="_on_WindowBase_gui_input"]
+[connection signal="gui_input" from="DummyTitlebar" to="." method="_on_Titlebar_gui_input"]

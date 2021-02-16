@@ -66,7 +66,7 @@ func _ready():
 	print("Soft-Debug: "+ str(DEBUG))
 	rng.randomize()
 	loadConfig()
-	videoSetup(2)
+	videoSetup(1)
 	switchFullscreen()
 
 # Config Save
@@ -135,7 +135,7 @@ func setFullscreen(val: bool):
 func switchFullscreen():
 	if not userConfig.fullscreen:
 		OS.window_fullscreen = false
-		videoSetup(2)
+		videoSetup(1)
 	else:
 		videoSetup(3)
 		OS.window_fullscreen = true

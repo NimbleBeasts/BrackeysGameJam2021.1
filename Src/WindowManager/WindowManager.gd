@@ -1,16 +1,15 @@
 extends Control
 
+var activeWindow = null
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func registerWindow(node):
+	node.connect("focus_window", self, "_focus_window")
+	
+func _focus_window(node):
+	move_child(node, get_child_count() - 1)
+	
+	if activeWindow:
+		activeWindow.setActive(false)
+	
+	activeWindow = node
+	activeWindow.setActive(true)
