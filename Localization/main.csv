@@ -1,0 +1,13 @@
+keys,en,fr,de
+NEXT,"next","suivant"
+EVENT_SWORDBREAD_TITLE,"The sword and the bread","Le pain et le glaive"
+EVENT_SWORDBREAD_DESC,"As the rising sun barely begins to dazzle the camp like the rage of the Soul Eater, your men notice a procession of soldiers watching them from a hill.\nTheir paraphernalia reminds you of Ketchak handicrafts. Fear not, these people may appear hostile, but they are also known to be friendly as long as you are safe.\nOne of them approaches firmly, holding a spear in his left hand and swinging it over his shoulders. Attached at both ends are a sword on one side and a loaf of bread on the other.\nSeeing you approach he cheers in Ketchak tongue: \"Hear, Princess of a faraway land! In the name of the friendship between our two peoples, I ask you to declare your intentions: War or comradeship?\"","Alors que soleil levant commence à peine à éblouir le campement tel la rage du mange-Âme, vos hommes remarquent un cortège de soldats les observant depuis une colline.\nLeur attirail vous évoque l'artisanat Ketchak. Vous n'avez crainte, ce peuple peut paraître hostile, mais il est aussi connu pour s'avérer amical tant que vous ne présentez aucun danger. \nL'un d'entre eux s'approche fermement, tenant dans sa main gauche une lance qu'il maintient en balancier sur ses épaules. Attachés aux deux extrémités, sont d'un côté un glaive et de l'autre un pain.\nVous voyant approcher il s'acclame en langue Ketchak : \"Oyez Princesse d'une contrée lointaine ! Au nom de l'amitié entre nos deux peuples, je vous prie de déclarer vos intentions : La guerre ou la camaraderie ?\"",
+EVENT_SWORDBREAD_YES,"Taking the bread","Prendre le pain"
+EVENT_SWORDBREAD_NO,"Take the sword","Prendre l'épée"
+EVENT_SWORDBREAD_NO_PROMPT,"Choose those who will go to fight","Choissez ceux qui iront se battre"
+EVENT_JOINING_TITLE,"Newcomers","Nouveaux arrivants"
+EVENT_JOINING_DESC,"In the middle of the night, a swarming mass of poor people appears. No sooner do they perceive you than they raise the scarlet Trija banner. Survivors of the massacre! They approach you as supplicants and lend you allegiance.","Au beau milieu de la nuit, une masse grouillante pauvres gens apparaît. À peine vous apperçoivent-ils qu'ils font surgir l'étendard écarlate de Trija. Des rescapés du massacre ! Suppliants, ils s'approchent et vous prêtent allégiance."
+EVENT_JOINING_YES,"recruit","recruter"
+EVENT_JOINING_NO,"reject","rejeter"
+EVENT_JOINING_NO_DICE_PROMPT_OBJECTIVE,"reject newcomers","les faire partir"
+MINIGAME_DICE_PROMPT,"Roll $win-min-score or more to $objective","Faites $win-min-score ou plus pour $objective"
