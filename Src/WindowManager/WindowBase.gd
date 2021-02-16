@@ -3,22 +3,24 @@ class_name WindowBase
 
 signal focus_window
 
-const inactiveColor = Color("60717e")
-const activeColor = Color("658ba7")
+const ninePatchTextures = [
+	preload("res://Assets/Ui/Window9Patch_3x.png"),
+	preload("res://Assets/Ui/Window9Patch_inactive_3x.png"),
+	]
 
 var windowActive = false
 var dragPosition = null
 
 func _ready():
-	$Label.set_text(name)
+	$TitleBar/Label.set_text(name)
 	get_parent().registerWindow(self)
 
 func setActive(value):
 	windowActive = value
 	if value:
-		$DummyBg.color = activeColor
+		$Bg.texture = ninePatchTextures[0]
 	else:
-		$DummyBg.color = inactiveColor
+		$Bg.texture = ninePatchTextures[1]
 
 func focusWindow():
 	emit_signal("focus_window", self)

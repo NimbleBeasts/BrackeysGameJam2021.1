@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "PlayerUnitsBase",
 "language": "GDScript",
 "path": "res://Src/Entities/PlayerUnitsBase.gd"
+}, {
+"base": "Control",
+"class": "WindowBase",
+"language": "GDScript",
+"path": "res://Src/WindowManager/WindowBase.gd"
 } ]
 _global_script_class_icons={
 "GatheringSpot": "",
-"PlayerUnitsBase": ""
+"PlayerUnitsBase": "",
+"WindowBase": ""
 }
 
 [application]

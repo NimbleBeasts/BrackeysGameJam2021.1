@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Src/GameInstance.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ui/TopBar/Bg_3x.png" type="Texture" id=2]
@@ -9,9 +9,18 @@
 [ext_resource path="res://Src/Menu/InGame/WaterLabel.gd" type="Script" id=7]
 [ext_resource path="res://Src/Menu/InGame/FaithLabel.gd" type="Script" id=8]
 [ext_resource path="res://Src/Menu/InGame/FoodLabel.gd" type="Script" id=9]
+[ext_resource path="res://Assets/Ui/MenuButtons/Move_3x2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Ui/MenuButtons/Exploration_3x1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Ui/MenuButtons/End_3x3.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Ui/MenuButtons/Exploration_3x2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Ui/MenuButtons/Exploration_3x3.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Ui/MenuButtons/Move_3x3.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Ui/MenuButtons/End_3x1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Ui/MenuButtons/Move_3x1.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Ui/MenuButtons/End_3x2.png" type="Texture" id=18]
 
 [sub_resource type="GDScript" id=1]
-script/source = "extends Button
+script/source = "extends TextureButton
 
 
 func _pressed():
@@ -178,28 +187,64 @@ __meta__ = {
 
 [node name="Menu" type="Control" parent="."]
 anchor_bottom = 1.0
-margin_left = 32.0
-margin_top = 256.0
-margin_right = 232.0
-margin_bottom = 216.0
+margin_left = 24.0
+margin_top = 248.0
+margin_right = 246.0
+margin_bottom = -24.0
 
-[node name="ExpButton" type="Button" parent="Menu"]
-margin_right = 200.0
-margin_bottom = 40.0
+[node name="ExpButton" type="TextureButton" parent="Menu"]
+margin_right = 216.0
+margin_bottom = 48.0
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 13 )
+texture_disabled = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu/ExpButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
 text = "Expedition"
+valign = 1
 
-[node name="MoveButton" type="Button" parent="Menu"]
-margin_top = 48.0
-margin_right = 200.0
-margin_bottom = 88.0
+[node name="MoveButton" type="TextureButton" parent="Menu"]
+margin_top = 56.0
+margin_right = 216.0
+margin_bottom = 104.0
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 10 )
+texture_disabled = ExtResource( 15 )
+
+[node name="Label" type="Label" parent="Menu/MoveButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
 text = "Move"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TurnButton" type="Button" parent="Menu"]
+[node name="TurnButton" type="TextureButton" parent="Menu"]
 margin_top = 152.0
-margin_right = 200.0
-margin_bottom = 192.0
-text = "End Turn"
+margin_right = 216.0
+margin_bottom = 200.0
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 18 )
+texture_disabled = ExtResource( 12 )
 script = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Menu/TurnButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+text = "End Turn"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
