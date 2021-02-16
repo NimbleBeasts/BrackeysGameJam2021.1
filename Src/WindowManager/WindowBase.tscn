@@ -4,8 +4,10 @@
 [ext_resource path="res://Assets/Ui/Window9Patch_3x.png" type="Texture" id=2]
 
 [node name="WindowBase" type="Control"]
-margin_right = 420.0
-margin_bottom = 240.0
+margin_left = -180.0
+margin_top = -124.14
+margin_right = 180.0
+margin_bottom = 115.86
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

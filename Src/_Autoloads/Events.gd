@@ -11,6 +11,12 @@ const DEBUG_OUTPUT_ON_SIGNAL_CONNECT = false
 # Level Management
 signal new_game()
 
+# Window Management
+signal window_show(windowType) #Types.WindowType
+const WINDOW_SHOW = "window_show"
+signal window_close(windowType) #Types.WindowType
+const WINDOW_CLOSE = "window_show"
+
 #Dungeon Master. Turns, world events, etc.
 signal game_lost()
 const GAME_LOST = "game_lost"

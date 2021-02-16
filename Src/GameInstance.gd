@@ -80,7 +80,8 @@ func _on_ButtonSound_button_up():
 
 
 func _on_ExpButton_button_up():
-	pass # Replace with function body.
+	Events.emit_signal("play_sound", "menu_click")
+	Events.emit_signal(Events.WINDOW_SHOW, Types.WindowType.Expedition)
 
 
 func _on_MoveButton_button_up():

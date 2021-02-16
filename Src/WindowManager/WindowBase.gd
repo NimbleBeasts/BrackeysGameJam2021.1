@@ -13,9 +13,9 @@ var dragPosition = null
 
 func _ready():
 	$TitleBar/Label.set_text(name)
-	get_parent().registerWindow(self)
+	#get_parent().registerWindow(self) 
 
-func setActive(value):
+func setActive(value = true):
 	windowActive = value
 	if value:
 		$Bg.texture = ninePatchTextures[0]
@@ -31,6 +31,7 @@ func _on_WindowBase_gui_input(event):
 			focusWindow()
 
 func _on_Titlebar_gui_input(event):
+	#TODO: check if window is within the viewport rect + safety margin
 	if event is InputEventMouseButton:
 		if event.pressed:
 			dragPosition = get_global_mouse_position() - rect_global_position

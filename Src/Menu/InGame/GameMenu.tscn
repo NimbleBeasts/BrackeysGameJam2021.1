@@ -248,3 +248,4 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="button_up" from="Menu/ExpButton" to="." method="_on_ExpButton_button_up"]
