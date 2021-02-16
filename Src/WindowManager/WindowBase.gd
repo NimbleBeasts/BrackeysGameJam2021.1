@@ -10,10 +10,14 @@ const ninePatchTextures = [
 
 var windowActive = false
 var dragPosition = null
+onready var content = $Content
 
 func _ready():
 	$TitleBar/Label.set_text(name)
 	#get_parent().registerWindow(self) 
+
+func reset():
+	content.reset()
 
 func setActive(value = true):
 	windowActive = value

@@ -15,7 +15,7 @@ signal new_game()
 signal window_show(windowType) #Types.WindowType
 const WINDOW_SHOW = "window_show"
 signal window_close(windowType) #Types.WindowType
-const WINDOW_CLOSE = "window_show"
+const WINDOW_CLOSE = "window_close"
 
 #Dungeon Master. Turns, world events, etc.
 signal game_lost()
