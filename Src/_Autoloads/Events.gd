@@ -14,6 +14,8 @@ signal new_game()
 #Dungeon Master. Turns, world events, etc.
 signal game_lost()
 const GAME_LOST = "game_lost"
+signal left_location()
+const LEFT_LOCATION = "left_location"
 signal new_location_reached(new_location)
 const NEW_LOCATION_REACHED = "new_location_reached"
 signal turn_ended()

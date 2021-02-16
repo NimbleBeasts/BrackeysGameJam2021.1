@@ -6,6 +6,11 @@ onready var res = $Resources
 
 onready var turn_ended_processing = [res]
 
+#Generate a new location
+func _enter_new_location() -> void :
+	var new_location = $GatheringExpeditions.generate_expedition()
+	Events.emit_signal(Events.NEW_LOCATION_REACHED, new_location)
+
 func _game_lost() -> void :
 	get_tree().quit()
 
@@ -24,9 +29,11 @@ func _ready():
 	Events.connect(Events.TURN_ENDED, self, "_turn_ended")
 	Events.connect(Events.GAME_LOST, self, "_game_lost")
 	
-	#Generate a new location
-	var new_location = $GatheringExpeditions.generate_expedition()
-	Events.emit_signal(Events.NEW_LOCATION_REACHED, new_location)
+	#Generate a grid map at start of game.
+	_enter_new_location()
+	
+	#Listen for when the location is left so we can generate a new one.
+	Events.connect(Events.LEFT_LOCATION, self, "_enter_new_location")
 
 func _turn_ended() -> void :
 	#Go through nodes that need to finish processing

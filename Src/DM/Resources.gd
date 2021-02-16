@@ -13,6 +13,16 @@ var faith : int = 1000 setget set_faith
 var food : int = 1000 setget set_food
 var water : int = 1000 setget set_water
 
+#:Let others know about resources being initialized.
+func _ready():
+	call_deferred("_ready_deferred")
+	
+func _ready_deferred() -> void :
+	set_water(water)
+	set_food(food)
+	set_energy(energy)
+	set_faith(faith)
+
 #Calculate how much food is used based on unit amount.
 func turn_end_test() -> bool :
 	#Subtract from water and food based on number of units.
