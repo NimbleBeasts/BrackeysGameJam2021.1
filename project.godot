@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Button",
+"class": "GatheringSpot",
+"language": "GDScript",
+"path": "res://Src/Menu/InGame/Gathering/GatheringSpot.gd"
+}, {
 "base": "Node",
 "class": "PlayerUnitsBase",
 "language": "GDScript",
 "path": "res://Src/Entities/PlayerUnitsBase.gd"
 } ]
 _global_script_class_icons={
+"GatheringSpot": "",
 "PlayerUnitsBase": ""
 }
 

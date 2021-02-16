@@ -23,6 +23,10 @@ const TURN_ENDED = "turn_ended"
 signal turn_started()
 const TURN_STARTED = "turn_started"
 
+#Gathering
+signal gather_point_added(vector2_path_point)
+const GATHER_POINT_ADDED = "gather_point_added"
+
 #Unit and resource handling
 signal add_unit()
 const ADD_UNIT = "add_unit"
