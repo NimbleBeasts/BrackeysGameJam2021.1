@@ -1,4 +1,5 @@
 extends Control
+class_name WindowBase
 
 signal focus_window
 
