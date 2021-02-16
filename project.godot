@@ -45,6 +45,7 @@ Global="*res://Src/_Autoloads/Global.gd"
 Types="*res://Src/_Autoloads/Types.gd"
 Events="*res://Src/_Autoloads/Events.gd"
 Debug="*res://Src/_Autoloads/Debug.gd"
+Localization="*res://Src/_Autoloads/Localization.gd"
 
 [display]
 
@@ -75,6 +76,10 @@ texture={
 "stream": false,
 "svg/scale": 1.0
 }
+
+[locale]
+
+translations=PoolStringArray( "res://Localization/main.en.translation", "res://Localization/main.fr.translation", "res://Localization/main.de.translation" )
 
 [rendering]
 
