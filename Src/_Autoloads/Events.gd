@@ -11,8 +11,36 @@ const DEBUG_OUTPUT_ON_SIGNAL_CONNECT = false
 # Level Management
 signal new_game()
 
+#Dungeon Master. Turns, world events, etc.
+signal game_lost()
+const GAME_LOST = "game_lost"
+signal left_location()
+const LEFT_LOCATION = "left_location"
+signal new_location_reached(new_location)
+const NEW_LOCATION_REACHED = "new_location_reached"
+signal turn_ended()
+const TURN_ENDED = "turn_ended"
+signal turn_started()
+const TURN_STARTED = "turn_started"
+
+#Unit and resource handling
+signal add_unit()
+const ADD_UNIT = "add_unit"
+signal energy_changed(int_new_energy_value)
+const ENERGY_CHANGED = "energy_changed"
+signal faith_changed(int_new_faith_value)
+const FAITH_CHANGED = "faith_changed"
+signal food_changed(int_new_food_value)
+const FOOD_CHANGED = "food_changed"
+signal water_changed(int_new_water_value)
+const WATER_CHANGED = "water_changed"
+
 # Sound
 signal play_sound(sound, volume, pos)
+
+#Hud related. Think in game menu.
+signal expedition_started()
+const EXPEDITION_STARTED = "expedition_started"
 
 # Menu Related
 signal menu_back()
