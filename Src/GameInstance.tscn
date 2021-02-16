@@ -19,5 +19,3 @@ __meta__ = {
 [node name="DungeonMaster" parent="." instance=ExtResource( 2 )]
 
 [node name="GatheringPopup" parent="DungeonMaster" instance=ExtResource( 3 )]
-margin_left = 248.0
-margin_top = 137.0
