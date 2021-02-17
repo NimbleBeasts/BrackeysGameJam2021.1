@@ -8,7 +8,7 @@ onready var turn_ended_processing = [res]
 
 #Generate a new location
 func _enter_new_location() -> void :
-	var new_location = $GatheringExpeditions.generate_expedition()
+	var new_location = $Expedition/ExpeditionGenerator.generate_expedition()
 	Events.emit_signal(Events.NEW_LOCATION_REACHED, new_location)
 
 func _game_lost() -> void :

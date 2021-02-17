@@ -15,9 +15,24 @@ _global_script_classes=[ {
 "path": "res://Src/Menu/InGame/Gathering/GatheringSpot.gd"
 }, {
 "base": "Node",
+"class": "PlayerUnitHandler",
+"language": "GDScript",
+"path": "res://Src/DM/PlayerUnitHandler.gd"
+}, {
+"base": "Node",
 "class": "PlayerUnitsBase",
 "language": "GDScript",
 "path": "res://Src/Entities/PlayerUnitsBase.gd"
+}, {
+"base": "Node",
+"class": "ResourcesGetter",
+"language": "GDScript",
+"path": "res://Src/APIs/ResourcesGetter.gd"
+}, {
+"base": "Node",
+"class": "UnitGetter",
+"language": "GDScript",
+"path": "res://Src/APIs/UnitGetter.gd"
 }, {
 "base": "Control",
 "class": "WindowBase",
@@ -26,7 +41,10 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "GatheringSpot": "",
+"PlayerUnitHandler": "",
 "PlayerUnitsBase": "",
+"ResourcesGetter": "",
+"UnitGetter": "",
 "WindowBase": ""
 }
 
@@ -42,8 +60,8 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Src/_Autoloads/Global.gd"
-Types="*res://Src/_Autoloads/Types.gd"
 Events="*res://Src/_Autoloads/Events.gd"
+Types="*res://Src/_Autoloads/Types.gd"
 Debug="*res://Src/_Autoloads/Debug.gd"
 Localization="*res://Src/_Autoloads/Localization.gd"
 
