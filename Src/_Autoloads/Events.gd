@@ -30,8 +30,14 @@ signal turn_started()
 const TURN_STARTED = "turn_started"
 
 #Gathering
-signal gather_point_added(vector2_path_point, int_spot_type)
+signal expedition_confirmed()
+const EXPEDITION_CONFIRMED = "expedition_confirmed"
+signal gather_point_added(gatheringspot_spot)
 const GATHER_POINT_ADDED = "gather_point_added"
+signal gather_point_calculated(int_food_cost, int_water_cost)
+const GATHER_POINT_CALCULATED = "gather_point_calculated"
+signal gather_point_projected(int_food_cost, int_water_cost)
+const GATHER_POINT_PROJECTED = "gather_point_projected"
 
 #Unit and resource handling
 signal add_unit()
@@ -42,6 +48,8 @@ signal faith_changed(int_new_faith_value)
 const FAITH_CHANGED = "faith_changed"
 signal food_changed(int_new_food_value)
 const FOOD_CHANGED = "food_changed"
+signal unit_slotted()
+const UNIT_SLOTTED = "unit_slotted"
 signal water_changed(int_new_water_value)
 const WATER_CHANGED = "water_changed"
 
