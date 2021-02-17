@@ -1,13 +1,6 @@
 extends Node
 
-enum SPOTS {
-	LAKES = 0,
-	HUNTING = 1,
-	RUINS = 2,
-	BERRIES = 3,
-	CREEKS = 4,
-	NORMAL = 5
-}
+
 
 var grid : Array = []
 
@@ -23,8 +16,8 @@ func generate_expedition() -> Array :
 		for _y in range(expedition_grid_size.y) :
 			#Generate a spot on the grid.
 			var spot : int = randi() % 26
-			if spot >= SPOTS.NORMAL : #Lean towards placing normals.
-				spot = SPOTS.NORMAL
+			if spot >= Types.ExpeditionSpots.NORMAL : #Lean towards placing normals.
+				spot = Types.ExpeditionSpots.NORMAL
 			
 			y_array.append(spot)
 		grid.append(y_array)

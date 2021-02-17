@@ -30,13 +30,17 @@ func _pressed() -> void :
 	#You are suppose to set the location in the grid for this button.
 	assert(location_in_grid != Vector2(-1,-1))
 	
-	Events.emit_signal(Events.GATHER_POINT_ADDED, location_in_grid, spot_type)
+	Events.emit_signal(Events.GATHER_POINT_ADDED, self)
 	
 	#Let the player know where they clicked.
 	print("You have clicked [%s] on the Expedition. Spot value of %s" % [str(location_in_grid), str(spot_type)] )
 
 func get_location() -> Vector2 :
 	return location_in_grid
+
+#Return where the center of the button is in world space.
+func get_world_position() -> Vector2 :
+	return rect_global_position + (rect_size * 0.5)
 
 func set_location(new_location : Vector2) -> void :
 	location_in_grid = new_location

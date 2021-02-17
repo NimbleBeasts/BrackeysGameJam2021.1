@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Src/Menu/InGame/GameMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/DM/DungeonMaster.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Src/Menu/InGame/Gathering/GatheringPopup.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Src/WindowManager/WindowManager.tscn" type="PackedScene" id=4]
 
 [node name="GameInstance" type="Control"]
@@ -17,6 +16,3 @@ __meta__ = {
 [node name="WindowManager" parent="." instance=ExtResource( 4 )]
 
 [node name="DungeonMaster" parent="." instance=ExtResource( 2 )]
-
-[node name="GatheringPopup" parent="DungeonMaster" instance=ExtResource( 3 )]
-visible = false
