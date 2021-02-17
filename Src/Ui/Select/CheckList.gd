@@ -23,4 +23,4 @@ func _activeOption(node):
 	if activeOption:
 		activeOption.setActive(false)
 	activeOption = node
-	emit_signal("list_active")
+	emit_signal("list_active", activeOption)

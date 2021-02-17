@@ -29,12 +29,20 @@ func setDisabled(val = true):
 func setActive(val = true):
 	active = val
 	if active:
+		$Background.frame = 2
 		emit_signal("check_active", self)
+	else:
+		if checked:
+			$Background.frame = 1
+		else:
+			$Background.frame = 0
 
 
 func setChecked(val = true):
 	checked = val
 	emit_signal("check_toggle", self, checked)
+	if checked:
+		setActive()
 
 
 func _on_MouseDetector_mouse_entered():
@@ -42,7 +50,9 @@ func _on_MouseDetector_mouse_entered():
 
 
 func _on_MouseDetector_mouse_exited():
-	if checked or active:
+	if active:
+		$Background.frame = 2
+	elif checked:
 		$Background.frame = 1
 	else:
 		$Background.frame = 0
