@@ -20,8 +20,9 @@ func _draw():
 		i += 1
 
 func _ready():
-	Events.connect(Events.GATHER_POINT_ADDED, self, "add_point")
-	update()
+	if not Events.is_connected(Events.GATHER_POINT_ADDED, self, "add_point") :
+		Events.connect(Events.GATHER_POINT_ADDED, self, "add_point")
+		update()
 
 func add_point(spot : GatheringSpot) -> void :
 	points.append(spot)
