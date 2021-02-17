@@ -51,7 +51,7 @@
         },
         {
             "title": "EVENT_JOINING_TITLE",
-            "thumbnail": "Assets/Events/thumbnail-0.png",
+            "thumbnail": "Assets/Events/thumbnail-1.png",
             "desc": "EVENT_JOINING_DESC",
             "action": {
                 "type": "yesno",
