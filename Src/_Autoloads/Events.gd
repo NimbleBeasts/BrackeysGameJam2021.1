@@ -30,7 +30,7 @@ signal turn_started()
 const TURN_STARTED = "turn_started"
 
 #Gathering
-signal gather_point_added(vector2_path_point, int_spot_type)
+signal gather_point_added(gatheringspot_spot)
 const GATHER_POINT_ADDED = "gather_point_added"
 
 #Unit and resource handling
