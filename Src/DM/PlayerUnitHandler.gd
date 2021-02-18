@@ -13,7 +13,7 @@ var slotted_units : int = 0
 var temp_slotted_units : int = 1
 
 #How many units you have that are not occupied.
-var available_units : int = 20
+var available_units : int = 20 setget ,get_available_units
 
 #Listen for units being added.
 var already_ready : bool = false
