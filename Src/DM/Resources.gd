@@ -59,9 +59,13 @@ func set_faith(faith_value : int) -> void :
 	Events.emit_signal(Events.FAITH_CHANGED, faith)
 
 func set_food(food_value : int) -> void :
+	if food_value <= 0 :
+		get_tree().quit()
 	food = food_value
 	Events.emit_signal(Events.FOOD_CHANGED, food)
 
 func set_water(water_value : int) -> void :
+	if water_value <=  0 :
+		get_tree().quit()
 	water = water_value
 	Events.emit_signal(Events.WATER_CHANGED, water)

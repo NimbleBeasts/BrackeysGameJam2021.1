@@ -10,7 +10,7 @@ var unit_count : int = 20 setget  ,get_unit_count
 var slotted_units : int = 0
 
 #How many units are in a temporary holding position.
-var temp_slotted_units : int = 0
+var temp_slotted_units : int = 1
 
 #How many units you have that are not occupied.
 var available_units : int = 20
