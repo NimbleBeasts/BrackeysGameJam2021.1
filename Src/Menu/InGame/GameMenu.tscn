@@ -238,6 +238,9 @@ texture_pressed = ExtResource( 18 )
 texture_hover = ExtResource( 18 )
 texture_disabled = ExtResource( 12 )
 script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Menu/TurnButton"]
 anchor_right = 1.0

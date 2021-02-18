@@ -49,4 +49,4 @@ func get_unit_count() -> int :
 	return puh.get_unit_count()
 
 func get_units_present() -> int :
-	return puh.get_units_present()
+	return puh.get_available_units()
