@@ -17,7 +17,7 @@ const WINDOW_SHOW = "window_show"
 signal window_close(windowType) #Types.WindowType
 const WINDOW_CLOSE = "window_close"
 
-signal window_event_show(eventType, eventId) #Types.EventTypes
+signal window_event_show(eventType, eventId) #Types.EventTypes eventId can be of typ string or int
 const WINDOW_EVENT_SHOW = "window_event_show"
 
 

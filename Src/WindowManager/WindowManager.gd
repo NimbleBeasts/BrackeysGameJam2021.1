@@ -54,27 +54,32 @@ func closeWindow(type): #Types.WindowType
 			
 		#TODO: focus next visible window
 
-func getEventKeyId(key):
+func getEventEntryFromDb(db, key):
+	# Is Title
 	if typeof(key) == TYPE_STRING:
-		#TODO: get entry id 
-		print("string")
+		for entry in db:
+			if entry.title == key:
+				return entry
+		return null
+	# Is Id
 	else:
-		return key
+		return db[key]
 
 func getEventData(type, key):
+	var db = null
 	var entry = null
-	var id = getEventKeyId(key)
+	var id = -1
 		
 	match type:
 		Types.EventTypes.GameplayEvent:
-			
-			entry = eventDB.gameplay_event[id]
+			db = eventDB.gameplay_event
 		Types.EventTypes.TurnRandom:
-			
-			entry = eventDB.turn_random[id]
+			db = eventDB.turn_random
 		_:
 			print("WindowManager.gd: getEventData unknown type")
+			return null
 	print("-------------Get-------------")
+	entry = getEventEntryFromDb(db, id)
 	print(entry)
 	return entry
 

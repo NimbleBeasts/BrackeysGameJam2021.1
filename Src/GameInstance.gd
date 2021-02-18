@@ -95,5 +95,5 @@ func _on_TurnButton_button_up():
 func _on_EventSpawnButton_button_up():
 	#TODO: remove
 	Events.emit_signal("window_event_show", Types.EventTypes.TurnRandom, randi()%2)
-	#Events.emit_signal("window_event_show", Types.EventTypes.TurnRandom, "EVENT_SWORDBREAD_TITLE")
+	Events.emit_signal("window_event_show", Types.EventTypes.TurnRandom, "EVENT_SWORDBREAD_TITLE")
 	
