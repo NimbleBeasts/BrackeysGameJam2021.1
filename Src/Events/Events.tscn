@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Src/WindowManager/WindowBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Events/EventsBg_3x.png" type="Texture" id=2]
+[ext_resource path="res://Src/WindowManager/BaseButtonGreen.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Src/WindowManager/BaseButtonPink.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Events/thumbnail-0.png" type="Texture" id=5]
+[ext_resource path="res://Src/Events/Content.gd" type="Script" id=6]
+
+[node name="Events" instance=ExtResource( 1 )]
+margin_left = -210.0
+margin_top = -188.0
+margin_right = 211.0
+margin_bottom = 184.0
+
+[node name="Content" parent="." index="2"]
+script = ExtResource( 6 )
+
+[node name="TextureRect" type="TextureRect" parent="Content" index="0"]
+margin_left = 4.0
+margin_right = 415.0
+margin_bottom = 339.0
+texture = ExtResource( 2 )
+
+[node name="TitleImage" type="Sprite" parent="Content" index="1"]
+position = Vector2( 10, 6 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="TitleLabel" type="Label" parent="Content" index="2"]
+margin_left = 4.0
+margin_top = 177.0
+margin_right = 409.0
+margin_bottom = 214.0
+text = "Titel"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescriptionText" type="RichTextLabel" parent="Content" index="3"]
+margin_left = 10.0
+margin_top = 219.0
+margin_right = 409.0
+margin_bottom = 333.0
+bbcode_enabled = true
+bbcode_text = "Description text goes here"
+text = "Description text goes here"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BaseButtonGreen" parent="Content" index="4" instance=ExtResource( 3 )]
+margin_left = 331.0
+margin_top = 344.0
+margin_right = 421.0
+margin_bottom = 371.0
+buttonText = "Ok"
+
+[node name="BaseButtonPink" parent="Content" index="5" instance=ExtResource( 4 )]
+margin_left = 241.0
+margin_top = 344.0
+margin_right = 331.0
+margin_bottom = 371.0
+buttonText = "No"
+[connection signal="button_up" from="Content/BaseButtonPink" to="Content" method="_on_BaseButtonPink_button_up"]

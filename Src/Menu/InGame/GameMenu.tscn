@@ -248,4 +248,15 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="EventSpawnButton" type="Button" parent="."]
+margin_left = 40.0
+margin_top = 72.0
+margin_right = 112.0
+margin_bottom = 104.0
+text = "Spawn Event"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_up" from="Menu/ExpButton" to="." method="_on_ExpButton_button_up"]
+[connection signal="button_up" from="EventSpawnButton" to="." method="_on_EventSpawnButton_button_up"]

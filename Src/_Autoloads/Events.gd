@@ -17,6 +17,10 @@ const WINDOW_SHOW = "window_show"
 signal window_close(windowType) #Types.WindowType
 const WINDOW_CLOSE = "window_close"
 
+signal window_event_show(eventType, eventId) #Types.EventTypes
+const WINDOW_EVENT_SHOW = "window_event_show"
+
+
 #Dungeon Master. Turns, world events, etc.
 signal game_lost()
 const GAME_LOST = "game_lost"
