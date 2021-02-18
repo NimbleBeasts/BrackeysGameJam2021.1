@@ -58,7 +58,7 @@ func getEventEntryFromDb(db, key):
 	# Is Title
 	if typeof(key) == TYPE_STRING:
 		for entry in db:
-			if entry.title == key:
+			if entry.id == key:
 				return entry
 		return null
 	# Is Id
@@ -78,10 +78,9 @@ func getEventData(type, key):
 		_:
 			print("WindowManager.gd: getEventData unknown type")
 			return null
-	print("-------------Get-------------")
-	entry = getEventEntryFromDb(db, id)
-	print(entry)
-	return entry
+	
+	entry = getEventEntryFromDb(db, key)
+	return {"type": type, "id": key, "entry": entry}
 
 # Loads the events json data file and parses it
 func readEventData():

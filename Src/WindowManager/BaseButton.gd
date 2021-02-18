@@ -1,7 +1,10 @@
 tool
 extends TextureButton
 
-export (String) var buttonText = "Text"
+export (String) var buttonText = "Text" setget setText
 
 func _ready():
-	$Label.set_text(buttonText)
+	setText(buttonText)
+
+func setText(text):
+	$Label.set_text(text)

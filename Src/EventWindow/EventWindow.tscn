@@ -57,12 +57,11 @@ margin_left = 331.0
 margin_top = 344.0
 margin_right = 421.0
 margin_bottom = 371.0
-buttonText = "Ok"
 
 [node name="BaseButtonPink" parent="Content" index="5" instance=ExtResource( 3 )]
 margin_left = 241.0
 margin_top = 344.0
 margin_right = 331.0
 margin_bottom = 371.0
-buttonText = "No"
+[connection signal="button_up" from="Content/BaseButtonGreen" to="Content" method="_on_BaseButtonGreen_button_up"]
 [connection signal="button_up" from="Content/BaseButtonPink" to="Content" method="_on_BaseButtonPink_button_up"]

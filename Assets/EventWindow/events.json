@@ -1,95 +1,98 @@
-{  
-    "gameplay_event": {
-        "on_expedition_end": {
-            "title": "EVENT_EXPEDITIONEND_TITLE",
-            "thumbnail": "Assets/Events/thumbnail-2.png",
-            "desc": "EVENT_EXPEDITIONEND_DESC",
-            "action": {
-                "type": "yes",
-                "yes": {
-                    "text": "NEXT",
-                    "consequences": "scripted"
-                }
-            }
+{
+  "gameplay_event": [
+    {
+      "id": "on_expedition_end",
+      "title": "EVENT_EXPEDITIONEND_TITLE",
+      "thumbnail": "thumbnail-2.png",
+      "desc": "EVENT_EXPEDITIONEND_DESC",
+      "action": {
+        "type": "yes",
+        "yes": {
+          "text": "NEXT",
+          "consequences": "scripted"
         }
-    },
-    "turn_random": [
-        {
-            "title": "EVENT_SWORDBREAD_TITLE",
-            "thumbnail": "Assets/Events/thumbnail-0.png",
-            "desc": "EVENT_SWORDBREAD_DESC",
-            "action": {
-                "type": "yesno",
-                "yes": {
-                    "text": "EVENT_SWORDBREAD_YES",
-                    "consequences": [
-                        {
-                            "type": "resources",
-                            "faith": -10,
-                            "food": 50,
-                            "water": 30
-                        }
-                    ]
-                },
-                "no": {
-                    "text": "EVENT_SWORDBREAD_NO",
-                    "consequences": [
-                        {
-                            "type": "sacrifice",
-                            "prompt": "EVENT_SWORDBREAD_NO_PROMPT",
-                            "max-amount": 5
-                        },
-                        {
-                            "type": "resources",
-                            "faith": -50,
-                            "food": 20,
-                            "water": -30
-                        }
-                    ]
-                }
+      }
+    }
+  ],
+  "turn_random": [
+    {
+      "id": "swordbread",
+      "title": "EVENT_SWORDBREAD_TITLE",
+      "thumbnail": "thumbnail-0.png",
+      "desc": "EVENT_SWORDBREAD_DESC",
+      "action": {
+        "type": "yes",
+        "yes": {
+          "text": "EVENT_SWORDBREAD_YES",
+          "consequences": [
+            {
+              "type": "resources",
+              "faith": -10,
+              "food": 50,
+              "water": 30
             }
+          ]
         },
-        {
-            "title": "EVENT_JOINING_TITLE",
-            "thumbnail": "Assets/Events/thumbnail-1.png",
-            "desc": "EVENT_JOINING_DESC",
-            "action": {
-                "type": "yesno",
-                "yes": {
-                    "text": "EVENT_JOINING_YES",
-                    "consequences": [
-                        {
-                            "type": "join-select",
-                            "prompt": "EVENT_JOINING_NO_PROMPT",
-                            "min-amount-available": 1,
-                            "max-amount-available": 5,
-                            "min-percent-selected": 50
-                        }
-                    ]
-                },
-                "no": {
-                    "text": "EVENT_JOINING_NO",
-                    "consequences": [
-                        {
-                            "type": "play",
-                            "minigame": {
-                                "type": "dice",
-                                "prompt-objective":"EVENT_JOINING_NO_DICE_PROMPT_OBJECTIVE",
-                                "win-min-score": 4,
-                                "win-consequences": [],
-                                "lose-consequences": [
-                                    {
-                                        "type": "resources",
-                                        "faith": 10,
-                                        "food": -10,
-                                        "water": -10
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
+        "no": {
+          "text": "EVENT_SWORDBREAD_NO",
+          "consequences": [
+            {
+              "type": "sacrifice",
+              "prompt": "EVENT_SWORDBREAD_NO_PROMPT",
+              "max-amount": 5
+            },
+            {
+              "type": "resources",
+              "faith": -50,
+              "food": 20,
+              "water": -30
             }
+          ]
         }
-    ]
+      }
+    },
+    {
+      "id": "joining",
+      "title": "EVENT_JOINING_TITLE",
+      "thumbnail": "thumbnail-1.png",
+      "desc": "EVENT_JOINING_DESC",
+      "action": {
+        "type": "yesno",
+        "yes": {
+          "text": "EVENT_JOINING_YES",
+          "consequences": [
+            {
+              "type": "join-select",
+              "prompt": "EVENT_JOINING_NO_PROMPT",
+              "min-amount-available": 1,
+              "max-amount-available": 5,
+              "min-percent-selected": 50
+            }
+          ]
+        },
+        "no": {
+          "text": "EVENT_JOINING_NO",
+          "consequences": [
+            {
+              "type": "play",
+              "minigame": {
+                "type": "dice",
+                "prompt-objective": "EVENT_JOINING_NO_DICE_PROMPT_OBJECTIVE",
+                "win-min-score": 4,
+                "win-consequences": [],
+                "lose-consequences": [
+                  {
+                    "type": "resources",
+                    "faith": 10,
+                    "food": -10,
+                    "water": -10
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
