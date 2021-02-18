@@ -8,7 +8,8 @@ func _ready():
 	updateButtons()
 	
 	
-	
+	$BaseButtonGreen.connect("pressed", Events, "emit_signal", [Events.WINDOW_SHOW, Types.WindowType.Expedition])
+	$BaseButtonPink.connect("pressed", Events, "emit_signal", [Events.WINDOW_CLOSE, Types.WindowType.Expedition])
 
 func reset():
 	pass
