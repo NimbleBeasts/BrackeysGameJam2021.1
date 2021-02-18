@@ -15,6 +15,7 @@ func _ready():
 		Events.connect(Events.GATHER_POINT_ADDED, self, "point_added")
 		Events.connect(Events.GATHER_POINT_REMOVED, self, "point_removed")
 		Events.connect(Events.EXPEDITION_CONFIRMED, self, "clear")
+		Events.connect(Events.EXPEDITION_CANCELLED, self, "clear")
 
 #Reset myself to zero.
 func clear() -> void :
