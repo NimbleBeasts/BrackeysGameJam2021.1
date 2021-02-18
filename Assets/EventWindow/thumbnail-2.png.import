@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/window-spritesheet.png-0e00d9d79fc39ecbba026623aec95e89.stex"
+path="res://.import/thumbnail-2.png-8ee5fd6f0e4460c02e445ab55cefddc4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Events/window-spritesheet.png"
-dest_files=[ "res://.import/window-spritesheet.png-0e00d9d79fc39ecbba026623aec95e89.stex" ]
+source_file="res://Assets/EventWindow/thumbnail-2.png"
+dest_files=[ "res://.import/thumbnail-2.png-8ee5fd6f0e4460c02e445ab55cefddc4.stex" ]
 
 [params]
 

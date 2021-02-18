@@ -1,7 +1,7 @@
 extends Control
 
-const eventStructureFilePath = "res://Assets/Events/events.json"
-const eventWindowScene = preload("res://Src/Events/Events.tscn")
+const eventStructureFilePath = "res://Assets/EventWindow/events.json"
+const eventWindowScene = preload("res://Src/EventWindow/EventWindow.tscn")
 
 
 var activeWindow = null

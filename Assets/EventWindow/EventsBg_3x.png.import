@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thumbnail-1.png-df253bd2f923e46c09b7b1a5a758bede.stex"
+path="res://.import/EventsBg_3x.png-4438fd63a5ef04a5977f03338ad129cd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Events/thumbnail-1.png"
-dest_files=[ "res://.import/thumbnail-1.png-df253bd2f923e46c09b7b1a5a758bede.stex" ]
+source_file="res://Assets/EventWindow/EventsBg_3x.png"
+dest_files=[ "res://.import/EventsBg_3x.png-4438fd63a5ef04a5977f03338ad129cd.stex" ]
 
 [params]
 
