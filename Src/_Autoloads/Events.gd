@@ -30,6 +30,8 @@ signal turn_started()
 const TURN_STARTED = "turn_started"
 
 #Gathering
+signal expedition_cancelled()
+const EXPEDITION_CANCELLED = "expedition_cancelled"
 signal expedition_confirmed()
 const EXPEDITION_CONFIRMED = "expedition_confirmed"
 signal expedition_started()
@@ -40,6 +42,8 @@ signal gather_point_calculated(int_food_cost, int_water_cost)
 const GATHER_POINT_CALCULATED = "gather_point_calculated"
 signal gather_point_projected(int_food_cost, int_water_cost)
 const GATHER_POINT_PROJECTED = "gather_point_projected"
+signal gather_point_removed()
+const GATHER_POINT_REMOVED = "gather_point_removed"
 
 #Unit and resource handling
 signal add_unit()

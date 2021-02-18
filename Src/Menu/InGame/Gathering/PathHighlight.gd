@@ -23,6 +23,7 @@ func _ready():
 	if not Events.is_connected(Events.GATHER_POINT_ADDED, self, "add_point") :
 		Events.connect(Events.GATHER_POINT_ADDED, self, "add_point")
 		Events.connect(Events.EXPEDITION_CONFIRMED, self, "clear")
+		Events.connect(Events.GATHER_POINT_REMOVED, self, "remove_point")
 		update()
 
 func add_point(spot : GatheringSpot) -> void :
@@ -31,4 +32,8 @@ func add_point(spot : GatheringSpot) -> void :
 
 func clear() -> void :
 	points.clear()
+	update()
+
+func remove_point() -> void :
+	points.pop_back()
 	update()
