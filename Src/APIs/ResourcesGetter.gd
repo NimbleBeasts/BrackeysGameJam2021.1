@@ -15,6 +15,6 @@ func get_projected_water_cost() -> int :
 	return projected_water_cost
 
 func project_cost(food : int, water : int) -> void :
-	projected_food_cost = food * Types.unit_getter.get_slotted_units()
-	projected_water_cost = water * Types.unit_getter.get_slotted_units()
+	projected_food_cost = food * Types.unit_getter.get_temp_slotted_units()
+	projected_water_cost = water * Types.unit_getter.get_temp_slotted_units()
 	Events.emit_signal(Events.GATHER_POINT_PROJECTED, self, projected_food_cost, projected_water_cost)

@@ -56,6 +56,8 @@ signal food_changed(int_new_food_value)
 const FOOD_CHANGED = "food_changed"
 signal unit_slotted()
 const UNIT_SLOTTED = "unit_slotted"
+signal units_temp_slotted(int_num_units)
+const UNITS_TEMP_SLOTTED = "units_temp_slotted"
 signal water_changed(int_new_water_value)
 const WATER_CHANGED = "water_changed"
 
