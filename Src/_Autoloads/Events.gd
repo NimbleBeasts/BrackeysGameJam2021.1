@@ -32,6 +32,8 @@ const TURN_STARTED = "turn_started"
 #Gathering
 signal expedition_confirmed()
 const EXPEDITION_CONFIRMED = "expedition_confirmed"
+signal expedition_started()
+const EXPEDITION_STARTED = "expedition_started"
 signal gather_point_added(gatheringspot_spot)
 const GATHER_POINT_ADDED = "gather_point_added"
 signal gather_point_calculated(int_food_cost, int_water_cost)
@@ -55,10 +57,6 @@ const WATER_CHANGED = "water_changed"
 
 # Sound
 signal play_sound(sound, volume, pos)
-
-#Hud related. Think in game menu.
-signal expedition_started()
-const EXPEDITION_STARTED = "expedition_started"
 
 # Menu Related
 signal menu_back()
