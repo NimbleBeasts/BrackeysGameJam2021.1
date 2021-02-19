@@ -55,7 +55,7 @@
         ]
       },
       "no": {
-        "text": "EVENT_JOINING_NO",
+        "text": "REJECT",
         "consequences": [
           {
             "type": "play",

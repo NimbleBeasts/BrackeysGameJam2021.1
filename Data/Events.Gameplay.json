@@ -6,6 +6,16 @@
     "desc": "EVENT_EXPEDITIONEND_DESC",
     "action": {
       "type": "yes",
+      "yes": "scripted"
+    }
+  },
+  {
+    "id": "on_enemy_approaching",
+    "title": "EVENT_ENEMYAPPROACHING_TITLE",
+    "thumbnail": "thumbnail-3.png",
+    "desc": "EVENT_ENEMYAPPROACHING_DESC",
+    "action": {
+      "type": "yes",
       "yes": {
         "text": "NEXT",
         "consequences": "scripted"
