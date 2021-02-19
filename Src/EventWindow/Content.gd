@@ -30,10 +30,10 @@ func setup(event): #{"type": type, "id": key, "entry": entry}
 		$BaseButtonGreen.buttonText = "Ok"
 
 func _on_BaseButtonPink_button_up():
-	# Do stuff
+	Events.emit_signal("event_choice", type, id, "no")
 	Events.emit_signal("window_close", get_parent())
 
 func _on_BaseButtonGreen_button_up():
-	# Do stuff
+	Events.emit_signal("event_choice", type, id, "yes")
 	Events.emit_signal("window_close", get_parent())
 	

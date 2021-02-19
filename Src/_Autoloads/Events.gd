@@ -17,9 +17,10 @@ const WINDOW_SHOW = "window_show"
 signal window_close(windowRef)
 const WINDOW_CLOSE = "window_close"
 
-
 signal window_black_screen_show()
 signal window_black_screen_hide()
+
+signal event_choice(type, id, choice) #Types.EventTypes
 
 
 #Dungeon Master. Turns, world events, etc.
