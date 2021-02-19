@@ -3,6 +3,8 @@ class_name WindowBase
 
 signal focus_window
 
+export(Types.WindowType) var windowType = Types.WindowType.Expedition
+
 const ninePatchTextures = [
 	preload("res://Assets/Ui/Window9Patch_3x.png"),
 	preload("res://Assets/Ui/Window9Patch_inactive_3x.png"),

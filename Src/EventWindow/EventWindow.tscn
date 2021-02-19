@@ -9,9 +9,10 @@
 
 [node name="EventWindow" instance=ExtResource( 5 )]
 margin_left = -210.0
-margin_top = -188.0
+margin_top = -202.0
 margin_right = 211.0
-margin_bottom = 184.0
+margin_bottom = 170.0
+windowType = 1
 
 [node name="Content" parent="." index="2"]
 script = ExtResource( 6 )

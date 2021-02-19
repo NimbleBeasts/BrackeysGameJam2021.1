@@ -6,27 +6,18 @@ const eventStructureFilePath = "res://Assets/EventWindow/events.json"
 const windowScenes = [preload("res://Src/ExpeditionWindow/ExpeditionWindow.tscn"), preload("res://Src/EventWindow/EventWindow.tscn")]
 
 var activeWindow = null
-var eventDB = null
-
 
 
 func _ready():
-	
 	# Window Management
 	Events.connect(Events.WINDOW_SHOW, self, "showWindow")
 	Events.connect(Events.WINDOW_CLOSE, self, "closeWindow")
 
 
-func spawnEventWindow(type, id):
-	var data = Data.getEventDataById(type, id)
-
-
-
 func showWindow(type, payload = null): #Types.WindowType
 	var data = null
-	
 	# Parse Payload Data
-	match type:
+	match get_child_count():
 		Types.WindowType.Event:
 			#{"eventType": Types.EventTypes.TurnRandom, "id": randi()%2 }
 			var eventType = payload.eventType
@@ -35,6 +26,7 @@ func showWindow(type, payload = null): #Types.WindowType
 
 	var window = _spawnWindow(type, data)
 	_focus_window(window)
+	window.rect_position += Vector2(8, 8) * get_child_count()
 	Events.emit_signal("window_black_screen_show")
 
 
