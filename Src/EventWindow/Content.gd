@@ -31,10 +31,8 @@ func setup(event): #{"type": type, "id": key, "entry": entry}
 		$BaseButtonPink.hide()
 		$BaseButtonGreen.buttonText = "Ok"
 
-
 func _on_BaseButtonPink_button_up():
 	pass # Replace with function body.
-
 
 func _on_BaseButtonGreen_button_up():
 	pass # Replace with function body.
