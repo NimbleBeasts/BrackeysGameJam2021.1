@@ -1,11 +1,13 @@
 extends HBoxContainer
 
+var gg : GridGetter = Types.grid_getter
 
 
 func _ready():
-	Events.connect(Events.NEW_LOCATION_REACHED, self, "new_location")
+	var grid : Array = gg.get_grid()
+	create_grid(grid)
 
-func new_location(location : Array) -> void :
+func create_grid(location : Array) -> void :
 	#Erase all the spots that are children currently.
 	for child in get_children() :
 		child.queue_free()

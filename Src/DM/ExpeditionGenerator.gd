@@ -1,10 +1,13 @@
 extends Node
-
+class_name ExpeditionGenerator
 
 
 var grid : Array = []
 
-export var expedition_grid_size : Vector2 = Vector2(16,16)
+export var expedition_grid_size : Vector2 = Vector2(10,10)
+
+func _ready():
+	Types.grid_getter.set_expedition_generator(self)
 
 func generate_expedition() -> Array :
 	#Start the grid anew.
@@ -22,4 +25,7 @@ func generate_expedition() -> Array :
 			y_array.append(spot)
 		grid.append(y_array)
 	
+	return grid
+
+func get_grid() -> Array :
 	return grid
