@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Src/Menu/Menu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Menu/nbSplash.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Menu/MenuScreen.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Menu/inactiveButton.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Menu/hoverButton.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Menu/pressedButton.png" type="Texture" id=5]
@@ -9,6 +9,11 @@
 [ext_resource path="res://Assets/Fonts/MenuFont.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Assets/Menu/CountryFlags.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Menu/CountryFlagsHover.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Menu/SettingsButton_2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Menu/SettingsButton_1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Ui/Window9Patch_3x.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Ui/WindowInner9Patch_3x.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Fonts/MenuFont2x.tres" type="DynamicFont" id=14]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -23,6 +28,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 2 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Main" type="Control" parent="."]
 anchor_right = 1.0
@@ -32,9 +40,9 @@ __meta__ = {
 }
 
 [node name="ButtonLanguage" type="TextureButton" parent="Main"]
-margin_left = 536.0
+margin_left = 624.0
 margin_top = 32.0
-margin_right = 576.0
+margin_right = 664.0
 margin_bottom = 56.0
 texture_hover = ExtResource( 9 )
 __meta__ = {
@@ -46,6 +54,90 @@ show_behind_parent = true
 texture = ExtResource( 8 )
 centered = false
 hframes = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ButtonContinue" type="TextureButton" parent="Main"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -344.0
+margin_top = 312.0
+margin_right = -216.0
+margin_bottom = 336.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+texture_disabled = ExtResource( 3 )
+
+[node name="Text" type="Label" parent="Main/ButtonContinue"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 5.0
+margin_right = -11.0
+margin_bottom = -3.0
+mouse_filter = 1
+text = "MENU_CONTINUE"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ButtonPlay" type="TextureButton" parent="Main"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -344.0
+margin_top = 344.0
+margin_right = -216.0
+margin_bottom = 368.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+texture_disabled = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="Main/ButtonPlay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 5.0
+margin_right = -28.0
+margin_bottom = -3.0
+mouse_filter = 1
+text = "MENU_PLAY"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ButtonCredits" type="TextureButton" parent="Main"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -344.0
+margin_top = 392.0
+margin_right = -216.0
+margin_bottom = 416.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+texture_disabled = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="Main/ButtonCredits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 5.0
+margin_right = -27.0
+margin_bottom = -3.0
+mouse_filter = 1
+text = "MENU_CREDITS"
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="ButtonExit" type="TextureButton" parent="Main"]
 anchor_left = 0.5
@@ -62,18 +154,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Text" type="RichTextLabel" parent="Main/ButtonExit"]
+[node name="Text" type="Label" parent="Main/ButtonExit"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 16.0
-margin_top = 4.0
-margin_right = -16.0
-margin_bottom = -4.0
+margin_left = 4.0
+margin_top = 5.0
+margin_right = -28.0
+margin_bottom = -3.0
 mouse_filter = 1
-custom_fonts/normal_font = ExtResource( 7 )
-bbcode_enabled = true
-bbcode_text = "[center]Exit[/center]"
-text = "Exit"
+text = "MENU_EXIT"
 __meta__ = {
 "_edit_lock_": true
 }
@@ -81,57 +170,14 @@ __meta__ = {
 [node name="ButtonSettings" type="TextureButton" parent="Main"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 232.0
-margin_top = 64.0
-margin_right = 360.0
-margin_bottom = 88.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 4 )
-texture_disabled = ExtResource( 3 )
-
-[node name="Text" type="RichTextLabel" parent="Main/ButtonSettings"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 16.0
-margin_top = 4.0
-margin_right = -16.0
-margin_bottom = -4.0
-mouse_filter = 1
-custom_fonts/normal_font = ExtResource( 7 )
-bbcode_enabled = true
-bbcode_text = "[center]Settings[/center]"
-text = "Settings"
+margin_left = 312.0
+margin_top = 24.0
+margin_right = 352.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 11 )
+texture_hover = ExtResource( 10 )
 __meta__ = {
-"_edit_lock_": true
-}
-
-[node name="ButtonPlay" type="TextureButton" parent="Main"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -344.0
-margin_top = 344.0
-margin_right = -216.0
-margin_bottom = 368.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 4 )
-texture_disabled = ExtResource( 3 )
-
-[node name="Text" type="RichTextLabel" parent="Main/ButtonPlay"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 16.0
-margin_top = 4.0
-margin_right = -16.0
-margin_bottom = -4.0
-mouse_filter = 1
-custom_fonts/normal_font = ExtResource( 7 )
-bbcode_enabled = true
-bbcode_text = "[center]Play[/center]"
-text = "Play"
-__meta__ = {
-"_edit_lock_": true
+"_edit_use_anchors_": false
 }
 
 [node name="Settings" type="Control" parent="."]
@@ -142,13 +188,49 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Darkener" type="ColorRect" parent="Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.596078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="NinePatchRect" parent="Settings"]
+margin_left = 272.0
+margin_top = 176.0
+margin_right = 448.0
+margin_bottom = 320.0
+texture = ExtResource( 12 )
+patch_margin_left = 6
+patch_margin_top = 24
+patch_margin_right = 6
+patch_margin_bottom = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg2" type="NinePatchRect" parent="Settings"]
+margin_left = 276.0
+margin_top = 198.0
+margin_right = 444.0
+margin_bottom = 310.0
+texture = ExtResource( 13 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ButtonSound" type="TextureButton" parent="Settings"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -64.0
-margin_top = 128.0
+margin_top = 208.0
 margin_right = 64.0
-margin_bottom = 152.0
+margin_bottom = 232.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 4 )
@@ -177,9 +259,9 @@ __meta__ = {
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -64.0
-margin_top = 160.0
+margin_top = 240.0
 margin_right = 64.0
-margin_bottom = 184.0
+margin_bottom = 264.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 4 )
@@ -204,44 +286,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ButtonFullscreen" type="TextureButton" parent="Settings"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -64.0
-margin_top = 192.0
-margin_right = 64.0
-margin_bottom = 216.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 4 )
-texture_disabled = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Text" type="RichTextLabel" parent="Settings/ButtonFullscreen"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 16.0
-margin_top = 4.0
-margin_right = -16.0
-margin_bottom = -4.0
-mouse_filter = 1
-custom_fonts/normal_font = ExtResource( 7 )
-bbcode_enabled = true
-bbcode_text = "[center]Fullscreen: Off[/center]"
-text = "Fullscreen: Off"
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="ButtonBack" type="TextureButton" parent="Settings"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -64.0
-margin_top = 256.0
+margin_top = 280.0
 margin_right = 64.0
-margin_bottom = 280.0
+margin_bottom = 304.0
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 4 )
@@ -266,6 +317,120 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Credits" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Darkener" type="ColorRect" parent="Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.596078 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="NinePatchRect" parent="Credits"]
+margin_left = 160.0
+margin_top = 128.0
+margin_right = 544.0
+margin_bottom = 397.0
+texture = ExtResource( 12 )
+patch_margin_left = 6
+patch_margin_top = 24
+patch_margin_right = 6
+patch_margin_bottom = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg2" type="NinePatchRect" parent="Credits"]
+margin_left = 168.0
+margin_top = 152.0
+margin_right = 536.0
+margin_bottom = 384.0
+texture = ExtResource( 13 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="RichTextLabel" parent="Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 176.0
+margin_top = 156.0
+margin_right = -192.0
+margin_bottom = -292.0
+mouse_filter = 1
+custom_fonts/normal_font = ExtResource( 14 )
+bbcode_enabled = true
+bbcode_text = "Credits"
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="Credits"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 176.0
+margin_top = 192.0
+margin_right = -192.0
+margin_bottom = -128.0
+mouse_filter = 1
+custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "The NimbleBeasts Collective is a small and open independent development studio where anyone can participate - worldwide.  Support us, become part of the collective and buy our games, because they are really good. _
+
+[color=#f0b541]£ Anicet[/color] - Game Design & Pixels
+[color=#f0b541]¤ Zach777[/color] - Coding
+[color=#f0b541]¢ mago[/color] - UI Coding
+[color=#f0b541]~ SpaceCastle[/color] - Music & Sounds"
+text = "The NimbleBeasts Collective is a small and open independent development studio where anyone can participate - worldwide.  Support us, become part of the collective and buy our games, because they are really good. _
+
+£ Anicet - Game Design & Pixels
+¤ Zach777 - Coding
+¢ mago - UI Coding
+~ SpaceCastle - Music & Sounds"
+
+[node name="ButtonBack" type="TextureButton" parent="Credits"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -64.0
+margin_top = 352.0
+margin_right = 64.0
+margin_bottom = 376.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+texture_disabled = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="Credits/ButtonBack"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 4.0
+margin_right = -16.0
+margin_bottom = -4.0
+mouse_filter = 1
+custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[center]Back[/center]"
+text = "Back"
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Copyright" type="RichTextLabel" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
@@ -273,24 +438,32 @@ anchor_bottom = 1.0
 margin_top = -16.0
 custom_fonts/normal_font = ExtResource( 7 )
 bbcode_enabled = true
-bbcode_text = "[center]©2020 by NimbleBeasts [color=#34859d]`[/color]NimbleBeasts [color=#9d303b]¥[/color]NimbleBeasts[/center]"
-text = "©2020 by NimbleBeasts `NimbleBeasts ¥NimbleBeasts"
+bbcode_text = "[center]©2021 by NimbleBeasts [color=#34859d]`[/color]NimbleBeasts [color=#9d303b]¥[/color]NimbleBeasts[/center]"
+text = "©2021 by NimbleBeasts `NimbleBeasts ¥NimbleBeasts"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Version" type="RichTextLabel" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -64.0
-margin_right = -4.0
+margin_left = -112.0
+margin_right = -16.0
 margin_bottom = 16.0
 custom_fonts/normal_font = ExtResource( 7 )
 bbcode_enabled = true
 bbcode_text = "[right]Version[/right]"
 text = "Version"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_up" from="Main/ButtonLanguage" to="." method="_on_ButtonLanguage_button_up"]
+[connection signal="button_up" from="Main/ButtonContinue" to="." method="_on_ButtonPlay_button_up"]
+[connection signal="button_up" from="Main/ButtonPlay" to="." method="_on_ButtonPlay_button_up"]
+[connection signal="button_up" from="Main/ButtonCredits" to="." method="_on_ButtonCredits_button_up"]
 [connection signal="button_up" from="Main/ButtonExit" to="." method="_on_ButtonExit_button_up"]
 [connection signal="button_up" from="Main/ButtonSettings" to="." method="_on_ButtonSettings_button_up"]
-[connection signal="button_up" from="Main/ButtonPlay" to="." method="_on_ButtonPlay_button_up"]
 [connection signal="button_up" from="Settings/ButtonSound" to="." method="_on_ButtonSound_button_up"]
 [connection signal="button_up" from="Settings/ButtonMusic" to="." method="_on_ButtonMusic_button_up"]
-[connection signal="button_up" from="Settings/ButtonFullscreen" to="." method="_on_ButtonFullscreen_button_up"]
 [connection signal="button_up" from="Settings/ButtonBack" to="." method="_on_ButtonBack_button_up"]
+[connection signal="button_up" from="Credits/ButtonBack" to="." method="_on_ButtonBack_button_up"]

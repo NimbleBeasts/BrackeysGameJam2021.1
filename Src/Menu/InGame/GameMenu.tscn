@@ -281,6 +281,9 @@ text = "Sacrifice"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="button_up" from="ButtonBack" to="." method="_on_ButtonBack_button_up"]
+[connection signal="button_up" from="ButtonMusic" to="." method="_on_ButtonMusic_button_up"]
+[connection signal="button_up" from="ButtonSound" to="." method="_on_ButtonSound_button_up"]
 [connection signal="button_up" from="Menu/ExpButton" to="." method="_on_ExpButton_button_up"]
 [connection signal="button_up" from="EventSpawnButton" to="." method="_on_EventSpawnButton_button_up"]
 [connection signal="button_up" from="SacrificeButton" to="." method="_on_SacrificeButton_button_up"]

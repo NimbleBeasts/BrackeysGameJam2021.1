@@ -1,6 +1,6 @@
 extends Control
 
-enum MenuState {Main, Settings}
+enum MenuState {Main, Settings, Credits}
 
 func _ready():
 	# Event Hooks
@@ -12,6 +12,9 @@ func _ready():
 	$Version.bbcode_text = "[right]"+ Global.getVersionString() + "[/right]"
 
 	switchTo(MenuState.Main)
+
+func translate():
+	pass
 
 # Play menu button sound
 func playClick():
@@ -27,6 +30,8 @@ func switchTo(to):
 		MenuState.Settings:
 			updateSettings()
 			$Settings.show()
+		MenuState.Credits:
+			$Credits.show()
 		_:
 			print("Invalid menu state")
 
@@ -35,6 +40,7 @@ func hideAllMenuScenes():
 	# Add menu scenes here
 	$Main.hide()
 	$Settings.hide()
+	$Credits.hide()
 
 # Helper function to update the config labels
 func updateSettings():
@@ -48,10 +54,6 @@ func updateSettings():
 	else:
 		$Settings/ButtonMusic/Text.bbcode_text = "[center]Music: Off[/center]"
 
-	if Global.userConfig.fullscreen:
-		$Settings/ButtonFullscreen/Text.bbcode_text = "[center]Fullscreen: On[/center]"
-	else:
-		$Settings/ButtonFullscreen/Text.bbcode_text = "[center]Fullscreen: Off[/center]"
 
 ###############################################################################
 # Callbacks
@@ -82,6 +84,11 @@ func _on_ButtonPlay_button_up():
 func _on_ButtonSettings_button_up():
 	playClick()
 	switchTo(MenuState.Settings)
+
+
+func _on_ButtonCredits_button_up():
+	playClick()
+	switchTo(MenuState.Credits)
 
 
 func _on_ButtonExit_button_up():
@@ -121,4 +128,3 @@ func _on_ButtonLanguage_button_up():
 	TranslationServer.set_locale(availableLocale[id])
 	$Main/ButtonLanguage/Sprite.frame = flags.find(TranslationServer.get_locale())
 	print("Language: " + tr("TEST_ENTRY"))
-

@@ -1,5 +1,9 @@
 keys,en,fr,de
 TEST_ENTRY,"en","fr","de"
+MENU_PLAY,"Play","Jouer","Spielen"
+MENU_CONTINUE,"Continue","Continuer","Fortsetzen"
+MENU_CREDITS,"Credits","Contributeur","Mitwirkende"
+MENU_EXIT,"Exit","Sortie","Beenden"
 PLAY,"play,"jouer","spielen"
 NEXT,"next","suivant","weiter"
 ACCEPT,"accept","accepter","akzeptieren"
