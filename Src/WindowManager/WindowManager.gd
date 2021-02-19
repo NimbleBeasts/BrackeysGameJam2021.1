@@ -3,7 +3,11 @@ extends Control
 const eventStructureFilePath = "res://Assets/EventWindow/events.json"
 
 # According to enum Types.WindowType 
-const windowScenes = [preload("res://Src/ExpeditionWindow/ExpeditionWindow.tscn"), preload("res://Src/EventWindow/EventWindow.tscn")]
+const windowScenes = [
+	preload("res://Src/ExpeditionWindow/ExpeditionWindow.tscn"), 
+	preload("res://Src/EventWindow/EventWindow.tscn"),
+	preload("res://Src/CharacterWindow/CharacterWindow.tscn"),
+]
 
 var activeWindow = null
 

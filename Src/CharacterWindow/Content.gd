@@ -9,16 +9,12 @@ func _ready():
 	$CheckList.displayPage(0)
 	updateButtons()
 	
-	#warning-ignore:return_value_discarded
-	$BaseButtonGreen.connect("pressed", Events, "emit_signal", [Events.EXPEDITION_STARTED])
-	#warning-ignore:return_value_discarded
-	$BaseButtonPink.connect("pressed", Events, "emit_signal", [Events.WINDOW_CLOSE, get_parent()])
 
 func reset():
 	pass
 
 func setup(payload):
-	print("ExpeditionWindow setup()")
+	print("CharWindow setup()")
 
 func updateButtons():
 	var itemsPerPage = $CheckList.optionsPerPage
@@ -44,10 +40,12 @@ func _on_DownButton_button_up():
 	$CheckList.displayPage($CheckList.activePage - 1)
 	updateButtons()
 
+func _on_CheckList_list_active(node):
+	$DummyLabel.set_text(str(node.optionText))
+
 func _on_BaseButtonPink_button_up():
 	print("button")
 	Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
 
-func _on_CheckList_list_active(node):
-	$DummyLabel.set_text(str(node.optionText))
-
+func _on_BaseButtonGreen_button_up():
+	pass # Replace with function body.

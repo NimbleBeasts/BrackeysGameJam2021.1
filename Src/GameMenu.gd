@@ -59,3 +59,7 @@ func _on_EventSpawnButton_button_up():
 	Events.emit_signal("window_show", Types.WindowType.Event, {"eventType": Types.EventTypes.TurnRandom, "id": randi()%2 })
 	Events.emit_signal("window_show", Types.WindowType.Event, {"eventType": Types.EventTypes.TurnRandom, "id": Data.getEventIdByName(Types.EventTypes.TurnRandom, "swordbread")})
 	
+
+
+func _on_SacrificeButton_button_up():
+	Events.emit_signal("window_show", Types.WindowType.Char, Types.CharEventType.Sacrifice)
