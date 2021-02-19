@@ -9,7 +9,7 @@ class_name DiceRoll
 #If negative one, then dice roll will always be present.
 var day_cost : int = 1 setget ,get_day_cost
 
-var use_key : String = ""
+var use_key : int = -1
 
 func decrement_day() -> void :
 	day_cost -= 1
