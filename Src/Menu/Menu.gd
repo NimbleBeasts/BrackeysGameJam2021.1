@@ -110,5 +110,15 @@ func _on_ButtonFullscreen_button_up():
 	updateSettings()
 
 
-
+func _on_ButtonLanguage_button_up():
+	var flags = ["en", "fr", "de"]
+	var availableLocale = TranslationServer.get_loaded_locales()
+	var id = availableLocale.find(TranslationServer.get_locale()) + 1
+	
+	if id >= availableLocale.size():
+		id = 0
+	
+	TranslationServer.set_locale(availableLocale[id])
+	$Main/ButtonLanguage/Sprite.frame = flags.find(TranslationServer.get_locale())
+	print("Language: " + tr("TEST_ENTRY"))
 
