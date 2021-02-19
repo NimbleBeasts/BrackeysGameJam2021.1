@@ -22,4 +22,3 @@ func _turn_ended() -> void :
 			dr.decrement_day()
 			if dr.get_day_cost() == 0:
 				dr.roll_and_free()
-		

@@ -1,6 +1,6 @@
 extends Node
+class_name ResourcesHandler
 
-var resources : ResourcesGetter = Types.resources_getter
 
 #How much a unit costs per turn in food and water.
 export(int) var unit_faith_gained = 5
@@ -15,12 +15,13 @@ var faith : int = 1000 setget set_faith
 var food : int = 1000 setget set_food
 var water : int = 1000 setget set_water
 
+func _init():
+	Types.resources_getter.resources_handler = self
+
 #Let others know about resources being initialized.
 func _ready():
 	call_deferred("_ready_deferred")
-	if not Events.is_connected(Events.EXPEDITION_CONFIRMED, self, "use_resources") :
-		Events.connect(Events.EXPEDITION_CONFIRMED, self, "use_resources")
-	
+
 func _ready_deferred() -> void :
 	set_water(water)
 	set_food(food)
@@ -45,10 +46,14 @@ func turn_end_test() -> bool :
 	#Let dungeon master know I am finished processing turn end.
 	return true
 
-func use_resources() -> void :
-	#Use the resources in the projected cost list.
-	set_food(food - resources.get_projected_food_cost())
-	set_water(water - resources.get_projected_water_cost())
+func use_faith(faith_amount : int) -> void :
+	set_faith(faith - faith_amount)
+
+func use_food(food_amout : int) -> void :
+	set_food(food - food_amout)
+
+func use_water(water_amount : int) -> void :
+	set_water(water - water_amount)
 
 func set_energy(energy_value : int) -> void :
 	energy = energy_value

@@ -14,6 +14,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Src/DiceRolls/DiceRoll.gd"
 }, {
+"base": "Node",
+"class": "ExpeditionCalculator",
+"language": "GDScript",
+"path": "res://Src/DM/ExpeditionCalculator.gd"
+}, {
+"base": "DiceRoll",
+"class": "ExpeditionsRoll",
+"language": "GDScript",
+"path": "res://Src/ExpeditionsClass/ExpeditionsClass.gd"
+}, {
 "base": "Button",
 "class": "GatheringSpot",
 "language": "GDScript",
@@ -40,6 +50,11 @@ _global_script_classes=[ {
 "path": "res://Src/APIs/ResourcesGetter.gd"
 }, {
 "base": "Node",
+"class": "ResourcesHandler",
+"language": "GDScript",
+"path": "res://Src/DM/Resources.gd"
+}, {
+"base": "Node",
 "class": "UnitGetter",
 "language": "GDScript",
 "path": "res://Src/APIs/UnitGetter.gd"
@@ -51,11 +66,14 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "DiceRoll": "",
+"ExpeditionCalculator": "",
+"ExpeditionsRoll": "",
 "GatheringSpot": "",
 "NewTurnRoll": "",
 "PlayerUnitHandler": "",
 "PlayerUnitsBase": "",
 "ResourcesGetter": "",
+"ResourcesHandler": "",
 "UnitGetter": "",
 "WindowBase": ""
 }

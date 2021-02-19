@@ -1,4 +1,5 @@
 extends Node
+class_name ExpeditionCalculator
 
 
 #Determine how much resources cost to perform the expedition.
@@ -7,6 +8,9 @@ var traveled : PoolRealArray = PoolRealArray()
 
 var current_food_cost : int = 0
 var current_water_cost : int = 0
+
+func _init():
+	Types.resources_getter.expedition_calc = self
 
 func _ready():
 	if not Events.is_connected(Events.GATHER_POINT_ADDED, self, "point_added") :
@@ -45,5 +49,12 @@ func point_removed() -> void :
 	traveled.remove(traveled.size() - 1)
 	current_location.remove(current_location.size() - 1)
 
-
+func project_cost(unit_count : int) -> Dictionary :
+	var cost : Dictionary = {
+		"food" : current_food_cost * unit_count,
+		"water" : current_water_cost * unit_count,
+		"day_cost": int(round(traveled[traveled.size()-1] * 0.4))
+	}
+	Events.emit_signal(Events.GATHER_POINT_PROJECTED, cost)
+	return cost
 

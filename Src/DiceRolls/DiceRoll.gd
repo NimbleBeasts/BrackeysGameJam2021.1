@@ -38,3 +38,6 @@ func roll_chances() -> int :
 func roll_and_free() -> void :
 	roll()
 	queue_free()
+
+func set_day_cost(days : int) -> void :
+	day_cost = days

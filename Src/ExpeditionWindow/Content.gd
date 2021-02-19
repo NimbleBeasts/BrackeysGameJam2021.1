@@ -8,7 +8,7 @@ func _ready():
 	updateButtons()
 	
 	#warning-ignore:return_value_discarded
-	$BaseButtonGreen.connect("pressed", Events, "emit_signal", [Events.WINDOW_SHOW, Types.WindowType.Expedition])
+	$BaseButtonGreen.connect("pressed", Events, "emit_signal", [Events.EXPEDITION_STARTED])
 	#warning-ignore:return_value_discarded
 	$BaseButtonPink.connect("pressed", Events, "emit_signal", [Events.WINDOW_CLOSE, Types.WindowType.Expedition])
 
