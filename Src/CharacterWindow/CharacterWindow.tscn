@@ -13,6 +13,10 @@ margin_top = -116.0
 margin_right = 152.0
 margin_bottom = 130.0
 
+[node name="Bg" parent="." index="0"]
+margin_right = -1.0
+margin_bottom = 60.0
+
 [node name="Content" parent="." index="2"]
 script = ExtResource( 5 )
 
@@ -23,37 +27,58 @@ margin_bottom = 216.0
 texture = ExtResource( 2 )
 
 [node name="BaseButtonGreen" parent="Content" index="1" instance=ExtResource( 3 )]
-margin_left = 214.0
-margin_top = 218.0
-margin_right = 304.0
-margin_bottom = 245.0
+margin_left = 212.939
+margin_top = 278.052
+margin_right = 302.94
+margin_bottom = 305.052
+buttonText = "Text"
 
 [node name="BaseButtonPink" parent="Content" index="2" instance=ExtResource( 4 )]
-margin_left = 124.0
-margin_top = 218.0
-margin_right = 214.0
-margin_bottom = 245.0
+margin_left = 122.939
+margin_top = 278.052
+margin_right = 212.939
+margin_bottom = 305.052
+buttonText = "Text"
 
 [node name="CheckList" parent="Content" index="3" instance=ExtResource( 7 )]
+margin_left = 5.9395
+margin_top = 63.052
+margin_right = 149.939
+margin_bottom = 252.052
 
 [node name="DummyLabel" type="Label" parent="Content" index="4"]
-margin_left = 156.0
-margin_top = 6.0
-margin_right = 292.0
-margin_bottom = 54.0
+margin_left = 156.438
+margin_top = 62.3062
+margin_right = 292.438
+margin_bottom = 110.306
 
-[node name="UpButton" type="Button" parent="Content" index="5"]
-margin_left = 92.0
-margin_top = 194.0
-margin_right = 140.0
-margin_bottom = 214.0
+[node name="Prompt" type="Label" parent="Content" index="5"]
+margin_left = 7.0
+margin_top = 4.0
+margin_right = 294.0
+margin_bottom = 52.0
+
+[node name="Description" type="Label" parent="Content" index="6"]
+margin_left = 156.375
+margin_top = 234.0
+margin_right = 295.375
+margin_bottom = 270.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UpButton" type="Button" parent="Content" index="7"]
+margin_left = 90.9395
+margin_top = 254.052
+margin_right = 138.939
+margin_bottom = 274.052
 text = "up"
 
-[node name="DownButton" type="Button" parent="Content" index="6"]
-margin_left = 12.0
-margin_top = 194.0
-margin_right = 60.0
-margin_bottom = 214.0
+[node name="DownButton" type="Button" parent="Content" index="8"]
+margin_left = 10.9395
+margin_top = 254.052
+margin_right = 58.9395
+margin_bottom = 274.052
 text = "down"
 __meta__ = {
 "_edit_use_anchors_": false
