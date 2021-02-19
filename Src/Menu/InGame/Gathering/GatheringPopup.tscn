@@ -1,17 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Src/Menu/InGame/Gathering/GridContainer.gd" type="Script" id=1]
 [ext_resource path="res://Src/Menu/InGame/Gathering/PathHighlight.gd" type="Script" id=2]
 [ext_resource path="res://Src/Menu/InGame/Gathering/GatheringPopup.gd" type="Script" id=3]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Button
-
-
-
-func _pressed():
-	Events.emit_signal(Events.EXPEDITION_CANCELLED)
-"
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Button
@@ -70,27 +61,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Cancel" type="Button" parent="PointHandling"]
-margin_right = 81.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-text = "Cancel"
-script = SubResource( 1 )
-
 [node name="Remove" type="Button" parent="PointHandling"]
-margin_left = 103.0
-margin_right = 184.0
+margin_right = 288.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 text = "Remove"
 script = SubResource( 2 )
-
-[node name="Confirm" type="Button" parent="PointHandling"]
-margin_left = 206.0
-margin_right = 288.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-text = "Confirm"
 
 [node name="GridContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.2

@@ -13,25 +13,29 @@ margin_bottom = 136.0
 
 [node name="Content" parent="." index="2"]
 script = ExtResource( 5 )
+green_signal = "expedition_confirmed"
+red_signal = "expedition_cancelled"
+red_args = [  ]
 
 [node name="TextureRect" type="TextureRect" parent="Content" index="0"]
 margin_left = 4.0
 margin_right = 298.0
 margin_bottom = 216.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="BaseButtonGreen" parent="Content" index="1" instance=ExtResource( 3 )]
 margin_left = 246.0
 margin_top = 242.0
 margin_right = 336.0
 margin_bottom = 269.0
-buttonText = "Text"
 
 [node name="BaseButtonPink" parent="Content" index="2" instance=ExtResource( 4 )]
 margin_left = 156.0
 margin_top = 242.0
 margin_right = 246.0
 margin_bottom = 269.0
-buttonText = "Text"
 
 [node name="DummyLabel" type="Label" parent="Content" index="3"]
 margin_left = 12.0
