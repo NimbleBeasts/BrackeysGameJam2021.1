@@ -50,10 +50,13 @@ func point_removed() -> void :
 	current_location.remove(current_location.size() - 1)
 
 func project_cost(unit_count : int) -> Dictionary :
+	var day_cost : int = int(round(traveled[traveled.size()-1] * 0.4))
+	if day_cost <= 0 :
+		day_cost = 1
 	var cost : Dictionary = {
 		"food" : current_food_cost * unit_count,
 		"water" : current_water_cost * unit_count,
-		"day_cost": int(round(traveled[traveled.size()-1] * 0.4))
+		"day_cost": day_cost
 	}
 	Events.emit_signal(Events.GATHER_POINT_PROJECTED, cost)
 	return cost
