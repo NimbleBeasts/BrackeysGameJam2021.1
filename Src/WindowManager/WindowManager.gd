@@ -10,10 +10,7 @@ var eventDB = null
 
 
 func _ready():
-	# Read files
-	eventDB = readEventData()
-	assert(eventDB != null)
-	
+
 	# Connect the childs
 	$ExpeditionWindow.connect("focus_window", self, "_focus_window")
 	
@@ -24,8 +21,8 @@ func _ready():
 	Events.connect(Events.WINDOW_EVENT_SHOW, self, "spawnEventWindow")
 
 
-func spawnEventWindow(type, key):
-	var data = getEventData(type, key)
+func spawnEventWindow(type, id):
+	var data = Data.getEventDataById(type, id)
 	var window = eventWindowScene.instance()
 	window.connect("focus_window", self, "_focus_window")
 	window.hide()
@@ -54,41 +51,8 @@ func closeWindow(type): #Types.WindowType
 			
 		#TODO: focus next visible window
 
-func getEventEntryFromDb(db, key):
-	# Is Title
-	if typeof(key) == TYPE_STRING:
-		for entry in db:
-			if entry.id == key:
-				return entry
-		return null
-	# Is Id
-	else:
-		return db[key]
 
-func getEventData(type, key):
-	var db = null
-	var entry = null
-	var id = -1
-		
-	match type:
-		Types.EventTypes.GameplayEvent:
-			db = eventDB.gameplay_event
-		Types.EventTypes.TurnRandom:
-			db = eventDB.turn_random
-		_:
-			print("WindowManager.gd: getEventData unknown type")
-			return null
-	
-	entry = getEventEntryFromDb(db, key)
-	return {"type": type, "id": key, "entry": entry}
 
-# Loads the events json data file and parses it
-func readEventData():
-	#TODO: put it in the right spot
-	var eventFile = File.new()
-	assert(eventFile.file_exists(eventStructureFilePath))
-	eventFile.open(eventStructureFilePath, File.READ)
-	return parse_json(eventFile.get_as_text())
 
 func _focus_window(node):
 	move_child(node, get_child_count() - 1)

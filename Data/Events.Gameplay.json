@@ -1,0 +1,15 @@
+[
+  {
+    "id": "on_expedition_end",
+    "title": "EVENT_EXPEDITIONEND_TITLE",
+    "thumbnail": "thumbnail-2.png",
+    "desc": "EVENT_EXPEDITIONEND_DESC",
+    "action": {
+      "type": "yes",
+      "yes": {
+        "text": "NEXT",
+        "consequences": "scripted"
+      }
+    }
+  }
+]

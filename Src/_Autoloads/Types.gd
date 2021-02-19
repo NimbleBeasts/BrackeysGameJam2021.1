@@ -5,7 +5,7 @@ enum GameStates {Menu, Game, Settings}
 
 enum WindowType {Expedition} #TODO: maybe outdated
 
-enum EventTypes {GameplayEvent, TurnRandom}
+enum EventTypes {Expedition, Gameplay, TurnRandom}
 
 
 enum ExpeditionSpots  {
