@@ -15,6 +15,8 @@ func _ready():
 func reset():
 	pass
 
+func setup(payload):
+	print("ExpeditionWindow setup()")
 
 func updateButtons():
 	var itemsPerPage = $CheckList.optionsPerPage

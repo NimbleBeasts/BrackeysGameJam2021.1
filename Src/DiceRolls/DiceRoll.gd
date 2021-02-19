@@ -29,7 +29,7 @@ func is_permanent() -> bool :
 func roll() -> void :
 	#Inheriting classes will use this to roll on each turn.
 	if roll_chances() == 0 :
-		Events.emit_signal(Events.WINDOW_EVENT_SHOW, Types.EventTypes.TurnRandom, use_key)
+		Events.emit_signal("window_show", Types.WindowType.Event, {"eventType": Types.EventTypes.TurnRandom, "id":  use_key })
 	return
 
 func roll_chances() -> int :

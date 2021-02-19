@@ -12,13 +12,14 @@ const DEBUG_OUTPUT_ON_SIGNAL_CONNECT = false
 signal new_game()
 
 # Window Management
-signal window_show(windowType) #Types.WindowType
+signal window_show(windowType, payload) #Types.WindowType; payload can be null
 const WINDOW_SHOW = "window_show"
 signal window_close(windowType) #Types.WindowType
 const WINDOW_CLOSE = "window_close"
 
-signal window_event_show(eventType, eventId) #Types.EventTypes eventId can be of typ string or int
-const WINDOW_EVENT_SHOW = "window_event_show"
+
+signal window_black_screen_show()
+signal window_black_screen_hide()
 
 
 #Dungeon Master. Turns, world events, etc.
