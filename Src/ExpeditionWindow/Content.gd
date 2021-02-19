@@ -7,8 +7,9 @@ func _ready():
 	$CheckList.displayPage(0)
 	updateButtons()
 	
-	
-	$BaseButtonGreen.connect("pressed", Events, "emit_signal", [Events.WINDOW_SHOW, Types.WindowType.Expedition])
+	#warning-ignore:return_value_discarded
+	$BaseButtonGreen.connect("pressed", Events, "emit_signal", [Events.EXPEDITION_STARTED])
+	#warning-ignore:return_value_discarded
 	$BaseButtonPink.connect("pressed", Events, "emit_signal", [Events.WINDOW_CLOSE, Types.WindowType.Expedition])
 
 func reset():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Src/Menu/InGame/Gathering/GridContainer.gd" type="Script" id=1]
 [ext_resource path="res://Src/Menu/InGame/Gathering/PathHighlight.gd" type="Script" id=2]
@@ -18,14 +18,6 @@ script/source = "extends Button
 
 func _pressed():
 	Events.emit_signal(Events.GATHER_POINT_REMOVED)
-"
-
-[sub_resource type="GDScript" id=3]
-script/source = "extends Button
-
-
-func _pressed():
-	Events.emit_signal(Events.EXPEDITION_CONFIRMED)
 "
 
 [sub_resource type="GDScript" id=4]
@@ -99,7 +91,6 @@ margin_right = 288.0
 margin_bottom = 40.0
 size_flags_horizontal = 3
 text = "Confirm"
-script = SubResource( 3 )
 
 [node name="GridContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.2

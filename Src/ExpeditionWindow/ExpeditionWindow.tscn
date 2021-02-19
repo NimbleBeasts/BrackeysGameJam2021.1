@@ -28,14 +28,12 @@ margin_left = 214.0
 margin_top = 218.0
 margin_right = 304.0
 margin_bottom = 245.0
-buttonText = "Next"
 
 [node name="BaseButtonPink" parent="Content" index="2" instance=ExtResource( 4 )]
 margin_left = 124.0
 margin_top = 218.0
 margin_right = 214.0
 margin_bottom = 245.0
-buttonText = "Back"
 
 [node name="CheckList" parent="Content" index="3" instance=ExtResource( 7 )]
 

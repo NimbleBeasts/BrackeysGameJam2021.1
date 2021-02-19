@@ -47,6 +47,12 @@ func get_temp_slot_units() -> int :
 func set_available_units(num : int) -> void :
 	available_units = num
 
+func retrieve_temp_slotted_units() -> int :
+	var units : int = temp_slotted_units
+	slot_units(temp_slotted_units)
+	temp_slot_units(1)
+	return units
+
 func slot_units(num_units : int = 1) -> void :
 	assert(num_units <= available_units)
 	available_units -= num_units

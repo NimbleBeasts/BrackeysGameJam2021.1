@@ -22,6 +22,8 @@ const WINDOW_EVENT_SHOW = "window_event_show"
 
 
 #Dungeon Master. Turns, world events, etc.
+signal dice_roll_created(dice_roll_dice_roll)
+const DICE_ROLL_CREATED = "dice_roll_created"
 signal game_lost()
 const GAME_LOST = "game_lost"
 signal left_location()
