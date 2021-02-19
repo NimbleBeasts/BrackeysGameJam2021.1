@@ -6,11 +6,11 @@ var type = null
 func reset():
 	pass
 
+#TODO: hide buttons if window is not active. emit signal on basewindow maybe
 
 func setup(event): #{"type": type, "id": key, "entry": entry}
 	assert(event)
 	assert(event.entry)
-	
 	id = event.id
 	type = event.type
 	var data = event.entry

@@ -77,5 +77,22 @@
         ]
       }
     }
+  },
+  {
+    "id": "sacrifice",
+    "title": "EVENT_SACRIFICE_TITLE",
+    "thumbnail": "thumbnail-0.png",
+    "desc": "EVENT_SACRIFICE_DESC",
+    "action": {
+      "type": "yes",
+      "yes": {
+        "text": "EVENT_SACRIIFCE_YES",
+        "consequences": [
+          {
+            "type": "sacrifice"
+          }
+        ]
+      }
+    }
   }
 ]

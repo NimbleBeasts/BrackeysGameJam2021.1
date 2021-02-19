@@ -265,12 +265,23 @@ __meta__ = {
 [node name="SacrificeButton" type="Button" parent="."]
 margin_left = 40.0
 margin_top = 112.0
-margin_right = 131.0
+margin_right = 135.0
 margin_bottom = 144.0
 text = "Char Window"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SacrificeButton2" type="Button" parent="."]
+margin_left = 40.0
+margin_top = 152.0
+margin_right = 135.0
+margin_bottom = 184.0
+text = "Sacrifice"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="button_up" from="Menu/ExpButton" to="." method="_on_ExpButton_button_up"]
 [connection signal="button_up" from="EventSpawnButton" to="." method="_on_EventSpawnButton_button_up"]
 [connection signal="button_up" from="SacrificeButton" to="." method="_on_SacrificeButton_button_up"]
+[connection signal="button_up" from="SacrificeButton2" to="." method="_on_SacrificeButton2_button_up"]
