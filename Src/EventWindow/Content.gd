@@ -17,7 +17,7 @@ func setup(event): #{"type": type, "id": key, "entry": entry}
 
 	$TitleLabel.set_text(str(data.title))
 	$TitleImage.texture = load("res://Assets/EventWindow/" + str(data.thumbnail))
-	$DescriptionText.bbcode_text = data.desc
+	$DescriptionText.bbcode_text = data.desc + "\nData: " + str(event)
 	
 	if data.action.type == "yesno":
 		# YesNo Choice
