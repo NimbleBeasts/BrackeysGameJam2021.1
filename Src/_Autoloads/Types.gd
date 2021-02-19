@@ -9,6 +9,18 @@ enum EventTypes {Expedition, Gameplay, TurnRandom}
 
 enum CharEventType {Expedition, Sacrifice}
 
+enum UnitTypes {
+	Swordsman,
+	Chieftan,
+	Philosopher,
+	Farmer,
+	Oracle,
+	Traveller,
+	Merchant,
+	Hussard,
+	Priest
+}
+
 enum ExpeditionSpots  {
 	LAKES = 0,
 	HUNTING = 1,

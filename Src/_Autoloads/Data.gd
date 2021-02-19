@@ -4,12 +4,16 @@ const filePathEventExpedition = "res://Data/Events.Expedition.json"
 const filePathEventGameplay = "res://Data/Events.Gameplay.json"
 const filePathEventTurnRandom = "res://Data/Events.TurnRandom.json"
 
+const filePathUnits = "res://Data/Units.json"
+
 var events = {
 	"expedition": [],
 	"gameplay": [],
 	"turnRandom": []
 }
 
+#Types.UnitTypes
+var units = []
 
 
 func _ready():
@@ -59,6 +63,11 @@ func loadGameData():
 	events.gameplay = readJsonFile(filePathEventGameplay)
 	events.turnRandom = readJsonFile(filePathEventTurnRandom)
 	assert(events.expedition and events.gameplay and events.turnRandom)
+
+	units = readJsonFile(filePathUnits)
+	assert(units)
+	print(units)
+
 
 # Reads and parses a JSON file and returns it as a variable
 func readJsonFile(file):

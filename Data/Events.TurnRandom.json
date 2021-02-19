@@ -5,7 +5,7 @@
     "thumbnail": "thumbnail-0.png",
     "desc": "EVENT_SWORDBREAD_DESC",
     "action": {
-      "type": "yes",
+      "type": "yesno",
       "yes": {
         "text": "EVENT_SWORDBREAD_YES",
         "consequences": [

@@ -1,0 +1,92 @@
+[
+  {
+    "type": "swordsman",
+    "lakes": -2,
+    "hunting": 1,
+    "ruins": 1,
+    "berries": 0,
+    "creeks": -1,
+    "total": -1,
+    "chance": 30
+  },
+  {
+    "type": "chieftan",
+    "lakes": 0,
+    "hunting": 2,
+    "ruins": -1,
+    "berries": 1,
+    "creeks": 0,
+    "total": 2,
+    "chance": 5
+  },
+  {
+    "type": "philosopher",
+    "lakes": 2,
+    "hunting": -2,
+    "ruins": 2,
+    "berries": -1,
+    "creeks": 1,
+    "total": 2,
+    "chance": 5
+  },
+  {
+    "type": "farmer",
+    "lakes": -1,
+    "hunting": 2,
+    "ruins": -2,
+    "berries": 2,
+    "creeks": 0,
+    "total": 1,
+    "chance": 10
+  },
+  {
+    "type": "oracle",
+    "lakes": 2,
+    "hunting": -1,
+    "ruins": 2,
+    "berries": -1,
+    "creeks": -2,
+    "total": 0,
+    "chance": 20
+  },
+  {
+    "type": "traveller",
+    "lakes": -1,
+    "hunting": 1,
+    "ruins": 1,
+    "berries": 1,
+    "creeks": 2,
+    "total": 4,
+    "chance": 5
+  },
+  {
+    "type": "merchant",
+    "lakes": 2,
+    "hunting": -2,
+    "ruins": -2,
+    "berries": 1,
+    "creeks": 2,
+    "total": 1,
+    "chance": 15
+  },
+  {
+    "type": "hussard",
+    "lakes": -2,
+    "hunting": 2,
+    "ruins": 2,
+    "berries": 1,
+    "creeks": 0,
+    "total": 3,
+    "chance": 5
+  },
+  {
+    "type": "priest",
+    "lakes": 0,
+    "hunting": -1,
+    "ruins": 2,
+    "berries": 1,
+    "creeks": 1,
+    "total": 3,
+    "chance": 5
+  }
+]
