@@ -7,4 +7,4 @@ var potential_food_return : int = 0
 var potential_water_return : int = 0
 
 func roll_chances() -> int :
-	pass
+	return 2

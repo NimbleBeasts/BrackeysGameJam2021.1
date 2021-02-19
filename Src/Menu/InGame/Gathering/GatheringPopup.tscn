@@ -20,7 +20,7 @@ func _pressed():
 	Events.emit_signal(Events.GATHER_POINT_REMOVED)
 "
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=3]
 script/source = "extends Button
 
 
@@ -28,10 +28,10 @@ func _pressed() :
 	Types.unit_getter.add_temp_slotted_unit()
 "
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.172549, 0.172549, 0.172549, 1 )
 
-[sub_resource type="GDScript" id=6]
+[sub_resource type="GDScript" id=5]
 script/source = "extends Label
 
 func _ready():
@@ -41,7 +41,7 @@ func change(number: int) -> void :
 	text = \"%s\" % str(number)
 "
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=6]
 script/source = "extends Button
 
 func _pressed():
@@ -115,16 +115,16 @@ margin_right = 40.0
 margin_right = 64.0
 margin_bottom = 20.0
 text = "Add"
-script = SubResource( 4 )
+script = SubResource( 3 )
 
 [node name="Label" type="Label" parent="UnitSlotting"]
 margin_top = 24.0
 margin_right = 64.0
 margin_bottom = 38.0
-custom_styles/normal = SubResource( 5 )
+custom_styles/normal = SubResource( 4 )
 text = "1"
 align = 1
-script = SubResource( 6 )
+script = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -134,7 +134,7 @@ margin_top = 42.0
 margin_right = 64.0
 margin_bottom = 62.0
 text = "Subtract"
-script = SubResource( 7 )
+script = SubResource( 6 )
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 layer = 2

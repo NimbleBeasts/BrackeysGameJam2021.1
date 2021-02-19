@@ -24,12 +24,14 @@ margin_left = 246.0
 margin_top = 242.0
 margin_right = 336.0
 margin_bottom = 269.0
+buttonText = "Text"
 
 [node name="BaseButtonPink" parent="Content" index="2" instance=ExtResource( 4 )]
 margin_left = 156.0
 margin_top = 242.0
 margin_right = 246.0
 margin_bottom = 269.0
+buttonText = "Text"
 
 [node name="DummyLabel" type="Label" parent="Content" index="3"]
 margin_left = 12.0
