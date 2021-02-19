@@ -46,10 +46,9 @@ var debugLabel = null
 # User Config - These are also the default values
 var userConfig = {
 	"configVersion": CONFIG_VERSION,
-	"highscore": 0,
 	"sound": true,
 	"music": true,
-	"fullscreen": false
+	"language": "en"
 }
 
 # RNG base
@@ -67,7 +66,8 @@ func _ready():
 	rng.randomize()
 	loadConfig()
 	videoSetup(1)
-	switchFullscreen()
+
+
 
 # Config Save
 func saveConfig():
@@ -92,8 +92,7 @@ func loadConfig():
 		saveConfig()
 	
 	# Copy over userConfig
-	userConfig.highscore = data.highscore
-	userConfig.fullscreen = data.fullscreen
+	userConfig.language = data.language
 	userConfig.sound = data.sound
 	userConfig.music = data.music
 	# When stuck here, the config attributes have been changed.
@@ -124,21 +123,9 @@ func videoSetup(scale = 2):
 	OS.set_window_position(centered_pos)
 	OS.set_window_size(window_size)
 
-# Set Fullscreen Mode
-func setFullscreen(val: bool):
-	userConfig.fullscreen = val
-	saveConfig()
-	
-	switchFullscreen()
 
-# Perform Fullscreen Switch
-func switchFullscreen():
-	if not userConfig.fullscreen:
-		OS.window_fullscreen = false
-		videoSetup(1)
-	else:
-		videoSetup(3)
-		OS.window_fullscreen = true
+
+
 
 # PRNG
 func prng():

@@ -1,6 +1,7 @@
 extends Control
 
 enum MenuState {Main, Settings, Credits}
+const flags = ["en", "fr", "de"]
 
 func _ready():
 	# Event Hooks
@@ -12,6 +13,11 @@ func _ready():
 	$Version.bbcode_text = "[right]"+ Global.getVersionString() + "[/right]"
 
 	switchTo(MenuState.Main)
+	
+	
+	TranslationServer.set_locale(Global.userConfig.language)
+	$Main/ButtonLanguage/Sprite.frame = flags.find(TranslationServer.get_locale())
+		
 
 func translate():
 	pass
@@ -118,7 +124,6 @@ func _on_ButtonFullscreen_button_up():
 
 
 func _on_ButtonLanguage_button_up():
-	var flags = ["en", "fr", "de"]
 	var availableLocale = TranslationServer.get_loaded_locales()
 	var id = availableLocale.find(TranslationServer.get_locale()) + 1
 	
@@ -127,4 +132,8 @@ func _on_ButtonLanguage_button_up():
 	
 	TranslationServer.set_locale(availableLocale[id])
 	$Main/ButtonLanguage/Sprite.frame = flags.find(TranslationServer.get_locale())
+	
+	Global.userConfig.language = TranslationServer.get_locale()
+	Global.saveConfig()
+	
 	print("Language: " + tr("TEST_ENTRY"))
