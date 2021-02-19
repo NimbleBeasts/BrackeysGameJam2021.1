@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://Src/GameInstance.gd" type="Script" id=1]
+[ext_resource path="res://Src/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ui/TopBar/Bg_3x.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Ui/Sceneries/Scene_Dune_3x.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Ui/TopBar/Icons.png" type="Texture" id=4]

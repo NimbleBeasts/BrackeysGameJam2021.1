@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Src/Menu/InGame/GameMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/DM/DungeonMaster.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Src/BlackScreen.gd" type="Script" id=3]
 [ext_resource path="res://Src/WindowManager/WindowManager.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Src/GameInstance.gd" type="Script" id=5]
 
 [node name="GameInstance" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
