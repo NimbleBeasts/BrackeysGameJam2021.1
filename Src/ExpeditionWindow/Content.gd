@@ -10,7 +10,7 @@ func _ready():
 	#warning-ignore:return_value_discarded
 	$BaseButtonGreen.connect("pressed", Events, "emit_signal", [Events.EXPEDITION_STARTED])
 	#warning-ignore:return_value_discarded
-	$BaseButtonPink.connect("pressed", Events, "emit_signal", [Events.WINDOW_CLOSE, Types.WindowType.Expedition])
+	$BaseButtonPink.connect("pressed", Events, "emit_signal", [Events.WINDOW_CLOSE, get_parent()])
 
 func reset():
 	pass
@@ -44,7 +44,7 @@ func _on_DownButton_button_up():
 
 func _on_BaseButtonPink_button_up():
 	print("button")
-	Events.emit_signal(Events.WINDOW_CLOSE, Types.WindowType.Expedition)
+	Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
 
 func _on_CheckList_list_active(node):
 	$DummyLabel.set_text(str(node.optionText))

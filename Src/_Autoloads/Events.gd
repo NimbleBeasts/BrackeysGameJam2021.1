@@ -14,7 +14,7 @@ signal new_game()
 # Window Management
 signal window_show(windowType, payload) #Types.WindowType; payload can be null
 const WINDOW_SHOW = "window_show"
-signal window_close(windowType) #Types.WindowType
+signal window_close(windowRef)
 const WINDOW_CLOSE = "window_close"
 
 

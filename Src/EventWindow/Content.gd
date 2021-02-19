@@ -6,12 +6,6 @@ var type = null
 func reset():
 	pass
 
-func _ready():
-	$BaseButtonGreen.connect("pressed", self, "confirm")
-
-#Green button pressed.
-func confirm() -> void :
-	get_parent().queue_free()
 
 func setup(event): #{"type": type, "id": key, "entry": entry}
 	assert(event)
@@ -36,7 +30,10 @@ func setup(event): #{"type": type, "id": key, "entry": entry}
 		$BaseButtonGreen.buttonText = "Ok"
 
 func _on_BaseButtonPink_button_up():
-	pass # Replace with function body.
+	# Do stuff
+	Events.emit_signal("window_close", get_parent())
 
 func _on_BaseButtonGreen_button_up():
-	pass # Replace with function body.
+	# Do stuff
+	Events.emit_signal("window_close", get_parent())
+	

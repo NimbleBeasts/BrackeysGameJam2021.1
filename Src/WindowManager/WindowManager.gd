@@ -38,18 +38,13 @@ func showWindow(type, payload = null): #Types.WindowType
 	Events.emit_signal("window_black_screen_show")
 
 
-func closeWindow(type): #Types.WindowType
-	match type:
-		Types.WindowType.Expedition:
-			print("hide")
-			$ExpeditionWindow.reset()
-			$ExpeditionWindow.hide()
-		_:
-			print("WindowManager.gd: Unknown window")
-			
-		#TODO: focus next visible window
-	
-	Events.emit_signal("window_black_screen_hide")
+func closeWindow(node):
+	if node:
+		var openWindows = get_child_count() #Removing is asynchronous 
+		node.queue_free()
+		if get_child_count() <= 1:
+			Events.emit_signal("window_black_screen_hide")
+
 
 func _spawnWindow(type, data):
 	var window = windowScenes[type].instance()
