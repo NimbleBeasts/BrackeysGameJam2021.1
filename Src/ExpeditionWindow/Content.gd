@@ -3,7 +3,7 @@ extends Control
 export var green_signal : String = "expedition_started"
 export var red_signal : String = "window_close"
 export var green_args : Array = []
-export var red_args : Array = []
+export var red_args : Array = [Types.WindowType.Expedition]
 
 
 func _ready():
