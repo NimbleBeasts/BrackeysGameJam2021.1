@@ -21,6 +21,9 @@ margin_left = 4.0
 margin_right = 415.0
 margin_bottom = 339.0
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TitleImage" type="Sprite" parent="Content" index="1"]
 position = Vector2( 10, 6 )

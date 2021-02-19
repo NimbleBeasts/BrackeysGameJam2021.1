@@ -7,7 +7,11 @@ func reset():
 	pass
 
 func _ready():
-	pass # Replace with function body.
+	$BaseButtonGreen.connect("pressed", self, "confirm")
+
+#Green button pressed.
+func confirm() -> void :
+	get_parent().queue_free()
 
 func setup(event): #{"type": type, "id": key, "entry": entry}
 	assert(event)
