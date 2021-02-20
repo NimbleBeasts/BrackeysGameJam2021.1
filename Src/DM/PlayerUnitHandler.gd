@@ -34,39 +34,20 @@ func create_new_group():
 	temp_slotted_units.append(units[0])
 
 # Create a new unit
-func add_unit_by_name(unitName) -> int:
-	var unit = null
-	for entry in Data.units:
-		if entry.type == unitName:
-			unit = {
-				"uid": randi(),
-				"type": Types.UnitTypes.keys().find(unitName.capitalize()),
-				"name": entry.names[randi() % entry.names.size()],
-				"available": true
-			}
-			unit.uid = str(unit).sha256_text()
-			units.append(unit)
-			unit_count += 1
-			return (units.size() - 1)
-	return -1
+func add_unit_by_name(unitName : String) -> int:
+	var unit : Unit = Unit.new()
+	unit.set_by_name(unitName)
+	units.append(unit)
+	unit_count += 1
+	return (units.size() - 1)
 
 # Create a new unit by chance
 func add_unit_by_chance() -> int:
-	var unit = null
-	
-	var entry = Data.units[(randi() % (Data.units.size() -2)) + 1]
-
-	unit = {
-		"uid": randi(),
-		"type": Types.UnitTypes.keys().find(entry.type.capitalize()),
-		"name": entry.names[randi() % entry.names.size()],
-		"available": true
-	}
-	unit.uid = str(unit).sha256_text()
+	var unit : Unit = Unit.new()
+	unit.set_by_chance()
 	
 	units.append(unit)
 	unit_count += 1
-	
 	
 	return 0
 

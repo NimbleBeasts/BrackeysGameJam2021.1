@@ -1,16 +1,26 @@
 extends Node
+class_name Unit
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var uid =randi()
+var type : String
+var available : bool = true
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func set_by_name(type_name : String) -> void :
+	for entry in Data.units:
+		if entry.type == type_name:
+				type = type_name
+				name = entry.names[randi() % entry.names.size()]
+				available = true
+		
+	uid = str(self).sha256_text()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func set_by_chance() -> void :
+	var entry : Dictionary = Data.units[(randi() % Data.units.size() - 2) + 1]
+	
+	type = entry.type
+	name = entry.names[randi() % entry.names.size()]
+	available = true
+	
+	uid = str(self).sha256_text()
