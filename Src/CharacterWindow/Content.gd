@@ -42,16 +42,25 @@ func setup(type):
 	_on_CheckList_list_active($CheckList.get_child(0))
 
 func buttonAction(action):
+	var list = $CheckList.getChecked()
+	
 	match action:
+		# Back to Route Selection
 		ButtonActionTypes.BackToExpedition:
 			Events.emit_signal(Events.WINDOW_SHOW, Types.WindowType.Expedition)
 			Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
 			Events.emit_signal("play_sound", "menu_click")
+
+		# Expedition Start
 		ButtonActionTypes.StartExpedition:
-			Events.emit_signal("play_sound", "menu_click_positive")
+			if list.size() == 0:
+				Events.emit_signal("play_sound", "menu_click_negative")
+			else:
+				Events.emit_signal("play_sound", "menu_click_positive")
+			#TODO: use list data and start expedition
+
+		# Sacrifice
 		ButtonActionTypes.Sacrifice:
-			var list = $CheckList.getChecked()
-			
 			if list.size() == 0:
 				Events.emit_signal("play_sound", "menu_click_negative")
 			else:
@@ -94,6 +103,7 @@ func _on_CheckList_list_active(node):
 	#var type = Types.UnitTypes.keys().find(unitList[id].type.capitalize())
 	
 	$Chars.frame = unitList[id].type
+	$Description.text = TranslationServer.translate(Data.units[unitList[id].type].description)
 
 	$DummyLabel.set_text(str(node.optionText))
 
