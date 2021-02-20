@@ -98,12 +98,14 @@ func retrieve_temp_slotted_units() -> Array :
 	temp_slot_units([])
 	
 	#Let everything know that the available units count changed.
-	Events.emit_signal(Events.UNITS_AVAILABLE_CHANGED, available_units.size())
+	Events.emit_signal(Events.UNITS_AVAILABLE_CHANGED, available_units)
 	
 	return new_array
 
 func return_units(returning_units : Array) -> void :
-	units = units + returning_units
+	available_units += returning_units
+	Events.emit_signal(Events.UNITS_RETURNED, returning_units)
+	Events.emit_signal(Events.UNITS_AVAILABLE_CHANGED, available_units)
 
 func temp_slot_units(units_temp_slot : Array) -> void :
 	assert(units_temp_slot.size() <= units.size())

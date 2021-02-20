@@ -9,7 +9,7 @@ func _ready():
 	call_deferred("start_set_units")
 
 func start_set_units() -> void :
-	unit_changed(ug.get_available_units_count())
+	text = str(ug.get_available_units_count())
 
-func unit_changed(value : int) -> void :
-	text = str(value)
+func unit_changed(units : Array) -> void :
+	text = str(units.size())
