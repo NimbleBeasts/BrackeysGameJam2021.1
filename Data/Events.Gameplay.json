@@ -21,5 +21,18 @@
         "consequences": "scripted"
       }
     }
+  },
+  {
+    "id": "on_moving_expedition_fail",
+    "title": "EVENT_MOVINGEXPFAIL_TITLE",
+    "thumbnail": "thumbnail-4.png",
+    "desc": "EVENT_MOVINGEXPFAIL_DESC",
+    "action": {
+      "type": "yes",
+      "yes": {
+        "text": "NEXT",
+        "consequences": "scripted"
+      }
+    }
   }
 ]
