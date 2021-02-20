@@ -5,6 +5,12 @@ onready var GameInstance = get_parent()
 func _ready():
 	$Label.set_text("Turn: " + str(GameInstance.gameState.turn))
 
+
+func _unhandled_key_input(event):
+	if Input.is_key_pressed(KEY_ESCAPE):
+		Events.emit_signal("menu_back")
+
+
 func updateResourceGui(resourceType, val): #Types.ResourceType
 	match resourceType:
 		Types.ResourceType.Water:
@@ -70,4 +76,9 @@ func _on_SacrificeButton2_button_up():
 
 
 func _on_UnitsInBase_button_up():
+	Events.emit_signal("window_show", Types.WindowType.Char, Types.CharEventType.Overview)
+
+
+func _on_UnitButton_button_up():
+	Events.emit_signal("play_sound", "menu_click")
 	Events.emit_signal("window_show", Types.WindowType.Char, Types.CharEventType.Overview)

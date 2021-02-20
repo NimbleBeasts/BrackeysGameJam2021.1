@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Src/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ui/TopBar/Bg_3x.png" type="Texture" id=2]
@@ -18,6 +18,10 @@
 [ext_resource path="res://Assets/Ui/MenuButtons/End_3x1.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Ui/MenuButtons/Move_3x1.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Ui/MenuButtons/End_3x2.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Ui/TopBar/CounterBg_3x.png" type="Texture" id=19]
+[ext_resource path="res://Src/Menu/InGame/UnitLabel.gd" type="Script" id=20]
+[ext_resource path="res://Assets/Fonts/NormalFontSmall13.tres" type="DynamicFont" id=21]
+[ext_resource path="res://Assets/Ui/TopBar/CounterBg_3x_hover.png" type="Texture" id=22]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends TextureButton
@@ -84,20 +88,20 @@ __meta__ = {
 }
 
 [node name="ButtonMusic" type="Button" parent="."]
-margin_left = 560.0
-margin_top = 64.0
-margin_right = 656.0
-margin_bottom = 84.0
+margin_left = 384.0
+margin_top = 88.0
+margin_right = 480.0
+margin_bottom = 108.0
 text = "ToggleMusic"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonSound" type="Button" parent="."]
-margin_left = 456.0
-margin_top = 64.0
-margin_right = 552.0
-margin_bottom = 84.0
+margin_left = 384.0
+margin_top = 112.0
+margin_right = 480.0
+margin_bottom = 132.0
 text = "ToggleSound"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -126,6 +130,7 @@ hframes = 3
 margin_left = 8.0
 margin_right = 56.0
 margin_bottom = 32.0
+custom_fonts/font = ExtResource( 21 )
 text = "1000"
 align = 1
 valign = 1
@@ -151,6 +156,7 @@ frame = 1
 margin_left = 8.0
 margin_right = 56.0
 margin_bottom = 32.0
+custom_fonts/font = ExtResource( 21 )
 text = "1000"
 align = 1
 valign = 1
@@ -177,10 +183,47 @@ frame = 2
 margin_left = 8.0
 margin_right = 56.0
 margin_bottom = 32.0
+custom_fonts/font = ExtResource( 21 )
 text = "1000"
 align = 1
 valign = 1
 script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UnitButton" type="TextureButton" parent="TopBar"]
+margin_left = 552.0
+margin_top = 3.8147e-06
+margin_right = 672.0
+margin_bottom = 54.0
+texture_normal = ExtResource( 19 )
+texture_hover = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TopBar/UnitButton"]
+margin_left = 16.0
+margin_right = 48.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 21 )
+text = "4"
+align = 1
+valign = 1
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Goal" type="Label" parent="TopBar/UnitButton"]
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 21 )
+text = "35"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -283,10 +326,10 @@ __meta__ = {
 }
 
 [node name="UnitsInBase" type="Button" parent="."]
-margin_left = 296.0
-margin_top = 184.0
-margin_right = 391.0
-margin_bottom = 216.0
+margin_left = 576.0
+margin_top = 112.0
+margin_right = 674.0
+margin_bottom = 144.0
 text = "Units In Base"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -294,6 +337,7 @@ __meta__ = {
 [connection signal="button_up" from="ButtonBack" to="." method="_on_ButtonBack_button_up"]
 [connection signal="button_up" from="ButtonMusic" to="." method="_on_ButtonMusic_button_up"]
 [connection signal="button_up" from="ButtonSound" to="." method="_on_ButtonSound_button_up"]
+[connection signal="button_up" from="TopBar/UnitButton" to="." method="_on_UnitButton_button_up"]
 [connection signal="button_up" from="Menu/ExpButton" to="." method="_on_ExpButton_button_up"]
 [connection signal="button_up" from="EventSpawnButton" to="." method="_on_EventSpawnButton_button_up"]
 [connection signal="button_up" from="SacrificeButton" to="." method="_on_SacrificeButton_button_up"]

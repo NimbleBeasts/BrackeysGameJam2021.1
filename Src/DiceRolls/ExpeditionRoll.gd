@@ -5,15 +5,12 @@ class_name ExpeditionsRoll
 var ug : UnitGetter = Types.unit_getter
 var rg : ResourcesGetter = Types.resources_getter
 
-var units : int = 0
-
-
 
 """
  This contains all values for the expedition.
 """
 #If all units return then you gain some faith.
-var units_on_expedition : int = 0
+var units_on_expedition : Array = []
 
 var food_return : int = 0
 var water_return : int = 0
@@ -21,13 +18,12 @@ var water_return : int = 0
 func roll_chances() -> int :
 	rg.gift_food(food_return)
 	rg.gift_water(water_return)
-	ug.gift_units(units_on_expedition)
+	ug.return_units(units_on_expedition)
 	return 0
 
 func start() -> void :
-	units = ug.retrieve_temp_slotted_units()
-	units_on_expedition = units
-	var cost : Dictionary = rg.project_cost(units)
+	units_on_expedition = ug.retrieve_temp_slotted_units()
+	var cost : Dictionary = rg.project_cost(units_on_expedition.size())
 	rg.use_food(cost["food"])
 	rg.use_water(cost["water"])
 	

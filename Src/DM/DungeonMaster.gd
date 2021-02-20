@@ -1,7 +1,7 @@
 extends Node
 
 
-onready var puh = $PlayerUnitHandler
+onready var puh : PlayerUnitHandler = $PlayerUnitHandler
 onready var res = $Resources
 
 onready var turn_ended_processing = [res]
@@ -52,4 +52,4 @@ func get_unit_count() -> int :
 	return puh.get_unit_count()
 
 func get_units_present() -> int :
-	return puh.get_available_units()
+	return puh.get_unit_count()

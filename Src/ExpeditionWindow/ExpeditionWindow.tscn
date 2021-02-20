@@ -1,14 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Src/WindowManager/WindowBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/ExpeditionWindow/ExpTitle.png" type="Texture" id=2]
 [ext_resource path="res://Src/WindowManager/BaseButtonGreen.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Src/WindowManager/BaseButtonPink.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Src/ExpeditionWindow/Content.gd" type="Script" id=5]
 [ext_resource path="res://Src/Menu/InGame/Gathering/GatheringPopup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Ui/WindowInner9Patch_3x.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Fonts/TitleFont24.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Assets/ExpeditionWindow/Tiles.png" type="Texture" id=9]
 
 [node name="ExpeditionWindow" instance=ExtResource( 1 )]
+margin_left = -169.0
 margin_top = -136.0
-margin_right = 156.0
+margin_right = 167.0
 margin_bottom = 136.0
 
 [node name="Content" parent="." index="2"]
@@ -17,27 +22,70 @@ green_signal = "expedition_confirmed"
 red_signal = "expedition_cancelled"
 red_args = [  ]
 
-[node name="TextureRect" type="TextureRect" parent="Content" index="0"]
-margin_left = 4.0
-margin_right = 298.0
-margin_bottom = 216.0
+[node name="TextureRect" type="NinePatchRect" parent="Content" index="0"]
+margin_left = 3.0
+margin_top = 41.0
+margin_right = 333.0
+margin_bottom = 238.0
+texture = ExtResource( 7 )
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="TitleBg" type="TextureRect" parent="Content" index="1"]
+margin_left = 3.0
+margin_top = -1.0
+margin_right = 333.0
+margin_bottom = 38.0
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BaseButtonGreen" parent="Content" index="1" instance=ExtResource( 3 )]
+[node name="Title" type="Label" parent="Content" index="2"]
+margin_left = 3.0
+margin_right = 265.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 8 )
+text = "EXP_TITLE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Time" type="Label" parent="Content" index="3"]
+margin_left = 289.0
+margin_right = 336.0
+margin_bottom = 38.0
+custom_fonts/font = ExtResource( 8 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DummyTile" type="Sprite" parent="Content" index="4"]
+position = Vector2( 24, 62 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 9 )
+hframes = 7
+
+[node name="BaseButtonGreen" parent="Content" index="5" instance=ExtResource( 3 )]
 margin_left = 246.0
 margin_top = 242.0
 margin_right = 336.0
 margin_bottom = 269.0
 
-[node name="BaseButtonPink" parent="Content" index="2" instance=ExtResource( 4 )]
+[node name="BaseButtonPink" parent="Content" index="6" instance=ExtResource( 4 )]
 margin_left = 156.0
 margin_top = 242.0
 margin_right = 246.0
 margin_bottom = 269.0
 
-[node name="DummyLabel" type="Label" parent="Content" index="3"]
+[node name="DummyLabel" type="Label" parent="Content" index="7"]
 margin_left = 12.0
 margin_top = -3.0
 margin_right = 148.0
@@ -46,9 +94,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GatheringPopup" parent="Content" index="4" instance=ExtResource( 6 )]
-margin_left = 4.0
-margin_top = -50.0
-margin_right = 4.0
-margin_bottom = -50.0
+[node name="GatheringPopup" parent="Content" index="8" instance=ExtResource( 6 )]
+margin_left = -340.0
+margin_top = -26.0
+margin_right = -340.0
+margin_bottom = -26.0
 [connection signal="button_up" from="Content/BaseButtonPink" to="Content" method="_on_BaseButtonPink_button_up"]

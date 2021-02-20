@@ -4,20 +4,17 @@ class_name PlayerUnitHandler
 onready var unit_getter = Types.unit_getter
 
 
-#{"uid","type","name","available"}
-var units = []
+#{"uid","type","name","available"}. Units in total.
+var units : Array = [] setget ,get_units_all_array
+var available_units : Array = []
+
 
 #How many units you have in total.
 var unit_count : int = 20 setget  ,get_unit_count
 
-#Units you will potentially use on expeditions.
-var slotted_units : int = 0
-
 #How many units are in a temporary holding position.
-var temp_slotted_units : int = 1
+var temp_slotted_units : Array = []
 
-#How many units you have that are not occupied.
-var available_units : int = 20 setget ,get_available_units
 
 #Listen for units being added.
 var already_ready : bool = false
@@ -27,106 +24,91 @@ func _ready() -> void :
 		Events.connect(Events.ADD_UNIT, self, "add_unit")
 		unit_getter.set_unit_handler(self)
 
-
 # Used to create the initial starting group
 func create_new_group():
 	var pid = add_unit_by_name("princess")
 	units[pid].available = false
-	add_unit_by_chance()
-	add_unit_by_chance()
-	add_unit_by_chance()
+	for _i in range(0,19) :
+# warning-ignore:return_value_discarded
+		add_unit_by_chance()
+	
+	#Lock the first unit into being used.
+	temp_slotted_units.append(units[0])
 
 # Create a new unit
-func add_unit_by_name(unitName) -> int:
-	var unit = null
-	for entry in Data.units:
-		if entry.type == unitName:
-			unit = {
-				"uid": randi(),
-				"type": Types.UnitTypes.keys().find(unitName.capitalize()),
-				"name": entry.names[randi() % entry.names.size()],
-				"available": true
-			}
-			unit.uid = str(unit).sha256_text()
-			units.append(unit)
-			return (units.size() - 1)
-	return -1
+func add_unit_by_name(unitName : String) -> int:
+	var unit : Unit = Unit.new()
+	unit.set_by_name(unitName)
+	units.append(unit)
+	available_units.append(unit)
+	unit_count += 1
+	return (units.size() - 1)
 
 # Create a new unit by chance
 func add_unit_by_chance() -> int:
-	var rand = randi() % 100
-	var accumulatedChance = 0
-	var unit = null
+	var unit : Unit = Unit.new()
+	unit.set_by_chance()
 	
-	for entry in Data.units:
-		accumulatedChance += entry.chance
-		if accumulatedChance > rand:
-			unit = {
-				"uid": randi(),
-				"type": Types.UnitTypes.keys().find(entry.type.capitalize()),
-				"name": entry.names[randi() % entry.names.size()],
-				"available": true
-			}
-			unit.uid = str(unit).sha256_text()
-			units.append(unit)
-			return (units.size() - 1)
-	return -1
+	units.append(unit)
+	available_units.append(unit)
+	unit_count += 1
+	
+	return 0
 
-# Get avaialble units array 
+func get_available_units_count() -> int :
+	return available_units.size()
+
+# Get avaialble units array
 func get_units_available_array():
-	var temp = []
-	
-	for entry in units:
-		if entry.available == true:
-			temp.append(entry)
-	return temp
+	return available_units
 	
 # Get all units array 
 func get_units_all_array():
 	return units
 
-
-func add_unit() -> void :
-	print("deprecated: add_unit")
-	unit_count += 1
-	available_units += 1
-
-#Move units from temp_slotting to slotted
-func confirm_slotting() -> void :
-	set_available_units(available_units - temp_slotted_units)
-	yield(get_tree().create_timer(0.1), "timeout")
-	temp_slot_units(1)
-
-#Return number of units not away from camp. Either available or sleeping.
-func get_available_units() -> int :
-	return available_units
-
 func get_unit_count() -> int :
-	return unit_count
+	return units.size()
 
-func get_temp_slot_units() -> int :
+func get_units_present() -> int :
+	return get_available_units_count()
+
+func get_temp_slot_units() -> Array :
 	return temp_slotted_units
 
+func get_temp_slot_units_count() -> int :
+	return temp_slotted_units.size()
+
 func gift_units(unit_amount : int) -> void :
-	set_available_units(unit_amount + available_units)
+	while unit_amount > 0 :
+		unit_amount -= 1
+# warning-ignore:return_value_discarded
+		add_unit_by_chance()
 
-func set_available_units(num : int) -> void :
-	available_units = num
+func retrieve_temp_slotted_units() -> Array :
+	#We are about to take away available units.
+	for unit in temp_slotted_units :
+		assert(units.has(unit))
+		available_units.remove(available_units.find(unit))
+	
+	unit_count -= temp_slotted_units.size()
+	
+	var new_array : Array = []
+	for unit in temp_slotted_units :
+		new_array.append(unit)
+	temp_slot_units([])
+	
+	#Let everything know that the available units count changed.
+	Events.emit_signal(Events.UNITS_AVAILABLE_CHANGED, available_units.size())
+	
+	return new_array
 
-func retrieve_temp_slotted_units() -> int :
-	var units : int = temp_slotted_units
-	slot_units(temp_slotted_units)
-	temp_slot_units(1)
-	return units
+func return_units(returning_units : Array) -> void :
+	units = units + returning_units
 
-func slot_units(num_units : int = 1) -> void :
-	assert(num_units <= available_units)
-	available_units -= num_units
-	slotted_units += num_units
-
-func temp_slot_units(num_to_temp_slot : int) -> void :
-	if num_to_temp_slot > available_units :
-		num_to_temp_slot = available_units
-	temp_slotted_units = num_to_temp_slot
-	Events.emit_signal(Events.UNITS_TEMP_SLOTTED, num_to_temp_slot)
+func temp_slot_units(units_temp_slot : Array) -> void :
+	assert(units_temp_slot.size() <= units.size())
+	for unit in units_temp_slot :
+		assert(units.has(unit))
+	temp_slotted_units = units_temp_slot
+	Events.emit_signal(Events.UNITS_TEMP_SLOTTED, temp_slotted_units)
 

@@ -29,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Src/DiceRolls/ExpeditionRoll.gd"
 }, {
-"base": "Button",
+"base": "TextureButton",
 "class": "GatheringSpot",
 "language": "GDScript",
 "path": "res://Src/Menu/InGame/Gathering/GatheringSpot.gd"
@@ -65,6 +65,11 @@ _global_script_classes=[ {
 "path": "res://Src/DM/Resources.gd"
 }, {
 "base": "Node",
+"class": "Unit",
+"language": "GDScript",
+"path": "res://Src/Unit/UnitClass.gd"
+}, {
+"base": "Node",
 "class": "UnitGetter",
 "language": "GDScript",
 "path": "res://Src/APIs/UnitGetter.gd"
@@ -86,6 +91,7 @@ _global_script_class_icons={
 "PlayerUnitsBase": "",
 "ResourcesGetter": "",
 "ResourcesHandler": "",
+"Unit": "",
 "UnitGetter": "",
 "WindowBase": ""
 }
