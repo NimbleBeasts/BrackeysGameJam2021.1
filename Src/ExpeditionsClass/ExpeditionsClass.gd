@@ -23,4 +23,3 @@ func start() -> void :
 	#Now start the dice roll.
 	day_cost = cost["day_cost"]
 	Events.emit_signal(Events.DICE_ROLL_CREATED, self)
-	Events.emit_signal(Events.EXPEDITION_CONFIRMED)

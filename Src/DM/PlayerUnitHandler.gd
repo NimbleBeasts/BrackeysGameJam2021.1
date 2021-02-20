@@ -21,7 +21,6 @@ func _ready() -> void :
 	if not already_ready :
 		already_ready = true
 		Events.connect(Events.ADD_UNIT, self, "add_unit")
-		Events.connect(Events.EXPEDITION_CONFIRMED, self, "confirm_slotting")
 		unit_getter.set_unit_handler(self)
 
 func add_unit() -> void :
