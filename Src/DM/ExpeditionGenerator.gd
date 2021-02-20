@@ -19,11 +19,14 @@ func generate_expedition() -> Array :
 		for _y in range(expedition_grid_size.y) :
 			var spot : int = 0
 			#Generate a spot on the grid. Or home if in center.
-			if _x == expedition_grid_size.x / 2 && _y == expedition_grid_size.y / 2 :
+# warning-ignore:integer_division
+# warning-ignore:integer_division
+			if _x== int(expedition_grid_size.x) / 2 && _y  == int(expedition_grid_size.y) / 2 :
 				spot  = Types.ExpeditionSpots.HOME_BASE
 			else :
 				spot = randi() % 26
-				if spot >= Types.ExpeditionSpots.NORMAL : #Lean towards placing normals.
+				if(spot == Types.ExpeditionSpots.HOME_BASE || 
+						spot >= Types.ExpeditionSpots.NORMAL) : #Lean towards placing normals.
 					spot = Types.ExpeditionSpots.NORMAL
 			
 			y_array.append(spot)
