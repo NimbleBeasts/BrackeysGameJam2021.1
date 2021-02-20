@@ -22,6 +22,7 @@ UNIT_TRAVELLER_DESC,"dummy text","dummy text","dummy text7"
 UNIT_MERCHANT_DESC,"dummy text","dummy text","dummy text8"
 UNIT_HUSSARD_DESC,"dummy text","dummy text","dummy text9"
 UNIT_PRIEST_DESC,"dummy text","dummy text","dummy text"
+FADE_DAY,Day,Diaz,Tag
 PLAY,"play","jouer","spielen"
 NEXT,"next","suivant","weiter"
 ACCEPT,"accept","accepter","akzeptieren"
