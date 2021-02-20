@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Src/Menu/InGame/Gathering/GridContainer.gd" type="Script" id=1]
 [ext_resource path="res://Src/Menu/InGame/Gathering/PathHighlight.gd" type="Script" id=2]
 [ext_resource path="res://Src/Menu/InGame/Gathering/GatheringPopup.gd" type="Script" id=3]
 [ext_resource path="res://Src/WindowManager/BaseButtonPink.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Src/Menu/InGame/Gathering/GatheringDisplay.gd" type="Script" id=5]
 
 [node name="GatheringPopup" type="Control"]
 anchor_right = 1.0
@@ -44,3 +45,30 @@ anchor_right = 0.36
 anchor_bottom = 0.9
 grow_horizontal = 2
 grow_vertical = 2
+buttonText = "Text"
+
+[node name="GatheringDisplay" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.1
+margin_left = 10.0
+mouse_filter = 2
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="GatheringDisplay"]
+margin_right = 86.0
+margin_bottom = 167.0
+text = "Cost per unit:
+Food: 
+Water: 
+
+Day cost: 
+
+Rewards:
+faith: 
+food: 
+water: "
