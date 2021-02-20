@@ -14,10 +14,14 @@ func setup(event): #{"type": type, "id": key, "entry": entry}
 	id = event.id
 	type = event.type
 	var data = event.entry
+	
+	print(TranslationServer.translate("UNIT_PRIEST_DESC"))
+	print(TranslationServer.translate("EVENT_EXPEDITIONEND_TITLE"))
+	print(TranslationServer.translate(str(data.title)))
 
-	$TitleLabel.set_text(str(data.title))
+	$TitleLabel.set_text(TranslationServer.translate(data.title))
 	$TitleImage.texture = load("res://Assets/EventWindow/" + str(data.thumbnail))
-	$DescriptionText.bbcode_text = data.desc + "\nData: " + str(event)
+	$DescriptionText.bbcode_text = TranslationServer.translate(data.desc) + "\nData: " + str(event)
 	
 	if data.action.type == "yesno":
 		# YesNo Choice
