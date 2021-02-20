@@ -24,9 +24,25 @@ func kill_units() -> void :
 	remove()
 
 func roll_chances() -> int :
-	rg.gift_food(food_return)
-	rg.gift_water(water_return)
-	ug.kill_units(units_on_expedition)
+	var chances : int = randi() % (units_on_expedition.size() + 1)
+	#Kill random units in the party.
+	var kill : Array = []
+	while chances > 0 :
+		var random = randi() % units_on_expedition.size()
+		kill.append(units_on_expedition[random])
+		units_on_expedition.remove(random)
+		
+		chances -= 1
+	
+	if kill.size() > 0 :
+		ug.kill_units(kill)
+	
+	if units_on_expedition.size() > 0 :
+		rg.gift_food(food_return)
+		rg.gift_water(water_return)
+		ug.return_units(units_on_expedition)
+	else :
+		print("expedition_failed")
 	return 0
 
 func start() -> void :
@@ -34,7 +50,11 @@ func start() -> void :
 	var cost : Dictionary = rg.project_cost(units_on_expedition.size())
 	rg.use_food(cost["food"])
 	rg.use_water(cost["water"])
-	
-	#Now start the dice roll.
 	day_cost = cost["day_cost"]
+	
+	#Get the rewards.
+	var rewards : Dictionary = rg.project_reward()
+	food_return = rewards["food"]
+	water_return  = rewards["water"]
+	
 	Events.emit_signal(Events.DICE_ROLL_CREATED, self)
