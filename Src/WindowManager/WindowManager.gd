@@ -27,6 +27,8 @@ func showWindow(type, payload = null): #Types.WindowType
 			var eventType = payload.eventType
 			var eventId = payload.id
 			data = Data.getEventDataById(eventType, eventId)
+			if payload.has("payload"):
+				data.payload = payload.payload
 		Types.WindowType.Char:
 			data = payload
 

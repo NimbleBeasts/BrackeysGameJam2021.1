@@ -76,7 +76,20 @@ func _on_SacrificeButton2_button_up():
 
 
 func _on_UnitsInBase_button_up():
-	Events.emit_signal("window_show", Types.WindowType.Char, Types.CharEventType.Overview)
+	var data = {
+		"eventType": Types.EventTypes.Gameplay,
+		"payload": {
+			"success": true,
+			"changes": {
+				"water": 5,
+				"faith": -1,
+				"food": -2
+			},
+			"casualties": [] #array of uids
+		},
+		"id": Data.getEventIdByName(Types.EventTypes.Gameplay, "on_expedition_end")
+	}
+	Events.emit_signal("window_show", Types.WindowType.Event, data)
 
 
 func _on_UnitButton_button_up():

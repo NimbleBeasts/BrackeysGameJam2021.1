@@ -326,11 +326,11 @@ __meta__ = {
 }
 
 [node name="UnitsInBase" type="Button" parent="."]
-margin_left = 576.0
-margin_top = 112.0
-margin_right = 674.0
-margin_bottom = 144.0
-text = "Units In Base"
+margin_left = 496.0
+margin_top = 160.0
+margin_right = 641.0
+margin_bottom = 192.0
+text = "Call Expedition Event"
 __meta__ = {
 "_edit_use_anchors_": false
 }
