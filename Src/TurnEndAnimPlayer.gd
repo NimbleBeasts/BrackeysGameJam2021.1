@@ -5,6 +5,8 @@ func _ready():
 	$Sprite.frame = 0
 
 func _turn_ended():
+	get_parent().gameState.turn += 1
+	Events.emit_signal("play_sound", "daypassing")
 	play("fadeIn")
 	$Label.set_text(TranslationServer.translate("FADE_DAY") + " " + str(get_parent().gameState.turn))
 	

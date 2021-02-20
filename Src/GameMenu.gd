@@ -55,13 +55,14 @@ func _on_ExpButton_button_up():
 
 
 func _on_MoveButton_button_up():
-	Events.emit_signal("move_next")
+	Events.emit_signal("play_sound", "menu_click")
+	Events.emit_signal("window_show", Types.WindowType.Move, null)
 
 
 func _on_TurnButton_button_up():
-	get_parent().gameState.turn += 1
+	Events.emit_signal("play_sound", "menu_click")
 	Events.emit_signal(Events.TURN_ENDED)
-
+	
 
 func _on_EventSpawnButton_button_up():
 	#TODO: remove
