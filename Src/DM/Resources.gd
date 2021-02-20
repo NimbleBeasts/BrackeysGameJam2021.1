@@ -28,6 +28,15 @@ func _ready_deferred() -> void :
 	set_energy(energy)
 	set_faith(faith)
 
+func get_faith() -> int :
+	return faith
+
+func get_food() -> int :
+	return food
+
+func get_water() -> int :
+	return water
+
 func gift_faith(faith_amount : int) -> void :
 	set_faith(faith + faith_amount)
 

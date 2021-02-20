@@ -10,9 +10,9 @@
 [ext_resource path="res://Assets/Fonts/TitleFont24.tres" type="DynamicFont" id=8]
 
 [node name="ExpeditionWindow" instance=ExtResource( 1 )]
-margin_left = -209.0
+margin_left = -289.0
 margin_top = -186.0
-margin_right = 207.0
+margin_right = 287.0
 margin_bottom = 186.0
 
 [node name="Content" parent="." index="2"]
@@ -71,12 +71,14 @@ margin_left = 325.29
 margin_top = 344.453
 margin_right = 415.29
 margin_bottom = 371.453
+buttonText = "Text"
 
 [node name="BaseButtonPink" parent="Content" index="5" instance=ExtResource( 4 )]
 margin_left = 235.29
 margin_top = 344.453
 margin_right = 325.29
 margin_bottom = 371.453
+buttonText = "Text"
 
 [node name="DummyLabel" type="Label" parent="Content" index="6"]
 margin_left = 12.0
