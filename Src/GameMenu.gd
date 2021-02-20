@@ -5,6 +5,12 @@ onready var GameInstance = get_parent()
 func _ready():
 	$Label.set_text("Turn: " + str(GameInstance.gameState.turn))
 
+
+func _unhandled_key_input(event):
+	if Input.is_key_pressed(KEY_ESCAPE):
+		Events.emit_signal("menu_back")
+
+
 func updateResourceGui(resourceType, val): #Types.ResourceType
 	match resourceType:
 		Types.ResourceType.Water:
