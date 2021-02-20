@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Src/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ui/TopBar/Bg_3x.png" type="Texture" id=2]
@@ -23,14 +23,6 @@
 [ext_resource path="res://Assets/Fonts/NormalFontSmall13.tres" type="DynamicFont" id=21]
 [ext_resource path="res://Assets/Ui/TopBar/CounterBg_3x_hover.png" type="Texture" id=22]
 [ext_resource path="res://Assets/MainView/steps.png" type="Texture" id=23]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends TextureButton
-
-
-func _pressed():
-	Events.emit_signal(Events.TURN_ENDED)
-"
 
 [node name="GameMenu" type="Control"]
 anchor_right = 1.0
@@ -76,6 +68,7 @@ __meta__ = {
 }
 
 [node name="ButtonMusic" type="Button" parent="."]
+visible = false
 margin_left = 384.0
 margin_top = 88.0
 margin_right = 480.0
@@ -86,6 +79,7 @@ __meta__ = {
 }
 
 [node name="ButtonSound" type="Button" parent="."]
+visible = false
 margin_left = 384.0
 margin_top = 112.0
 margin_right = 480.0
@@ -295,7 +289,6 @@ texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 18 )
 texture_hover = ExtResource( 18 )
 texture_disabled = ExtResource( 12 )
-script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -355,6 +348,7 @@ __meta__ = {
 [connection signal="button_up" from="TopBar/UnitButton" to="." method="_on_UnitButton_button_up"]
 [connection signal="button_up" from="Menu/ExpButton" to="." method="_on_ExpButton_button_up"]
 [connection signal="button_up" from="Menu/MoveButton" to="." method="_on_MoveButton_button_up"]
+[connection signal="button_up" from="Menu/TurnButton" to="." method="_on_TurnButton_button_up"]
 [connection signal="button_up" from="EventSpawnButton" to="." method="_on_EventSpawnButton_button_up"]
 [connection signal="button_up" from="SacrificeButton" to="." method="_on_SacrificeButton_button_up"]
 [connection signal="button_up" from="SacrificeButton2" to="." method="_on_SacrificeButton2_button_up"]

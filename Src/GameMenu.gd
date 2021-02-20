@@ -29,10 +29,6 @@ func updateResourceGui(resourceType, val): #Types.ResourceType
 		_:
 			print("GameInstance.gd: Invalid Resource Type")
 
-func endTurn():
-	get_parent().gameState.turn += 1
-	$Label.set_text("Turn: " + str(GameInstance.gameState.turn))
-
 
 ###############################################################################
 # Callbacks
@@ -63,7 +59,8 @@ func _on_MoveButton_button_up():
 
 
 func _on_TurnButton_button_up():
-	endTurn()
+	get_parent().gameState.turn += 1
+	Events.emit_signal(Events.TURN_ENDED)
 
 
 func _on_EventSpawnButton_button_up():

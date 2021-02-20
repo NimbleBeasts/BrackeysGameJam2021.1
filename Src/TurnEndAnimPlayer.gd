@@ -6,8 +6,7 @@ func _ready():
 
 func _turn_ended():
 	play("fadeIn")
-	#TODO: zach please add the turn number here
-	$Label.set_text(TranslationServer.translate("FADE_DAY") + " " + str(0))
+	$Label.set_text(TranslationServer.translate("FADE_DAY") + " " + str(get_parent().gameState.turn))
 	
 
 func _on_TurnEndAnimPlayer_animation_finished(anim_name):
