@@ -45,7 +45,7 @@ func turn_end_test() -> bool :
 	set_water(water - (units * unit_water_cost))
 	
 	#Add to faith based on resting and available units.
-	var present = dm.get_units_present()
+	var present : int = dm.get_units_present()
 	set_faith(faith - ((unit_faith_gained * present) * 0.5))
 	
 	#Check that no resource is below 0.
