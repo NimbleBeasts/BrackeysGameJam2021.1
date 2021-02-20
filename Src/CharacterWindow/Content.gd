@@ -55,7 +55,23 @@ func _on_DownButton_button_up():
 	updateButtons()
 
 func _on_CheckList_list_active(node):
+	var id = findEntry(node.optionText)
+	assert(id != -1)
+	
+	#IMPORTANT get UnitTypes id from DM units
+	#var type = Types.UnitTypes.keys().find(unitList[id].type.capitalize())
+	
+	$Chars.frame = unitList[id].type
+
 	$DummyLabel.set_text(str(node.optionText))
+
+
+func findEntry(charName):
+	for i in range(unitList.size()):
+		if unitList[i].name == charName:
+			return i
+	return -1
+
 
 func _on_BaseButtonPink_button_up():
 	print("button")

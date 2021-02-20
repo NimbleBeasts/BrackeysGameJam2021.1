@@ -44,7 +44,7 @@ func add_unit_by_name(unitName) -> int:
 		if entry.type == unitName:
 			unit = {
 				"uid": randi(),
-				"type": unitName,
+				"type": Types.UnitTypes.keys().find(unitName.capitalize()),
 				"name": entry.names[randi() % entry.names.size()],
 				"available": true
 			}
@@ -64,7 +64,7 @@ func add_unit_by_chance() -> int:
 		if accumulatedChance > rand:
 			unit = {
 				"uid": randi(),
-				"type": entry.type,
+				"type": Types.UnitTypes.keys().find(entry.type.capitalize()),
 				"name": entry.names[randi() % entry.names.size()],
 				"available": true
 			}

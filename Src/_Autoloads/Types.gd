@@ -10,6 +10,7 @@ enum EventTypes {Expedition, Gameplay, TurnRandom}
 enum CharEventType {Expedition, Sacrifice, Overview}
 
 enum UnitTypes {
+	Princess,
 	Swordsman,
 	Chieftan,
 	Philosopher,
