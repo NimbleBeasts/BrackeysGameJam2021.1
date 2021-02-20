@@ -17,9 +17,9 @@ var water_return : int = 0
 
 #Kill units on expedition player leaves.
 func _init():
-	Events.connect(Events.LEFT_LOCATION, self, "kill_units")
+	Events.connect(Events.LEFT_LOCATION, self, "kill_all_units")
 
-func kill_units() -> void :
+func kill_all_units() -> void :
 	ug.kill_units(units_on_expedition)
 	remove()
 
