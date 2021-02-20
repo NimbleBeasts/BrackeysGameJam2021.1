@@ -27,10 +27,14 @@ func roll_chances() -> int :
 	var chances : int = randi() % (units_on_expedition.size() + 1)
 	#Kill random units in the party.
 	var kill : Array = []
+	var kill_uid : Array = []
 	while chances > 0 :
 		var random = randi() % units_on_expedition.size()
-		kill.append(units_on_expedition[random])
+		var unit : Unit = units_on_expedition[random]
+		kill.append(unit)
 		units_on_expedition.remove(random)
+		
+		kill_uid.append(unit.uid)
 		
 		chances -= 1
 	
@@ -43,7 +47,7 @@ func roll_chances() -> int :
 				"faith": 0,
 				"food": 0
 			},
-			"casualties": [] #array of uids
+			"casualties": [kill_uid] #array of uids
 		},
 		"id": Data.getEventIdByName(Types.EventTypes.Gameplay, "on_expedition_end")
 		}
