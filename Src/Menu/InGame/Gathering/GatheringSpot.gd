@@ -1,5 +1,8 @@
-extends Button
+extends TextureButton
 class_name GatheringSpot
+
+const PATH : String = "res://Assets/ExpeditionWindow/"
+var biome : String = "Standard"
 
 var location_in_grid : Vector2 = Vector2(-1,-1) setget set_location, get_location
 
@@ -7,21 +10,27 @@ var location_in_grid : Vector2 = Vector2(-1,-1) setget set_location, get_locatio
 var spot_type : int = -1 setget set_spot_type, get_spot_type
 
 func _init(location : Vector2 = Vector2(-1,-1), new_spot_type : int = -1) :
+	expand = true
+	rect_min_size = Vector2( 20,20)
+	
 	location_in_grid = location
 	spot_type = new_spot_type
 	#Temporary modulation to show what type we are.
 	if spot_type == Types.ExpeditionSpots.LAKES : #LAKE
-		modulate = Color(0, 0.1, 0.5)
+		texture_normal = load(PATH+biome+"LakeNormal.png")
 	elif spot_type == Types.ExpeditionSpots.HUNTING : #HUNTING
-		modulate = Color(1,0,0)
+		texture_normal = load(PATH+biome+"HuntNormal.png")
 	elif spot_type == Types.ExpeditionSpots.RUINS : #RUINS
-		modulate = Color(0.4,0.4,0.4)
+		texture_normal = load(PATH+biome+"RuinsNormal.png")
 	elif spot_type == Types.ExpeditionSpots.BERRIES : #BERRIES
-		modulate = Color(0,1,0)
+		texture_normal = load(PATH+biome+"BerriesNormal.png")
 	elif spot_type == Types.ExpeditionSpots.CREEKS : #Creek :
-		modulate = Color( 0,0,1)
+		texture_normal = load(PATH+biome+"CreekNormal.png")
 	elif spot_type == Types.ExpeditionSpots.HOME_BASE :
-		modulate = Color(0,0,0,0.5)
+		texture_normal = load(PATH+biome+"HomeNormal.png")
+		disabled = true
+	else :
+		texture_normal = load(PATH+biome+"RegNormal.png")
 		disabled = true
 	
 	
