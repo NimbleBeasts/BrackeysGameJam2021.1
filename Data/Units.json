@@ -57,7 +57,7 @@
   },
   {
     "type": "farmer",
-    "names": ["Duritrel Frostbeard", "Kherdoud Snowstone", "Ellil Marblebeard", "Deznean Ironcoat", "Reimnaen Earthbrewer", "Khemder Bluntspine", "Darermig Silverfinger", "Hozmumi Deepguard", "Wedgrok Redthane", "Thratgrek Alehood","Houmneag Darkbreaker","Jamdatin Granitejaw","Hernulim Dragonbasher","Kumduri Bitterdigger","Hovrul Dragonaxe","Dalondack Noblegrog","Krozeck Drakeminer","Bhammuck Platehand","Hadrirlun Runechin","Thirborlug Honorthane"],
+    "names": ["Duritrel", "Kherdoud", "Ellil", "Deznean", "Reimnaen", "Khemder", "Darermig", "Hozmumi", "Wedgrok", "Thratgrek","Houmneag","Jamdatin","Hernulim","Kumduri","Hovrul","Dalondack","Krozeck","Bhammuck","Hadrirlun","Thirborlug"],
     "description": "UNIT_FARMER_DESC",
     "portrait": "",
     "can_send": true,
@@ -113,7 +113,7 @@
   },
   {
     "type": "hussard",
-    "names": ["Irgoc","Vaershand","Sitrox","Sulgriug","Rended","Indriuk","Baidkrinox","Mursheza","Strukutgi","Trulirgeth","Brergagond","Adeskrend","Drizog"],
+    "names": ["Irga","Vaershand","Sitra","Sulgriaj","Rendad","Indria","Baidkrin","Mursheza","Strukutgi","Trulirgeth","Brergagond","Adeskrend","Drizig"],
     "description": "UNIT_HUSSARD_DESC",
     "portrait": "",
     "can_send": true,
