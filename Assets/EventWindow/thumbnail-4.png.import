@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fadeblack2.png-d7b513a3ca239e2d2d4bc464ff2f1684.stex"
+path="res://.import/thumbnail-4.png-3877f2d6e60093d86b1c6ba617077bea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/GameplayMisc/fade_anim/fadeblack2.png"
-dest_files=[ "res://.import/fadeblack2.png-d7b513a3ca239e2d2d4bc464ff2f1684.stex" ]
+source_file="res://Assets/EventWindow/thumbnail-4.png"
+dest_files=[ "res://.import/thumbnail-4.png-3877f2d6e60093d86b1c6ba617077bea.stex" ]
 
 [params]
 

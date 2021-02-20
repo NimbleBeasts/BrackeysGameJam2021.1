@@ -1,10 +1,61 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Src/Menu/InGame/GameMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Src/DM/DungeonMaster.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Src/BlackScreen.gd" type="Script" id=3]
 [ext_resource path="res://Src/WindowManager/WindowManager.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Src/GameInstance.gd" type="Script" id=5]
+[ext_resource path="res://Src/TurnEndAnimPlayer.gd" type="Script" id=6]
+[ext_resource path="res://Assets/GameplayMisc/fade_anim/Fade.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Fonts/TitleFont24.tres" type="DynamicFont" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fadeIn"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("TurnEndAnimPlayer/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fadeOut"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("TurnEndAnimPlayer/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "turn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("TurnEndAnimPlayer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 1.7, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="GameInstance" type="Control"]
 anchor_right = 1.0
@@ -28,4 +79,30 @@ __meta__ = {
 
 [node name="WindowManager" parent="." instance=ExtResource( 4 )]
 
+[node name="TurnEndAnimPlayer" type="AnimationPlayer" parent="."]
+anims/fadeIn = SubResource( 1 )
+anims/fadeOut = SubResource( 2 )
+anims/turn = SubResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="TurnEndAnimPlayer"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+centered = false
+hframes = 27
+
+[node name="Label" type="Label" parent="TurnEndAnimPlayer"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+margin_top = 202.0
+margin_bottom = 270.0
+custom_fonts/font = ExtResource( 8 )
+text = "Day 4"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="DungeonMaster" parent="." instance=ExtResource( 2 )]
+[connection signal="animation_finished" from="TurnEndAnimPlayer" to="TurnEndAnimPlayer" method="_on_TurnEndAnimPlayer_animation_finished"]
