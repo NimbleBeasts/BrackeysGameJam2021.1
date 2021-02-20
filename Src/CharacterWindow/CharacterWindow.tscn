@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Src/WindowManager/WindowBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/ExpeditionWindow/Bg_3x.png" type="Texture" id=2]
@@ -9,6 +9,14 @@
 [ext_resource path="res://Src/Ui/Select/CheckList.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Fonts/TitleFont24.tres" type="DynamicFont" id=8]
 [ext_resource path="res://Assets/Fonts/NormalFontSmall13.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Assets/Ui/Select/Down3x2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Ui/Select/Down3x3.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Ui/Select/Down3x1.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Ui/Select/Up3x1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Ui/Select/Up3x3.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Ui/Select/Up3x2.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Ui/Select/Up3x4.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Ui/Select/Down3x4.png" type="Texture" id=17]
 
 [node name="CharacterWindow" instance=ExtResource( 1 )]
 margin_left = -152.0
@@ -84,22 +92,25 @@ margin_bottom = 272.0
 custom_fonts/normal_font = ExtResource( 9 )
 text = "Text asd as das dasd asd asda sdasd asd aass"
 
-[node name="UpButton" type="Button" parent="Content" index="8"]
-margin_left = 90.9395
-margin_top = 254.052
-margin_right = 138.939
-margin_bottom = 274.052
-text = "up"
+[node name="UpButton" type="TextureButton" parent="Content" index="8"]
+margin_left = 7.0
+margin_top = 255.0
+margin_right = 73.0
+margin_bottom = 270.0
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 14 )
+texture_hover = ExtResource( 15 )
+texture_disabled = ExtResource( 16 )
 
-[node name="DownButton" type="Button" parent="Content" index="9"]
-margin_left = 10.9395
-margin_top = 254.052
-margin_right = 58.9395
-margin_bottom = 274.052
-text = "down"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="DownButton" type="TextureButton" parent="Content" index="9"]
+margin_left = 82.0
+margin_top = 255.0
+margin_right = 148.0
+margin_bottom = 270.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 10 )
+texture_disabled = ExtResource( 17 )
 [connection signal="button_up" from="Content/BaseButtonGreen" to="Content" method="_on_BaseButtonGreen_button_up"]
 [connection signal="button_up" from="Content/BaseButtonPink" to="Content" method="_on_BaseButtonPink_button_up"]
 [connection signal="list_active" from="Content/CheckList" to="Content" method="_on_CheckList_list_active"]
