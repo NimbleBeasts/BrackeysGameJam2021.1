@@ -135,5 +135,5 @@ func _on_ButtonLanguage_button_up():
 	
 	Global.userConfig.language = TranslationServer.get_locale()
 	Global.saveConfig()
-	
+	playClick()
 	print("Language: " + tr("TEST_ENTRY"))
