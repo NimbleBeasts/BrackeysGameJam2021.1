@@ -50,7 +50,11 @@ func start() -> void :
 	var cost : Dictionary = rg.project_cost(units_on_expedition.size())
 	rg.use_food(cost["food"])
 	rg.use_water(cost["water"])
-	
-	#Now start the dice roll.
 	day_cost = cost["day_cost"]
+	
+	#Get the rewards.
+	var rewards : Dictionary = rg.project_reward()
+	food_return = rewards["food"]
+	water_return  = rewards["water"]
+	
 	Events.emit_signal(Events.DICE_ROLL_CREATED, self)
