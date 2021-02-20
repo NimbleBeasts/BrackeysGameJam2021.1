@@ -30,6 +30,7 @@ anchor_right = 1.0
 margin_bottom = 18.0
 
 [node name="Label" type="Label" parent="TitleBar"]
+visible = false
 margin_left = 6.0
 margin_right = 188.0
 margin_bottom = 18.0

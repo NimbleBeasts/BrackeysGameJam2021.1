@@ -2,6 +2,10 @@ extends Control
 
 var unitList = null
 
+enum ButtonActionTypes {BackToExpedition, StartExpedition, Sacrifice, Close}
+
+var greenButtonAction = ButtonActionTypes.Close
+var pinkButtonAction = ButtonActionTypes.Close
 
 func reset():
 	pass
@@ -11,15 +15,22 @@ func setup(type):
 		Types.CharEventType.Expedition:
 			$BaseButtonPink.buttonText = TranslationServer.translate("MENU_BACK")
 			$BaseButtonGreen.buttonText = TranslationServer.translate("MENU_START")
+			pinkButtonAction = ButtonActionTypes.BackToExpedition
+			greenButtonAction = ButtonActionTypes.StartExpedition
 			unitList = Global.DM.puh.get_units_available_array()
+			$Title.set_text(TranslationServer.translate("CHAR_TITLE_EXPEDITION"))
 		Types.CharEventType.Overview:
 			$BaseButtonPink.hide()
 			$BaseButtonGreen.buttonText = TranslationServer.translate("MENU_OK")
+			greenButtonAction = ButtonActionTypes.Close
 			unitList = Global.DM.puh.get_units_all_array()
+			$Title.set_text(TranslationServer.translate("CHAR_TITLE_OVERVIEW"))
 		Types.CharEventType.Sacrifice:
 			$BaseButtonPink.hide()
 			$BaseButtonGreen.buttonText = TranslationServer.translate("MENU_SACRIFICE")
+			greenButtonAction = ButtonActionTypes.Sacrifice
 			unitList = Global.DM.puh.get_units_available_array()
+			$Title.set_text(TranslationServer.translate("CHAR_TITLE_SACRIFICE"))
 		_:
 			print("CharacterWindow.gd: setup unknown type")
 
@@ -28,6 +39,7 @@ func setup(type):
 		
 	$CheckList.displayPage(0)
 	updateButtons()
+	_on_CheckList_list_active($CheckList.get_child(0))
 
 
 func updateButtons():
@@ -72,10 +84,25 @@ func findEntry(charName):
 			return i
 	return -1
 
+func buttonAction(action):
+	match action:
+		ButtonActionTypes.BackToExpedition:
+			Events.emit_signal(Events.WINDOW_SHOW, Types.WindowType.Expedition)
+			Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
+			Events.emit_signal("play_sound", "menu_click")
+		ButtonActionTypes.StartExpedition:
+			Events.emit_signal("play_sound", "menu_click_positive")
+		ButtonActionTypes.Sacrifice:
+			Events.emit_signal("play_sound", "menu_click_negative")
+		_:
+			Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
+			Events.emit_signal("play_sound", "menu_click")
+			
 
 func _on_BaseButtonPink_button_up():
-	print("button")
-	Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
+	buttonAction(pinkButtonAction)
+	
 
 func _on_BaseButtonGreen_button_up():
-	pass # Replace with function body.
+	buttonAction(greenButtonAction)
+
