@@ -84,6 +84,26 @@ func gift_units(unit_amount : int) -> void :
 # warning-ignore:return_value_discarded
 		add_unit_by_chance()
 
+#Remove some units from the game completely.
+func kill_units(units_to_kill : Array) -> void :
+	#First remove them from the units array.
+	var av_changed : bool = false
+	for unit in units_to_kill :
+		var units_has : bool = units.has(unit)
+		var av_has : bool = available_units.has(unit)
+		assert(units_has || av_has)
+		if units_has :
+			units.remove(units.find(unit))
+		if av_has :
+			av_changed = true
+			available_units.remove(unit)
+		unit.queue_free()
+	
+	if av_changed :
+		Events.emit_signal(Events.UNITS_AVAILABLE_CHANGED, available_units)
+	
+	Events.emit_signal(Events.UNITS_KILLED, units_to_kill)
+
 func retrieve_temp_slotted_units() -> Array :
 	#We are about to take away available units.
 	for unit in temp_slotted_units :

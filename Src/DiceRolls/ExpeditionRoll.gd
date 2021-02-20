@@ -18,7 +18,7 @@ var water_return : int = 0
 func roll_chances() -> int :
 	rg.gift_food(food_return)
 	rg.gift_water(water_return)
-	ug.return_units(units_on_expedition)
+	ug.kill_units(units_on_expedition)
 	return 0
 
 func start() -> void :

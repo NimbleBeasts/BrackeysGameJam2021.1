@@ -66,6 +66,8 @@ signal food_changed(int_new_food_value)
 const FOOD_CHANGED = "food_changed"
 signal units_available_changed(int_num_of_available_units)
 const UNITS_AVAILABLE_CHANGED = "units_available_changed"
+signal units_killed(array_killed_units)
+const UNITS_KILLED = "units_killed"
 signal units_returned(array_of_returning_units)
 const UNITS_RETURNED = "units_returned"
 signal units_temp_slotted(array_of_temp_slotted_units)

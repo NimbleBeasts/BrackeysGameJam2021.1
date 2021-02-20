@@ -23,6 +23,9 @@ func get_temp_slotted_units_count() -> int :
 func gift_units(unit_count : int) -> void :
 	unit_handler.gift_units(unit_count)
 
+func kill_units(units_to_kill : Array) -> void :
+	unit_handler.kill_units(units_to_kill)
+
 func retrieve_temp_slotted_units() -> Array :
 	return unit_handler.retrieve_temp_slotted_units()
 
