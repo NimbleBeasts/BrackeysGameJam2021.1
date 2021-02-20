@@ -2,6 +2,10 @@ extends Control
 
 var unitList = null
 
+enum ButtonActionTypes {BackToExpedition, StartExpedition, Sacrifice, Close}
+
+var greenButtonAction = ButtonActionTypes.Close
+var pinkButtonAction = ButtonActionTypes.Close
 
 func reset():
 	pass
@@ -11,24 +15,61 @@ func setup(type):
 		Types.CharEventType.Expedition:
 			$BaseButtonPink.buttonText = TranslationServer.translate("MENU_BACK")
 			$BaseButtonGreen.buttonText = TranslationServer.translate("MENU_START")
+			pinkButtonAction = ButtonActionTypes.BackToExpedition
+			greenButtonAction = ButtonActionTypes.StartExpedition
 			unitList = Global.DM.puh.get_units_available_array()
+			$Title.set_text(TranslationServer.translate("CHAR_TITLE_EXPEDITION"))
 		Types.CharEventType.Overview:
 			$BaseButtonPink.hide()
 			$BaseButtonGreen.buttonText = TranslationServer.translate("MENU_OK")
+			greenButtonAction = ButtonActionTypes.Close
 			unitList = Global.DM.puh.get_units_all_array()
+			$Title.set_text(TranslationServer.translate("CHAR_TITLE_OVERVIEW"))
 		Types.CharEventType.Sacrifice:
 			$BaseButtonPink.hide()
 			$BaseButtonGreen.buttonText = TranslationServer.translate("MENU_SACRIFICE")
+			greenButtonAction = ButtonActionTypes.Sacrifice
 			unitList = Global.DM.puh.get_units_available_array()
+			$Title.set_text(TranslationServer.translate("CHAR_TITLE_SACRIFICE"))
 		_:
 			print("CharacterWindow.gd: setup unknown type")
 
-	for entry in unitList:
-		$CheckList.addOption(entry.name, !entry.available)
+	for i in range(unitList.size()):
+		$CheckList.addOption(unitList[i].name, unitList[i].uid, !unitList[i].available)
 		
 	$CheckList.displayPage(0)
 	updateButtons()
+	_on_CheckList_list_active($CheckList.get_child(0))
 
+func buttonAction(action):
+	var list = $CheckList.getChecked()
+	
+	match action:
+		# Back to Route Selection
+		ButtonActionTypes.BackToExpedition:
+			Events.emit_signal(Events.WINDOW_SHOW, Types.WindowType.Expedition)
+			Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
+			Events.emit_signal("play_sound", "menu_click")
+
+		# Expedition Start
+		ButtonActionTypes.StartExpedition:
+			if list.size() == 0:
+				Events.emit_signal("play_sound", "menu_click_negative")
+			else:
+				Events.emit_signal("play_sound", "menu_click_positive")
+			#TODO: use list data and start expedition
+
+		# Sacrifice
+		ButtonActionTypes.Sacrifice:
+			if list.size() == 0:
+				Events.emit_signal("play_sound", "menu_click_negative")
+			else:
+				Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
+				Events.emit_signal("play_sound", "menu_click")
+		_:
+			Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
+			Events.emit_signal("play_sound", "menu_click")
+			
 
 func updateButtons():
 	var itemsPerPage = $CheckList.optionsPerPage
@@ -62,6 +103,7 @@ func _on_CheckList_list_active(node):
 	#var type = Types.UnitTypes.keys().find(unitList[id].type.capitalize())
 	
 	$Chars.frame = unitList[id].type
+	$Description.text = TranslationServer.translate(Data.units[unitList[id].type].description)
 
 	$DummyLabel.set_text(str(node.optionText))
 
@@ -73,9 +115,12 @@ func findEntry(charName):
 	return -1
 
 
+			
+
 func _on_BaseButtonPink_button_up():
-	print("button")
-	Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
+	buttonAction(pinkButtonAction)
+	
 
 func _on_BaseButtonGreen_button_up():
-	pass # Replace with function body.
+	buttonAction(greenButtonAction)
+

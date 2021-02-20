@@ -35,7 +35,6 @@ func create_new_group():
 	add_unit_by_chance()
 	add_unit_by_chance()
 	add_unit_by_chance()
-	print(units)
 
 # Create a new unit
 func add_unit_by_name(unitName) -> int:
