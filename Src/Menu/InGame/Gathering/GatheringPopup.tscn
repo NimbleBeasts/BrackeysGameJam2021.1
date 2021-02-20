@@ -3,13 +3,7 @@
 [ext_resource path="res://Src/Menu/InGame/Gathering/GridContainer.gd" type="Script" id=1]
 [ext_resource path="res://Src/Menu/InGame/Gathering/PathHighlight.gd" type="Script" id=2]
 [ext_resource path="res://Src/Menu/InGame/Gathering/GatheringPopup.gd" type="Script" id=3]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Button
-
-func _pressed():
-	Events.emit_signal(Events.GATHER_POINT_REMOVED)
-"
+[ext_resource path="res://Src/WindowManager/BaseButtonPink.tscn" type="PackedScene" id=4]
 
 [node name="GatheringPopup" type="Control"]
 anchor_right = 1.0
@@ -18,27 +12,6 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="PointHandling" type="HBoxContainer" parent="."]
-anchor_left = 0.3
-anchor_top = 0.9
-anchor_right = 0.7
-anchor_bottom = 0.9
-margin_bottom = 40.0
-grow_horizontal = 2
-grow_vertical = 2
-custom_constants/separation = 22
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Remove" type="Button" parent="PointHandling"]
-margin_right = 288.0
-margin_bottom = 40.0
-size_flags_horizontal = 3
-text = "Remove"
-script = SubResource( 1 )
 
 [node name="Canvas" type="CanvasLayer" parent="."]
 layer = 2
@@ -64,6 +37,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Remove" parent="." instance=ExtResource( 4 )]
+anchor_left = 0.36
+anchor_top = 0.9
+anchor_right = 0.36
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
