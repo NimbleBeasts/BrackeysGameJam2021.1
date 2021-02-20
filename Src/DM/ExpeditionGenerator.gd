@@ -38,4 +38,6 @@ func get_grid() -> Array :
 	return grid
 
 func get_home_base_pos() -> Vector2 :
-	return Vector2(expedition_grid_size.x / 2, expedition_grid_size.y / 2)
+# warning-ignore:integer_division
+# warning-ignore:integer_division
+	return Vector2(int(expedition_grid_size.x) / 2, int(expedition_grid_size.y) / 2)
