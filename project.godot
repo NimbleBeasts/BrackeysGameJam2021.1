@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "DiceRoll",
 "class": "ExpeditionsRoll",
 "language": "GDScript",
-"path": "res://Src/ExpeditionsClass/ExpeditionsClass.gd"
+"path": "res://Src/DiceRolls/ExpeditionRoll.gd"
 }, {
 "base": "Button",
 "class": "GatheringSpot",

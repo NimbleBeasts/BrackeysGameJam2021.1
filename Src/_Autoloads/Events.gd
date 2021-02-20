@@ -44,6 +44,8 @@ signal expedition_confirmed()
 const EXPEDITION_CONFIRMED = "expedition_confirmed"
 signal expedition_started()
 const EXPEDITION_STARTED = "expedition_started"
+signal gather_home_created(gatherspot_home_base)
+const GATHER_HOME_CREATED = "gather_home_created"
 signal gather_point_added(gatheringspot_spot)
 const GATHER_POINT_ADDED = "gather_point_added"
 signal gather_point_calculated(int_food_cost, int_water_cost)

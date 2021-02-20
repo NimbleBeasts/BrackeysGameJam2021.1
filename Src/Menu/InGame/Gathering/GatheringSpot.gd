@@ -10,17 +10,22 @@ func _init(location : Vector2 = Vector2(-1,-1), new_spot_type : int = -1) :
 	location_in_grid = location
 	spot_type = new_spot_type
 	#Temporary modulation to show what type we are.
-	if spot_type == 0 : #LAKE
+	if spot_type == Types.ExpeditionSpots.LAKES : #LAKE
 		modulate = Color(0, 0.1, 0.5)
-	elif spot_type == 1 : #HUNTING
+	elif spot_type == Types.ExpeditionSpots.HUNTING : #HUNTING
 		modulate = Color(1,0,0)
-	elif spot_type == 2 : #RUINS
+	elif spot_type == Types.ExpeditionSpots.RUINS : #RUINS
 		modulate = Color(0.4,0.4,0.4)
-	elif spot_type == 3 : #BERRIES
+	elif spot_type == Types.ExpeditionSpots.BERRIES : #BERRIES
 		modulate = Color(0,1,0)
-	elif spot_type == 4 : #Creek :
+	elif spot_type == Types.ExpeditionSpots.CREEKS : #Creek :
 		modulate = Color( 0,0,1)
+	elif spot_type == Types.ExpeditionSpots.HOME_BASE :
+		modulate = Color(0,0,0,0.5)
 	
+	
+	if new_spot_type == Types.ExpeditionSpots.HOME_BASE :
+		Events.emit_signal(Events.GATHER_HOME_CREATED, self)
 	
 	#Make sure values of the location are correct.
 	assert(location_in_grid.x >= 0 && location_in_grid.y >= 0)
@@ -37,6 +42,16 @@ func _pressed() -> void :
 
 func get_location() -> Vector2 :
 	return location_in_grid
+
+func get_reward() -> Dictionary :
+	var food : int = 50
+	var water : int = 50
+	
+	var rewards : Dictionary = {
+		"food" : food,
+		"water" : water
+	}
+	return rewards
 
 #Return where the center of the button is in world space.
 func get_world_position() -> Vector2 :

@@ -21,7 +21,6 @@ func _ready() -> void :
 	if not already_ready :
 		already_ready = true
 		Events.connect(Events.ADD_UNIT, self, "add_unit")
-		Events.connect(Events.EXPEDITION_CONFIRMED, self, "confirm_slotting")
 		unit_getter.set_unit_handler(self)
 
 func add_unit() -> void :
@@ -43,6 +42,9 @@ func get_unit_count() -> int :
 
 func get_temp_slot_units() -> int :
 	return temp_slotted_units
+
+func gift_units(unit_amount : int) -> void :
+	set_available_units(unit_amount + available_units)
 
 func set_available_units(num : int) -> void :
 	available_units = num
