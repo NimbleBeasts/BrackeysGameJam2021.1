@@ -26,5 +26,6 @@ func set_by_chance() -> void :
 			type = Types.UnitTypes.keys().find(entry.type.capitalize())
 			name = entry.names[randi() % entry.names.size()]
 			available = true
+			break
 
 	uid = str(self).sha256_text()
