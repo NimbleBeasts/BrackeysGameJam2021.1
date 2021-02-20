@@ -56,7 +56,7 @@ func add_unit_by_chance() -> int:
 	return 0
 
 func get_available_units_count() -> int :
-	return units.size()
+	return available_units.size()
 
 # Get avaialble units array
 func get_units_available_array():
@@ -96,6 +96,10 @@ func retrieve_temp_slotted_units() -> Array :
 	for unit in temp_slotted_units :
 		new_array.append(unit)
 	temp_slot_units([])
+	
+	#Let everything know that the available units count changed.
+	Events.emit_signal(Events.UNITS_AVAILABLE_CHANGED, available_units.size())
+	
 	return new_array
 
 func return_units(returning_units : Array) -> void :
