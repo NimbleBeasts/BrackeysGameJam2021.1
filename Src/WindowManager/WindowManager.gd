@@ -27,6 +27,8 @@ func showWindow(type, payload = null): #Types.WindowType
 			var eventType = payload.eventType
 			var eventId = payload.id
 			data = Data.getEventDataById(eventType, eventId)
+		Types.WindowType.Char:
+			data = payload
 
 	var window = _spawnWindow(type, data)
 	_focus_window(window)
@@ -47,7 +49,7 @@ func _spawnWindow(type, data):
 	window.connect("focus_window", self, "_focus_window")
 	window.hide()
 	self.add_child(window)
-	if data:
+	if data != null:
 		window.content.setup(data)
 	window.show()
 	return window

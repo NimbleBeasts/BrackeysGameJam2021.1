@@ -7,7 +7,7 @@ signal check_active(node)
 export (String) var optionText = "Text"
 
 # Disable checkbox
-var disabled = false setget setDisabled
+var disabled = false
 # Is the option checked
 var checked = false
 # Is the option active - e.g. display char
@@ -21,7 +21,7 @@ func _ready():
 func setDisabled(val = true):
 	disabled = val
 	if disabled:
-		$CheckBoxSprite.frame = 4
+		$CheckBoxSprite.frame = 3
 	else:
 		$CheckBoxSprite.frame = 0
 
@@ -65,8 +65,9 @@ func _on_MouseDetector_gui_input(event):
 
 
 func _on_CheckBox_mouse_entered():
-	$CheckBoxSprite.frame = 2
-	_on_MouseDetector_mouse_entered()
+	if not disabled:
+		$CheckBoxSprite.frame = 2
+		_on_MouseDetector_mouse_entered()
 
 
 func _on_CheckBox_mouse_exited():
@@ -82,5 +83,6 @@ func _on_CheckBox_mouse_exited():
 func _on_CheckBox_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == BUTTON_LEFT:
-			setChecked(!checked)
+			if not disabled:
+				setChecked(!checked)
 

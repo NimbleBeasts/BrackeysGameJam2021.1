@@ -25,11 +25,12 @@ func displayPage(page = 0):
 
 
 # Add option return id
-func addOption(text) -> int:
+func addOption(text, disabled = false) -> int:
 	var option = checkOptionScene.instance()
 	option.optionText = text
 	option.connect("check_toggle", self, "_toggleOption")
 	option.connect("check_active", self, "_activeOption")
+	option.setDisabled(disabled)
 	self.add_child(option)
 	optionCount = self.get_child_count() #- 1 # Control Field
 	return (optionCount - 1)

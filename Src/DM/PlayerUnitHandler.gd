@@ -30,7 +30,8 @@ func _ready() -> void :
 
 # Used to create the initial starting group
 func create_new_group():
-	add_unit_by_name("princess")
+	var pid = add_unit_by_name("princess")
+	units[pid].available = false
 	add_unit_by_chance()
 	add_unit_by_chance()
 	add_unit_by_chance()
@@ -45,7 +46,7 @@ func add_unit_by_name(unitName) -> int:
 				"uid": randi(),
 				"type": unitName,
 				"name": entry.names[randi() % entry.names.size()],
-				"available": false
+				"available": true
 			}
 			unit.uid = str(unit).sha256_text()
 			units.append(unit)
@@ -65,12 +66,26 @@ func add_unit_by_chance() -> int:
 				"uid": randi(),
 				"type": entry.type,
 				"name": entry.names[randi() % entry.names.size()],
-				"available": false
+				"available": true
 			}
 			unit.uid = str(unit).sha256_text()
 			units.append(unit)
 			return (units.size() - 1)
 	return -1
+
+# Get avaialble units array 
+func get_units_available_array():
+	var temp = []
+	
+	for entry in units:
+		if entry.available == true:
+			temp.append(entry)
+	return temp
+	
+# Get all units array 
+func get_units_all_array():
+	return units
+
 
 func add_unit() -> void :
 	print("deprecated: add_unit")

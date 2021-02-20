@@ -40,6 +40,9 @@ const levels = [
 	"res://Src/GameInstance.tscn",
 ]
 
+
+var DM = null
+
 # Debug Settings
 var debugLabel = null
 

@@ -1,20 +1,34 @@
 extends Control
 
+var unitList = null
 
-func _ready():
-	
-	print("char window")
-	for i in range(17):
-		$CheckList.addOption("Option " + str(i))
-	$CheckList.displayPage(0)
-	updateButtons()
-	
 
 func reset():
 	pass
 
-func setup(payload):
-	print("CharWindow setup()")
+func setup(type):
+	match type:
+		Types.CharEventType.Expedition:
+			$BaseButtonPink.buttonText = TranslationServer.translate("MENU_BACK")
+			$BaseButtonGreen.buttonText = TranslationServer.translate("MENU_START")
+			unitList = Global.DM.puh.get_units_available_array()
+		Types.CharEventType.Overview:
+			$BaseButtonPink.hide()
+			$BaseButtonGreen.buttonText = TranslationServer.translate("MENU_OK")
+			unitList = Global.DM.puh.get_units_all_array()
+		Types.CharEventType.Sacrifice:
+			$BaseButtonPink.hide()
+			$BaseButtonGreen.buttonText = TranslationServer.translate("MENU_SACRIFICE")
+			unitList = Global.DM.puh.get_units_available_array()
+		_:
+			print("CharacterWindow.gd: setup unknown type")
+
+	for entry in unitList:
+		$CheckList.addOption(entry.name, !entry.available)
+		
+	$CheckList.displayPage(0)
+	updateButtons()
+
 
 func updateButtons():
 	var itemsPerPage = $CheckList.optionsPerPage

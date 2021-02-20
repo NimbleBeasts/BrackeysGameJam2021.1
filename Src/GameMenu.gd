@@ -62,7 +62,7 @@ func _on_EventSpawnButton_button_up():
 
 
 func _on_SacrificeButton_button_up():
-	Events.emit_signal("window_show", Types.WindowType.Char, Types.CharEventType.Sacrifice)
+	Events.emit_signal("window_show", Types.WindowType.Char, Types.CharEventType.Expedition)
 
 
 func _on_SacrificeButton2_button_up():

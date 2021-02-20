@@ -16,6 +16,9 @@ func _game_lost() -> void :
 
 var ready_already_done : bool = false
 func _ready():
+	#TODO: proper access :D
+	Global.DM = self
+	
 	if ready_already_done :
 		return
 	ready_already_done = true
