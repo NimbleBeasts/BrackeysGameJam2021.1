@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Src/Menu/InGame/Gathering/GridContainer.gd" type="Script" id=1]
 [ext_resource path="res://Src/Menu/InGame/Gathering/PathHighlight.gd" type="Script" id=2]
@@ -9,34 +9,6 @@ script/source = "extends Button
 
 func _pressed():
 	Events.emit_signal(Events.GATHER_POINT_REMOVED)
-"
-
-[sub_resource type="GDScript" id=2]
-script/source = "extends Button
-
-
-func _pressed() :
-	Types.unit_getter.add_temp_slotted_unit()
-"
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.172549, 0.172549, 0.172549, 1 )
-
-[sub_resource type="GDScript" id=4]
-script/source = "extends Label
-
-func _ready():
-	Events.connect(Events.UNITS_TEMP_SLOTTED, self, \"change\")
-
-func change(number: int) -> void :
-	text = \"%s\" % str(number)
-"
-
-[sub_resource type="GDScript" id=5]
-script/source = "extends Button
-
-func _pressed():
-	Types.unit_getter.subtract_temp_slotted_unit()
 "
 
 [node name="GatheringPopup" type="Control"]
@@ -91,35 +63,3 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="UnitSlotting" type="VBoxContainer" parent="."]
-anchor_left = 0.8
-anchor_top = 0.1
-anchor_right = 0.8
-anchor_bottom = 0.5
-margin_right = 40.0
-
-[node name="Up" type="Button" parent="UnitSlotting"]
-margin_right = 64.0
-margin_bottom = 20.0
-text = "Add"
-script = SubResource( 2 )
-
-[node name="Label" type="Label" parent="UnitSlotting"]
-margin_top = 24.0
-margin_right = 64.0
-margin_bottom = 38.0
-custom_styles/normal = SubResource( 3 )
-text = "1"
-align = 1
-script = SubResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Down" type="Button" parent="UnitSlotting"]
-margin_top = 42.0
-margin_right = 64.0
-margin_bottom = 62.0
-text = "Subtract"
-script = SubResource( 5 )
