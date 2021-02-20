@@ -34,6 +34,20 @@ func roll_chances() -> int :
 		
 		chances -= 1
 	
+	var data = {
+		"eventType": Types.EventTypes.Gameplay,
+		"payload": {
+			"success": false,
+			"changes": {
+				"water": 0,
+				"faith": 0,
+				"food": 0
+			},
+			"casualties": [] #array of uids
+		},
+		"id": Data.getEventIdByName(Types.EventTypes.Gameplay, "on_expedition_end")
+		}
+	
 	if kill.size() > 0 :
 		ug.kill_units(kill)
 	
@@ -41,8 +55,11 @@ func roll_chances() -> int :
 		rg.gift_food(food_return)
 		rg.gift_water(water_return)
 		ug.return_units(units_on_expedition)
-	else :
-		print("expedition_failed")
+		data["payload"]["changes"]["water"] = water_return
+		data["payload"]["changes"]["food"] = food_return
+		data["payload"]["success"] = true
+
+	Events.emit_signal("window_show", Types.WindowType.Event, data)
 	return 0
 
 func start() -> void :
