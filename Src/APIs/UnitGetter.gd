@@ -22,6 +22,9 @@ func get_slotted_units() -> int :
 func get_temp_slotted_units() -> int :
 	return unit_handler.get_temp_slot_units()
 
+func gift_units(unit_count : int) -> void :
+	unit_handler.gift_units(unit_count)
+
 func retrieve_temp_slotted_units() -> int :
 	return unit_handler.retrieve_temp_slotted_units()
 

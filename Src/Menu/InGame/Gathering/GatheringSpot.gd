@@ -43,6 +43,16 @@ func _pressed() -> void :
 func get_location() -> Vector2 :
 	return location_in_grid
 
+func get_reward() -> Dictionary :
+	var food : int = 50
+	var water : int = 50
+	
+	var rewards : Dictionary = {
+		"food" : food,
+		"water" : water
+	}
+	return rewards
+
 #Return where the center of the button is in world space.
 func get_world_position() -> Vector2 :
 	return rect_global_position + (rect_size * 0.5)

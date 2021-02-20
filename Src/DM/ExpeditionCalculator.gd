@@ -10,6 +10,9 @@ var traveled : PoolRealArray = PoolRealArray()
 var current_food_cost : int = 0
 var current_water_cost : int = 0
 
+var reward_food : PoolIntArray = PoolIntArray()
+var reward_water : PoolIntArray = PoolIntArray()
+
 func _init():
 	Types.resources_getter.expedition_calc = self
 
@@ -44,6 +47,17 @@ func point_added(spot : GatheringSpot) -> void :
 	current_food_cost = int(round(trav * 1.6))
 	current_water_cost = int(round(trav * 1.8))
 	
+	var a : int = 0
+	if reward_food.size() > 0 :
+		a = reward_food[reward_food.size() - 1]
+	var spot_rewards : Dictionary = spot.get_reward()
+	reward_food.append(a + spot_rewards["food"])
+	
+	var b : int = 0
+	if reward_water.size() > 0 :
+		b = reward_water[reward_water.size() - 1]
+	reward_water.append(b + spot_rewards["water"])
+	
 	Events.emit_signal(Events.GATHER_POINT_CALCULATED, current_food_cost, current_water_cost)
 
 func point_removed() -> void :
@@ -51,6 +65,9 @@ func point_removed() -> void :
 		return
 	traveled.remove(traveled.size() - 1)
 	current_location.remove(current_location.size() - 1)
+	
+	reward_food.remove(reward_food.size() - 1)
+	reward_water.remove(reward_water.size() - 1)
 
 func project_cost(unit_count : int) -> Dictionary :
 	var day_cost : int = int(round(traveled[traveled.size()-1] * 1))
@@ -64,3 +81,9 @@ func project_cost(unit_count : int) -> Dictionary :
 	Events.emit_signal(Events.GATHER_POINT_PROJECTED, cost)
 	return cost
 
+func project_reward() -> Dictionary :
+	var rewards : Dictionary = {
+		"food" : reward_food[reward_food.size() - 1],
+		"water" : reward_water[reward_water.size() - 1]
+	}
+	return rewards

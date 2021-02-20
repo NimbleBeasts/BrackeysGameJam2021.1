@@ -4,6 +4,15 @@ class_name ResourcesGetter
 var expedition_calc : ExpeditionCalculator
 var resources_handler : ResourcesHandler
 
+func gift_faith(faith : int) -> void :
+	resources_handler.gift_faith(faith)
+
+func gift_food(food : int) -> void :
+	resources_handler.gift_food(food)
+
+func gift_water(water : int) -> void :
+	resources_handler.gift_water(water)
+
 func use_faith(faith_amount : int) -> void :
 	resources_handler.use_faith(faith_amount)
 

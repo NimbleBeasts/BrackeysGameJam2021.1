@@ -28,6 +28,15 @@ func _ready_deferred() -> void :
 	set_energy(energy)
 	set_faith(faith)
 
+func gift_faith(faith_amount : int) -> void :
+	set_faith(faith + faith_amount)
+
+func gift_food(food_amount : int) -> void :
+	set_food(food + food_amount)
+
+func gift_water(water_amount : int) -> void :
+	set_water(water + water_amount)
+
 #Calculate how much food is used based on unit amount.
 func turn_end_test() -> bool :
 	#Subtract from water and food based on number of units.

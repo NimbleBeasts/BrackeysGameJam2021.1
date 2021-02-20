@@ -43,6 +43,9 @@ func get_unit_count() -> int :
 func get_temp_slot_units() -> int :
 	return temp_slotted_units
 
+func gift_units(unit_amount : int) -> void :
+	set_available_units(unit_amount + available_units)
+
 func set_available_units(num : int) -> void :
 	available_units = num
 
