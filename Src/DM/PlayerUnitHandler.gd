@@ -4,8 +4,10 @@ class_name PlayerUnitHandler
 onready var unit_getter = Types.unit_getter
 
 
-#{"uid","type","name","available"}
-var units : Array = [] setget ,get_available_units
+#{"uid","type","name","available"}. Units in total.
+var units : Array = [] setget ,get_units_all_array
+var available_units : Array = []
+
 
 #How many units you have in total.
 var unit_count : int = 20 setget  ,get_unit_count
@@ -38,6 +40,7 @@ func add_unit_by_name(unitName : String) -> int:
 	var unit : Unit = Unit.new()
 	unit.set_by_name(unitName)
 	units.append(unit)
+	available_units.append(unit)
 	unit_count += 1
 	return (units.size() - 1)
 
@@ -47,6 +50,7 @@ func add_unit_by_chance() -> int:
 	unit.set_by_chance()
 	
 	units.append(unit)
+	available_units.append(unit)
 	unit_count += 1
 	
 	return 0
@@ -55,16 +59,11 @@ func get_available_units_count() -> int :
 	return units.size()
 
 # Get avaialble units array
-#Deprecated.
 func get_units_available_array():
-	return get_units_all_array()
+	return available_units
 	
 # Get all units array 
 func get_units_all_array():
-	return units
-
-#Return number of units not away from camp. Either available or sleeping.
-func get_available_units() -> Array :
 	return units
 
 func get_unit_count() -> int :
@@ -89,7 +88,7 @@ func retrieve_temp_slotted_units() -> Array :
 	#We are about to take away available units.
 	for unit in temp_slotted_units :
 		assert(units.has(unit))
-		units.remove(units.find(unit))
+		available_units.remove(available_units.find(unit))
 	
 	unit_count -= temp_slotted_units.size()
 	
