@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Src/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ui/TopBar/Bg_3x.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Assets/Ui/TopBar/CounterBg_3x.png" type="Texture" id=19]
 [ext_resource path="res://Src/Menu/InGame/UnitLabel.gd" type="Script" id=20]
 [ext_resource path="res://Assets/Fonts/NormalFontSmall13.tres" type="DynamicFont" id=21]
+[ext_resource path="res://Assets/Ui/TopBar/CounterBg_3x_hover.png" type="Texture" id=22]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends TextureButton
@@ -191,12 +192,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Army" type="Sprite" parent="TopBar"]
-position = Vector2( 552, 3.8147e-06 )
-texture = ExtResource( 19 )
-centered = false
+[node name="UnitButton" type="TextureButton" parent="TopBar"]
+margin_left = 552.0
+margin_top = 3.8147e-06
+margin_right = 672.0
+margin_bottom = 54.0
+texture_normal = ExtResource( 19 )
+texture_hover = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="Label" parent="TopBar/Army"]
+[node name="Label" type="Label" parent="TopBar/UnitButton"]
 margin_left = 16.0
 margin_right = 48.0
 margin_bottom = 32.0
@@ -209,7 +216,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Goal" type="Label" parent="TopBar/Army"]
+[node name="Goal" type="Label" parent="TopBar/UnitButton"]
 margin_left = 72.0
 margin_right = 104.0
 margin_bottom = 32.0
@@ -330,6 +337,7 @@ __meta__ = {
 [connection signal="button_up" from="ButtonBack" to="." method="_on_ButtonBack_button_up"]
 [connection signal="button_up" from="ButtonMusic" to="." method="_on_ButtonMusic_button_up"]
 [connection signal="button_up" from="ButtonSound" to="." method="_on_ButtonSound_button_up"]
+[connection signal="button_up" from="TopBar/UnitButton" to="." method="_on_UnitButton_button_up"]
 [connection signal="button_up" from="Menu/ExpButton" to="." method="_on_ExpButton_button_up"]
 [connection signal="button_up" from="EventSpawnButton" to="." method="_on_EventSpawnButton_button_up"]
 [connection signal="button_up" from="SacrificeButton" to="." method="_on_SacrificeButton_button_up"]
