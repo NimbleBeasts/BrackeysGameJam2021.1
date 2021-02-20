@@ -64,10 +64,12 @@ signal faith_changed(int_new_faith_value)
 const FAITH_CHANGED = "faith_changed"
 signal food_changed(int_new_food_value)
 const FOOD_CHANGED = "food_changed"
-signal unit_slotted()
-const UNIT_SLOTTED = "unit_slotted"
-signal units_temp_slotted(int_num_units)
+signal units_available_changed(int_num_of_available_units)
+const UNITS_AVAILABLE_CHANGED = "units_available_changed"
+signal units_temp_slotted(array_of_temp_slotted_units)
 const UNITS_TEMP_SLOTTED = "units_temp_slotted"
+signal units_unavailable_changed(int_new_unavailble_units_count)
+const UNITS_UNAVAILABLE_CHANGED = "units_unavailable_changed"
 signal water_changed(int_new_water_value)
 const WATER_CHANGED = "water_changed"
 
