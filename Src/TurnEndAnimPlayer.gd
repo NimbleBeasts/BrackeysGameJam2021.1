@@ -6,6 +6,7 @@ func _ready():
 
 func _turn_ended():
 	play("fadeIn")
+	#TODO: zach please add the turn number here
 	$Label.set_text(TranslationServer.translate("FADE_DAY") + " " + str(0))
 	
 

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Src/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ui/TopBar/Bg_3x.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Ui/Sceneries/Scene_Dune_3x.png" type="Texture" id=3]
+[ext_resource path="res://Assets/MainView/backgrounds.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Ui/TopBar/Icons.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Ui/MapDummy3x.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Ui/Frame3x.png" type="Texture" id=6]
@@ -47,15 +47,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Scenery" type="TextureRect" parent="."]
-margin_left = 24.0
-margin_top = 21.0
-margin_right = 696.0
-margin_bottom = 237.0
+[node name="Scenery" type="Sprite" parent="."]
+position = Vector2( 19, 18 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+centered = false
+hframes = 4
 
 [node name="MapDummy" type="TextureRect" parent="."]
 margin_left = 258.0

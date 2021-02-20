@@ -9,6 +9,8 @@ enum EventTypes {Expedition, Gameplay, TurnRandom}
 
 enum CharEventType {Expedition, Sacrifice, Overview}
 
+enum BiomeType {Desert, Forest, Mountain, Savana}
+
 enum UnitTypes {
 	Princess,
 	Swordsman,
