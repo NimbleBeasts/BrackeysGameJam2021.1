@@ -15,6 +15,14 @@ var units_on_expedition : Array = []
 var food_return : int = 0
 var water_return : int = 0
 
+#Kill units on expedition player leaves.
+func _init():
+	Events.connect(Events.LEFT_LOCATION, self, "kill_units")
+
+func kill_units() -> void :
+	ug.kill_units(units_on_expedition)
+	remove()
+
 func roll_chances() -> int :
 	rg.gift_food(food_return)
 	rg.gift_water(water_return)
