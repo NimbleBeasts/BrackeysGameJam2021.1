@@ -22,6 +22,7 @@ func _init(location : Vector2 = Vector2(-1,-1), new_spot_type : int = -1) :
 		modulate = Color( 0,0,1)
 	elif spot_type == Types.ExpeditionSpots.HOME_BASE :
 		modulate = Color(0,0,0,0.5)
+		disabled = true
 	
 	
 	if new_spot_type == Types.ExpeditionSpots.HOME_BASE :

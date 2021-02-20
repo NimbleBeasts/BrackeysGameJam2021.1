@@ -77,30 +77,27 @@ func updateButtons():
 	var page = $CheckList.activePage
 	
 	if page == 0:
-		$DownButton.disabled = true
+		$UpButton.disabled = true
 	else:
-		$DownButton.disabled = false
+		$UpButton.disabled = false
 
 	if page < (itemsTotal - 1)/itemsPerPage :
-		$UpButton.disabled = false
+		$DownButton.disabled = false
 	else:
-		$UpButton.disabled = true
-	
+		$DownButton.disabled = true
+
 
 func _on_UpButton_button_up():
-	$CheckList.displayPage($CheckList.activePage + 1)
+	$CheckList.displayPage($CheckList.activePage - 1)
 	updateButtons()
 
 func _on_DownButton_button_up():
-	$CheckList.displayPage($CheckList.activePage - 1)
+	$CheckList.displayPage($CheckList.activePage + 1)
 	updateButtons()
 
 func _on_CheckList_list_active(node):
 	var id = findEntry(node.optionText)
 	assert(id != -1)
-	
-	#IMPORTANT get UnitTypes id from DM units
-	#var type = Types.UnitTypes.keys().find(unitList[id].type.capitalize())
 	
 	$Chars.frame = unitList[id].type
 	$Description.text = TranslationServer.translate(Data.units[unitList[id].type].description)
@@ -115,7 +112,6 @@ func findEntry(charName):
 	return -1
 
 
-			
 
 func _on_BaseButtonPink_button_up():
 	buttonAction(pinkButtonAction)

@@ -15,7 +15,6 @@ var activePage = 0
 
 # Display page 
 func displayPage(page = 0):
-	print("display page: " + str(page))
 	activePage = page
 	var start = optionsPerPage * page
 	for i in range(0, self.get_child_count()):
