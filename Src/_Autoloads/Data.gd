@@ -3,6 +3,7 @@ extends Node
 const filePathEventExpedition = "res://Data/Events.Expedition.json"
 const filePathEventGameplay = "res://Data/Events.Gameplay.json"
 const filePathEventTurnRandom = "res://Data/Events.TurnRandom.json"
+const filePathTiles = "res://Data/Tiles.json"
 
 const filePathUnits = "res://Data/Units.json"
 
@@ -14,6 +15,8 @@ var events = {
 
 #Types.UnitTypes
 var units = []
+
+var tiles : Dictionary
 
 
 func _ready():
@@ -66,6 +69,9 @@ func loadGameData():
 
 	units = readJsonFile(filePathUnits)
 	assert(units)
+	
+	tiles = readJsonFile(filePathTiles)
+	assert(tiles)
 
 
 

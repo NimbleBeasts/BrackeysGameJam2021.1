@@ -8,6 +8,7 @@ var location_in_grid : Vector2 = Vector2(-1,-1) setget set_location, get_locatio
 
 #This will determine spot type and thus what texture we use.
 var spot_type : int = -1 setget set_spot_type, get_spot_type
+var type_name : String = ""
 
 func _init(location : Vector2 = Vector2(-1,-1), new_spot_type : int = -1) :
 	expand = true
@@ -18,14 +19,19 @@ func _init(location : Vector2 = Vector2(-1,-1), new_spot_type : int = -1) :
 	#Temporary modulation to show what type we are.
 	if spot_type == Types.ExpeditionSpots.LAKES : #LAKE
 		texture_normal = load(PATH+biome+"LakeNormal.png")
+		type_name = "lakes"
 	elif spot_type == Types.ExpeditionSpots.HUNTING : #HUNTING
 		texture_normal = load(PATH+biome+"HuntNormal.png")
+		type_name = "hunting"
 	elif spot_type == Types.ExpeditionSpots.RUINS : #RUINS
 		texture_normal = load(PATH+biome+"RuinsNormal.png")
+		type_name = "ruins"
 	elif spot_type == Types.ExpeditionSpots.BERRIES : #BERRIES
 		texture_normal = load(PATH+biome+"BerriesNormal.png")
+		type_name = "berries"
 	elif spot_type == Types.ExpeditionSpots.CREEKS : #Creek :
 		texture_normal = load(PATH+biome+"CreekNormal.png")
+		type_name = "creeks"
 	elif spot_type == Types.ExpeditionSpots.HOME_BASE :
 		texture_normal = load(PATH+biome+"HomeNormal.png")
 		disabled = true
@@ -54,9 +60,15 @@ func get_location() -> Vector2 :
 	return location_in_grid
 
 func get_reward() -> Dictionary :
-	var faith : int = 50
-	var food : int = 50
-	var water : int = 50
+	var faith : int = 0
+	var food : int = 0
+	var water : int = 0
+	var val : Dictionary
+	if not type_name == "" :
+		val = Data.tiles[type_name]
+		faith = val["faith"]
+		food = val["food"]
+		water = val["water"]
 	
 	var rewards : Dictionary = {
 		"faith" : faith,
