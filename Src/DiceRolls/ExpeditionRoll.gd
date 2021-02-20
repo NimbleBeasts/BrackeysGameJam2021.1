@@ -12,6 +12,7 @@ var rg : ResourcesGetter = Types.resources_getter
 #If all units return then you gain some faith.
 var units_on_expedition : Array = []
 
+var faith_return : int = 0
 var food_return : int = 0
 var water_return : int = 0
 
@@ -56,11 +57,13 @@ func roll_chances() -> int :
 		ug.kill_units(kill)
 	
 	if units_on_expedition.size() > 0 :
+		rg.gift_faith(faith_return)
 		rg.gift_food(food_return)
 		rg.gift_water(water_return)
 		ug.return_units(units_on_expedition)
 		data["payload"]["changes"]["water"] = water_return
 		data["payload"]["changes"]["food"] = food_return
+		data["payload"]["changes"]["faith"]
 		data["payload"]["success"] = true
 
 	Events.emit_signal("window_show", Types.WindowType.Event, data)
@@ -75,6 +78,7 @@ func start() -> void :
 	
 	#Get the rewards.
 	var rewards : Dictionary = rg.project_reward()
+	faith_return = rewards["faith"]
 	food_return = rewards["food"]
 	water_return  = rewards["water"]
 	
