@@ -30,7 +30,7 @@ func _ready():
 	#is not performed.
 	Events.emit_signal(Events.TURN_STARTED)
 	
-	Events.connect(Events.TURN_ENDED, self, "_turn_ended")
+	Events.connect(Events.TURN_STARTED, self, "_turn_started")
 	Events.connect(Events.GAME_LOST, self, "_game_lost")
 	
 	#Generate a grid map at start of game.
@@ -39,15 +39,12 @@ func _ready():
 	#Listen for when the location is left so we can generate a new one.
 	Events.connect(Events.LEFT_LOCATION, self, "_enter_new_location")
 
-func _turn_ended() -> void :
+func _turn_started() -> void :
 	#Go through nodes that need to finish processing
 	#and see if they complete succesfully. If not succesful, game ends.
 	for node in turn_ended_processing :
 		if not node.turn_end_test() :
 			Events.emit_signal(Events.GAME_LOST)
-	 
-	#All tests succeeded. Start next turn.
-	Events.emit_signal(Events.TURN_STARTED)
 
 func get_unit_count() -> int :
 	return puh.get_unit_count()

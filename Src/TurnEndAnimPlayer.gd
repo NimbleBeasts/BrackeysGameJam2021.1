@@ -17,5 +17,7 @@ func _on_TurnEndAnimPlayer_animation_finished(anim_name):
 			play("turn")
 		"turn":
 			play("fadeOut")
-		"fadeOut":
+			Events.emit_signal(Events.TURN_ANIMATED)
 			Events.emit_signal(Events.TURN_STARTED)
+		"fadeOut":
+			pass

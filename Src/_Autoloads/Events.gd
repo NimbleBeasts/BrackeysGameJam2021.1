@@ -34,6 +34,8 @@ signal left_location()
 const LEFT_LOCATION = "left_location"
 signal new_location_reached(new_location)
 const NEW_LOCATION_REACHED = "new_location_reached"
+signal turn_animated()
+const TURN_ANIMATED = "turn_animated"
 signal turn_ended()
 const TURN_ENDED = "turn_ended"
 signal turn_started()

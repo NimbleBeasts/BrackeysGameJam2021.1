@@ -9,11 +9,11 @@ func _ready() -> void :
 	var roll : DiceRoll = NewTurnRoll.new()
 	rolls.append(roll)
 	
-	Events.connect(Events.TURN_STARTED, self, "_turn_started")
+	Events.connect(Events.TURN_ANIMATED, self, "_turn_animated")
 	
 	Events.connect(Events.DICE_ROLL_CREATED, self, "add_dice_roll")
 
-func _turn_started() -> void :
+func _turn_animated() -> void :
 	var i : int = 0
 	var remove_array : PoolIntArray = PoolIntArray()
 	for roll in rolls :
