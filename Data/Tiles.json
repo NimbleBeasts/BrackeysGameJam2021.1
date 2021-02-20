@@ -1,0 +1,27 @@
+{
+    "lakes": {
+        "water":33,
+        "food":33,
+        "faith":33
+    },
+    "hunting": {
+        "water":0,
+        "food":100,
+        "faith":0
+    },
+    "ruins": {
+        "water":0,
+        "food":33,
+        "faith":66
+    },
+    "berries": {
+        "water":50,
+        "food":50,
+        "faith":0
+    },
+    "creeks": {
+        "water":66,
+        "food":0,
+        "faith":33
+    }
+}

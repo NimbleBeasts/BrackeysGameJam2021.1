@@ -10,6 +10,7 @@ var traveled : PoolRealArray = PoolRealArray()
 var current_food_cost : int = 0
 var current_water_cost : int = 0
 
+var reward_faith : PoolIntArray = PoolIntArray()
 var reward_food : PoolIntArray = PoolIntArray()
 var reward_water : PoolIntArray = PoolIntArray()
 
@@ -58,14 +59,20 @@ func point_added(spot : GatheringSpot) -> void :
 		b = reward_water[reward_water.size() - 1]
 	reward_water.append(b + spot_rewards["water"])
 	
+	var c : int = 0
+	if reward_faith.size() > 0 :
+		c = reward_faith[reward_faith.size() - 1]
+	reward_faith.append(c + spot_rewards["faith"])
+	
 	Events.emit_signal(Events.GATHER_POINT_CALCULATED, current_food_cost, current_water_cost)
 
 func point_removed() -> void :
-	if traveled.size() == 1 || current_location.size() == 1:
+	if traveled.size() == 1 || current_location.size() == 1 :
 		return
 	traveled.remove(traveled.size() - 1)
 	current_location.remove(current_location.size() - 1)
 	
+	reward_faith.remove(reward_faith.size() - 1)
 	reward_food.remove(reward_food.size() - 1)
 	reward_water.remove(reward_water.size() - 1)
 
@@ -83,6 +90,7 @@ func project_cost(unit_count : int) -> Dictionary :
 
 func project_reward() -> Dictionary :
 	var rewards : Dictionary = {
+		"faith" : reward_faith[reward_faith.size() - 1],
 		"food" : reward_food[reward_food.size() - 1],
 		"water" : reward_water[reward_water.size() - 1]
 	}

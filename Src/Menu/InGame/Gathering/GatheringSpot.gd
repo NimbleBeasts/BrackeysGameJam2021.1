@@ -54,10 +54,12 @@ func get_location() -> Vector2 :
 	return location_in_grid
 
 func get_reward() -> Dictionary :
+	var faith : int = 50
 	var food : int = 50
 	var water : int = 50
 	
 	var rewards : Dictionary = {
+		"faith" : faith,
 		"food" : food,
 		"water" : water
 	}

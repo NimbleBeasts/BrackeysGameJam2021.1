@@ -24,3 +24,6 @@ func use_water(water_amount : int) -> void :
 
 func project_cost(unit_count : int) -> Dictionary :
 	return expedition_calc.project_cost(unit_count)
+
+func project_reward() -> Dictionary :
+	return expedition_calc.project_reward()
