@@ -27,7 +27,8 @@ enum ExpeditionSpots  {
 	RUINS = 2,
 	BERRIES = 3,
 	CREEKS = 4,
-	NORMAL = 5
+	HOME_BASE = 5,
+	NORMAL = 6
 }
 
 enum ResourceType {Water = 0, Food, Faith}

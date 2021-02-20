@@ -1,6 +1,7 @@
 extends Node
 class_name ExpeditionCalculator
 
+var gg : GridGetter = Types.grid_getter
 
 #Determine how much resources cost to perform the expedition.
 var current_location : PoolVector2Array = PoolVector2Array()
@@ -14,7 +15,8 @@ func _init():
 
 func _ready():
 	if not Events.is_connected(Events.GATHER_POINT_ADDED, self, "point_added") :
-		current_location.append(Vector2(-1,-1)) #Default value for starting spot.
+		var home_base = gg.get_home_base_pos()
+		current_location.append(Vector2(home_base)) #Default value for starting spot.
 		traveled.append(0)
 		Events.connect(Events.GATHER_POINT_ADDED, self, "point_added")
 		Events.connect(Events.GATHER_POINT_REMOVED, self, "point_removed")
@@ -24,7 +26,8 @@ func _ready():
 #Reset myself to zero.
 func clear() -> void :
 	current_location = PoolVector2Array()
-	current_location.append(Vector2(-1,-1)) #Default value for starting spot.
+	var home_base : Vector2 = gg.get_home_base_pos()
+	current_location.append(home_base) #Default value for starting spot.
 	traveled = PoolRealArray()
 	traveled.append(0)
 	current_food_cost = 0
