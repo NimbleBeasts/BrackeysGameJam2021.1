@@ -22,6 +22,7 @@ signal window_black_screen_hide()
 
 signal event_choice(type, id, choice) #Types.EventTypes
 
+signal move_next()
 
 #Dungeon Master. Turns, world events, etc.
 signal dice_roll_created(dice_roll_dice_roll)
