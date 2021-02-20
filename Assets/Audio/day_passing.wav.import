@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/day_passing.wav-432b48e94ed6d94fb477c7511818ab14.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/day_passing.wav"
+dest_files=[ "res://.import/day_passing.wav-432b48e94ed6d94fb477c7511818ab14.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

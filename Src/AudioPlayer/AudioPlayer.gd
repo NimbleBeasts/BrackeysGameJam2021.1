@@ -24,14 +24,30 @@ func _playSound(sound: String, _volume : float = 1.0, _pos : Vector2 = Vector2(0
 	if Global.userConfig.sound:
 		match sound:
 			"menu_click":
-				$MenuClick.play()
-			"example":
-				$Example2D.volume_db = -20 + 12 * _volume
-				$Example2D.position = _pos
-				$Example2D.play()
+				$MenuClick_Neutral.play()
+			"menu_click_positive":
+				$MenuClick_Positive.play()
+			"menu_click_negative":
+				$MenuClick_Negative.play()
+			"achievement":
+				$Achievement.play()
+			"daypassing":
+				$DayPassing.play()
+			"faith_gain":
+				$FaithGain.play()
+			"faith_lost":
+				$FaithLost.play()
+			"food_gain":
+				$FoodGain.play()
+			"food_lost":
+				$FoodLost.play()
+			"water_gain":
+				$WaterGain.play()
+			"water_lost":
+				$WaterLost.play()
 			_:
 				print("error: sound not found - name: " + str(sound))
 
 # Music Loop?
 func _on_Music_finished():
-	pass # Replace with function body.
+	$Music.play()

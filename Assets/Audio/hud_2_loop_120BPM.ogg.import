@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hud_2_loop_120BPM.ogg-b8f2c6676a3c977023c77a3aa319b366.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/hud_2_loop_120BPM.ogg"
+dest_files=[ "res://.import/hud_2_loop_120BPM.ogg-b8f2c6676a3c977023c77a3aa319b366.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

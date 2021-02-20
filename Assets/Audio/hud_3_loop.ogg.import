@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hud_3_loop.ogg-783f8cdbf348ea7a1f38160280f46aef.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/hud_3_loop.ogg"
+dest_files=[ "res://.import/hud_3_loop.ogg-783f8cdbf348ea7a1f38160280f46aef.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

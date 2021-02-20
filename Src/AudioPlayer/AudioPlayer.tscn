@@ -1,26 +1,67 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Assets/Menu/MenuClick.wav" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Audio/title.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Src/AudioPlayer/AudioPlayer.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Audio/select_neutral.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/select_positive.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Audio/select_negative.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/achievement.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Audio/day_passing.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Audio/water_lose.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Audio/water_gain.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Audio/faith_lose.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Audio/faith_gain.wav" type="AudioStream" id=11]
+[ext_resource path="res://Assets/Audio/food_lost.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Audio/food_gained.wav" type="AudioStream" id=13]
 
 [node name="AudioPlayer" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="MenuClick" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
-volume_db = -16.0
-pitch_scale = 0.6
+[node name="MenuClick_Neutral" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 bus = "Sound"
 
-[node name="Example2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 1 )
-volume_db = -16.0
-pitch_scale = 0.6
+[node name="MenuClick_Positive" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "Sound"
+
+[node name="MenuClick_Negative" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+bus = "Sound"
+
+[node name="Achievement" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+bus = "Sound"
+
+[node name="DayPassing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+bus = "Sound"
+
+[node name="FaithGain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+bus = "Sound"
+
+[node name="FoodGain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+bus = "Sound"
+
+[node name="WaterGain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+bus = "Sound"
+
+[node name="FaithLost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+bus = "Sound"
+
+[node name="FoodLost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+bus = "Sound"
+
+[node name="WaterLost" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 bus = "Sound"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -16.0
-pitch_scale = 0.6
 bus = "Music"
 [connection signal="finished" from="Music" to="." method="_on_Music_finished"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/water_lose.wav-bbed8279bcc443bcac0e47a6e6235cbc.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/water_lose.wav"
+dest_files=[ "res://.import/water_lose.wav-bbed8279bcc443bcac0e47a6e6235cbc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

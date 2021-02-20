@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/food_lost.wav-7618ebc7eedd1a09fc20fa8502b4fd6f.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/food_lost.wav"
+dest_files=[ "res://.import/food_lost.wav-7618ebc7eedd1a09fc20fa8502b4fd6f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
