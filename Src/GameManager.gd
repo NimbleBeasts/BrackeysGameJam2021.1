@@ -56,6 +56,7 @@ func _newGame():
 	if levelNode:
 		unloadLevel()
 	loadLevel(0)
+	levelNode.setup("newgame")
 	switchTo(Types.GameStates.Game)
 
 # Event Hook: Update user config for sound

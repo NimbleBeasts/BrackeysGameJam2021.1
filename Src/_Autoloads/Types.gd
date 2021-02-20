@@ -7,7 +7,7 @@ enum WindowType {Expedition = 0, Event = 1, Char = 2}
 
 enum EventTypes {Expedition, Gameplay, TurnRandom}
 
-enum CharEventType {Expedition, Sacrifice}
+enum CharEventType {Expedition, Sacrifice, Overview}
 
 enum UnitTypes {
 	Swordsman,

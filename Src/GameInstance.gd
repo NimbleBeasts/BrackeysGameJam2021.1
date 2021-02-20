@@ -16,6 +16,9 @@ onready var GameUi = $GameMenu
 func _ready():
 	initDebug()
 
+func setup(type):
+	if type == "newgame":
+		$DungeonMaster/PlayerUnitHandler.create_new_group()
 
 func initDebug():
 	var cat = Debug.addCategory("Resources")

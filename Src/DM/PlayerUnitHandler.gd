@@ -3,6 +3,10 @@ class_name PlayerUnitHandler
 
 onready var unit_getter = Types.unit_getter
 
+
+#{"uid","type","name","available"}
+var units = []
+
 #How many units you have in total.
 var unit_count : int = 20 setget  ,get_unit_count
 
@@ -23,7 +27,53 @@ func _ready() -> void :
 		Events.connect(Events.ADD_UNIT, self, "add_unit")
 		unit_getter.set_unit_handler(self)
 
+
+# Used to create the initial starting group
+func create_new_group():
+	add_unit_by_name("princess")
+	add_unit_by_chance()
+	add_unit_by_chance()
+	add_unit_by_chance()
+	print(units)
+
+# Create a new unit
+func add_unit_by_name(unitName) -> int:
+	var unit = null
+	for entry in Data.units:
+		if entry.type == unitName:
+			unit = {
+				"uid": randi(),
+				"type": unitName,
+				"name": entry.names[randi() % entry.names.size()],
+				"available": false
+			}
+			unit.uid = str(unit).sha256_text()
+			units.append(unit)
+			return (units.size() - 1)
+	return -1
+
+# Create a new unit by chance
+func add_unit_by_chance() -> int:
+	var rand = randi() % 100
+	var accumulatedChance = 0
+	var unit = null
+	
+	for entry in Data.units:
+		accumulatedChance += entry.chance
+		if accumulatedChance > rand:
+			unit = {
+				"uid": randi(),
+				"type": entry.type,
+				"name": entry.names[randi() % entry.names.size()],
+				"available": false
+			}
+			unit.uid = str(unit).sha256_text()
+			units.append(unit)
+			return (units.size() - 1)
+	return -1
+
 func add_unit() -> void :
+	print("deprecated: add_unit")
 	unit_count += 1
 	available_units += 1
 

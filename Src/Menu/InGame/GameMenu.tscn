@@ -281,6 +281,16 @@ text = "Sacrifice"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="UnitsInBase" type="Button" parent="."]
+margin_left = 296.0
+margin_top = 184.0
+margin_right = 391.0
+margin_bottom = 216.0
+text = "Units In Base"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_up" from="ButtonBack" to="." method="_on_ButtonBack_button_up"]
 [connection signal="button_up" from="ButtonMusic" to="." method="_on_ButtonMusic_button_up"]
 [connection signal="button_up" from="ButtonSound" to="." method="_on_ButtonSound_button_up"]
@@ -288,3 +298,4 @@ __meta__ = {
 [connection signal="button_up" from="EventSpawnButton" to="." method="_on_EventSpawnButton_button_up"]
 [connection signal="button_up" from="SacrificeButton" to="." method="_on_SacrificeButton_button_up"]
 [connection signal="button_up" from="SacrificeButton2" to="." method="_on_SacrificeButton2_button_up"]
+[connection signal="button_up" from="UnitsInBase" to="." method="_on_UnitsInBase_button_up"]

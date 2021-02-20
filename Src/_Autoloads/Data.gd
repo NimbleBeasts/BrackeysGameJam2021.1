@@ -66,7 +66,7 @@ func loadGameData():
 
 	units = readJsonFile(filePathUnits)
 	assert(units)
-	print(units)
+
 
 
 # Reads and parses a JSON file and returns it as a variable
