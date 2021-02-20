@@ -21,6 +21,7 @@ func _init():
 
 func kill_units() -> void :
 	ug.kill_units(units_on_expedition)
+	remove()
 
 func roll_chances() -> int :
 	rg.gift_food(food_return)
