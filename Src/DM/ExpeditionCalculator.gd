@@ -18,7 +18,7 @@ func _ready():
 		traveled.append(0)
 		Events.connect(Events.GATHER_POINT_ADDED, self, "point_added")
 		Events.connect(Events.GATHER_POINT_REMOVED, self, "point_removed")
-		Events.connect(Events.EXPEDITION_CONFIRMED, self, "clear")
+		Events.connect(Events.EXPEDITION_STARTED, self, "clear")
 		Events.connect(Events.EXPEDITION_CANCELLED, self, "clear")
 
 #Reset myself to zero.
@@ -38,8 +38,8 @@ func point_added(spot : GatheringSpot) -> void :
 	
 	#Determine how much food and water that costs.
 	var trav : float = traveled[traveled.size()-1]
-	current_food_cost = int(round(trav * 1.2))
-	current_water_cost = int(round(trav * 1.4))
+	current_food_cost = int(round(trav * 1.6))
+	current_water_cost = int(round(trav * 1.8))
 	
 	Events.emit_signal(Events.GATHER_POINT_CALCULATED, current_food_cost, current_water_cost)
 
@@ -50,7 +50,7 @@ func point_removed() -> void :
 	current_location.remove(current_location.size() - 1)
 
 func project_cost(unit_count : int) -> Dictionary :
-	var day_cost : int = int(round(traveled[traveled.size()-1] * 0.4))
+	var day_cost : int = int(round(traveled[traveled.size()-1] * 1))
 	if day_cost <= 0 :
 		day_cost = 1
 	var cost : Dictionary = {
