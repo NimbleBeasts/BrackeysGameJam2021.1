@@ -5,6 +5,7 @@ signal check_toggle(node, checked)
 signal check_active(node)
 
 export (String) var optionText = "Text"
+var externId = -1
 
 # Disable checkbox
 var disabled = false

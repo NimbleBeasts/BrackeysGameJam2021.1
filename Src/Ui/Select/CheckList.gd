@@ -6,6 +6,7 @@ const checkOptionScene = preload("res://Src/Ui/Select/CheckOption.tscn")
 
 export(int) var optionsPerPage = 8
 
+var optionsChecked = []
 
 var optionCount = 0
 var activeOption = null
@@ -25,9 +26,10 @@ func displayPage(page = 0):
 
 
 # Add option return id
-func addOption(text, disabled = false) -> int:
+func addOption(text, externId, disabled = false) -> int:
 	var option = checkOptionScene.instance()
 	option.optionText = text
+	option.externId = externId
 	option.connect("check_toggle", self, "_toggleOption")
 	option.connect("check_active", self, "_activeOption")
 	option.setDisabled(disabled)
@@ -44,9 +46,18 @@ func clear():
 		self.remove_child(option)
 		option.queue_free()
 
+func getChecked():
+	var list = []
+	for entry in optionsChecked:
+		list.append(entry.externId)
+	return list
 
 func _toggleOption(node, checked):
-	pass
+	if checked:
+		optionsChecked.append(node)
+	else:
+		optionsChecked.remove(optionsChecked.find(node))
+
 	
 func _activeOption(node):
 	if activeOption:

@@ -34,13 +34,33 @@ func setup(type):
 		_:
 			print("CharacterWindow.gd: setup unknown type")
 
-	for entry in unitList:
-		$CheckList.addOption(entry.name, !entry.available)
+	for i in range(unitList.size()):
+		$CheckList.addOption(unitList[i].name, unitList[i].uid, !unitList[i].available)
 		
 	$CheckList.displayPage(0)
 	updateButtons()
 	_on_CheckList_list_active($CheckList.get_child(0))
 
+func buttonAction(action):
+	match action:
+		ButtonActionTypes.BackToExpedition:
+			Events.emit_signal(Events.WINDOW_SHOW, Types.WindowType.Expedition)
+			Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
+			Events.emit_signal("play_sound", "menu_click")
+		ButtonActionTypes.StartExpedition:
+			Events.emit_signal("play_sound", "menu_click_positive")
+		ButtonActionTypes.Sacrifice:
+			var list = $CheckList.getChecked()
+			
+			if list.size() == 0:
+				Events.emit_signal("play_sound", "menu_click_negative")
+			else:
+				Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
+				Events.emit_signal("play_sound", "menu_click")
+		_:
+			Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
+			Events.emit_signal("play_sound", "menu_click")
+			
 
 func updateButtons():
 	var itemsPerPage = $CheckList.optionsPerPage
@@ -84,19 +104,7 @@ func findEntry(charName):
 			return i
 	return -1
 
-func buttonAction(action):
-	match action:
-		ButtonActionTypes.BackToExpedition:
-			Events.emit_signal(Events.WINDOW_SHOW, Types.WindowType.Expedition)
-			Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
-			Events.emit_signal("play_sound", "menu_click")
-		ButtonActionTypes.StartExpedition:
-			Events.emit_signal("play_sound", "menu_click_positive")
-		ButtonActionTypes.Sacrifice:
-			Events.emit_signal("play_sound", "menu_click_negative")
-		_:
-			Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
-			Events.emit_signal("play_sound", "menu_click")
+
 			
 
 func _on_BaseButtonPink_button_up():
