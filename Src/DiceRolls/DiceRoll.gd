@@ -5,6 +5,8 @@ class_name DiceRoll
  This class handles the likelyhood of dice events succeeding.
 """
 
+signal removed(diceroll_dice_roll)
+
 #How many days before rolling will happen.
 #If negative one, then dice roll will always be present.
 var day_cost : int = 1 setget ,get_day_cost
@@ -25,6 +27,9 @@ func is_permanent() -> bool :
 		return true
 	else :
 		return false
+
+func remove() -> void :
+	emit_signal("removed", self)
 
 func roll() -> void :
 	#Inheriting classes will use this to roll on each turn.

@@ -35,4 +35,9 @@ func _turn_ended() -> void :
 		i -= 1
 
 func add_dice_roll(dice_roll : DiceRoll) -> void :
+	# warning-ignore:return_value_discarded
+	dice_roll.connect("removed", self, "dice_removed_itself")
 	rolls.append(dice_roll)
+
+func dice_removed_itself(dice_roll : DiceRoll) -> void :
+	rolls.remove(rolls.find(dice_roll))
