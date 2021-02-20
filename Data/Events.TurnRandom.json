@@ -86,7 +86,7 @@
     "action": {
       "type": "yes",
       "yes": {
-        "text": "EVENT_SACRIIFCE_YES",
+        "text": "EVENT_SACRIFICE_YES",
         "consequences": [
           {
             "type": "sacrifice"
