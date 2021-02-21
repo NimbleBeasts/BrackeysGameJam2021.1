@@ -31,13 +31,18 @@ func _ready():
 	Events.emit_signal(Events.TURN_STARTED)
 	
 	Events.connect(Events.TURN_STARTED, self, "_turn_started")
-
 	
 	#Generate a grid map at start of game.
 	_enter_new_location()
 	
 	#Listen for when the location is left so we can generate a new one.
 	Events.connect(Events.LEFT_LOCATION, self, "_enter_new_location")
+	
+	Events.emit_signal("window_show", Types.WindowType.ResFb, {"text":tr("TUTORIAL")+" - "+tr("TUT2"), "meaning":"neutral"})
+	Events.emit_signal("window_show", Types.WindowType.ResFb, {"text":tr("TUTORIAL")+" - "+tr("TUT1"), "meaning":"neutral"})
+	Events.emit_signal("window_show", Types.WindowType.ResFb, {"text":tr("TUTORIAL")+" - "+tr("TUT0"), "meaning":"neutral"})
+	Events.emit_signal("window_show", Types.WindowType.ResFb, {"text":tr("LORESTART"), "meaning":"neutral"})
+
 
 func _turn_started() -> void :
 	#Go through nodes that need to finish processing
