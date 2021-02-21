@@ -17,7 +17,7 @@ func countdown() -> void :
 	Events.emit_signal(Events.ENEMY_ARMY_DAYS_CHANGED, counter)
 	
 	if counter <= 0 :
-		Events.emit_signal(Events.GAME_LOST)
+		Events.emit_signal(Events.GAME_LOST, Types.GameOverType.Units) #Game is over
 
 func get_days_left() -> int :
 	return counter

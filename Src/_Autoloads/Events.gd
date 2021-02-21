@@ -28,7 +28,7 @@ signal move_update_gfx(curId, nextId) #Types.BiomeType
 #Dungeon Master. Turns, world events, etc.
 signal dice_roll_created(dice_roll_dice_roll)
 const DICE_ROLL_CREATED = "dice_roll_created"
-signal game_lost()
+signal game_lost(reason)
 const GAME_LOST = "game_lost"
 signal left_location()
 const LEFT_LOCATION = "left_location"

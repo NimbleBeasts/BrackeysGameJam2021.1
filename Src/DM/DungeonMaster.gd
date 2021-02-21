@@ -31,7 +31,7 @@ func _ready():
 	Events.emit_signal(Events.TURN_STARTED)
 	
 	Events.connect(Events.TURN_STARTED, self, "_turn_started")
-	Events.connect(Events.GAME_LOST, self, "_game_lost")
+
 	
 	#Generate a grid map at start of game.
 	_enter_new_location()
@@ -44,7 +44,8 @@ func _turn_started() -> void :
 	#and see if they complete succesfully. If not succesful, game ends.
 	for node in turn_ended_processing :
 		if not node.turn_end_test() :
-			Events.emit_signal(Events.GAME_LOST)
+			return
+			Events.emit_signal(Events.GAME_LOST, Types.GameOverType.Units) #TODO: workaround lol
 
 func get_unit_count() -> int :
 	return puh.get_unit_count()

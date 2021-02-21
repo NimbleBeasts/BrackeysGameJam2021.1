@@ -4,6 +4,7 @@ enum Direction { Top, Right, Down, Left }
 enum GameStates {Menu, Game, Settings} 
 
 enum WindowType {Expedition = 0, Event = 1, Char = 2, Move = 3, ResFb = 4}
+enum GameOverType {Water, Food, Faith, Units}
 
 enum EventTypes {Expedition, Gameplay, TurnRandom}
 
