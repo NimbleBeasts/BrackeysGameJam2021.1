@@ -29,10 +29,7 @@
     "desc": "EVENT_MOVINGEXPFAIL_DESC",
     "action": {
       "type": "yes",
-      "yes": {
-        "text": "NEXT",
-        "consequences": "scripted"
-      }
+      "yes": "scripted"
     }
   },
   {
