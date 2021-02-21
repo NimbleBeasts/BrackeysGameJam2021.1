@@ -20,13 +20,13 @@ func _game_over(reason=""):
 	$Label.set_text(TranslationServer.translate("GAME_OVER"))
 	match reason:
 		Types.GameOverType.Faith:
-			$Sub.set_text(TranslationServer.translate("GAME_OVER_FAITH"))
+			$Sub.bbcode_text = "[center]" + (TranslationServer.translate("GAME_OVER_FAITH")) + "[/center]"
 		Types.GameOverType.Water:
-			$Sub.set_text(TranslationServer.translate("GAME_OVER_WATER"))
+			$Sub.bbcode_text = "[center]" + (TranslationServer.translate("GAME_OVER_WATER"))+ "[/center]"
 		Types.GameOverType.Food:
-			$Sub.set_text(TranslationServer.translate("GAME_OVER_FOOD"))
+			$Sub.bbcode_text = "[center]" + (TranslationServer.translate("GAME_OVER_FOOD"))+ "[/center]"
 		_:
-			$Sub.set_text(TranslationServer.translate("GAME_OVER_UNITS"))
+			$Sub.bbcode_text = "[center]" + (TranslationServer.translate("GAME_OVER_UNITS"))+ "[/center]"
 	
 	play("fadeIn")
 

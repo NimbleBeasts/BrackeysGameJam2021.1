@@ -141,16 +141,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sub" type="Label" parent="TurnEndAnimPlayer"]
+[node name="Sub" type="RichTextLabel" parent="TurnEndAnimPlayer"]
 visible = false
 modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
-margin_top = 227.617
-margin_bottom = 295.617
-custom_fonts/font = ExtResource( 9 )
-text = "You've run out of food"
-align = 1
-valign = 1
+margin_left = 67.0
+margin_top = 259.0
+margin_right = -59.0
+margin_bottom = 348.0
+custom_fonts/normal_font = ExtResource( 9 )
+text = "Without water and food, the law of the desert has sealed your fate and that of your men. Their loyalty led them to leave you the last rations of water and food."
 __meta__ = {
 "_edit_use_anchors_": false
 }
