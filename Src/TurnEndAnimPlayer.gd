@@ -4,8 +4,8 @@ func _ready():
 	Events.connect(Events.TURN_ENDED, self, "_turn_ended")
 	Events.connect("game_lost", self, "_game_over")
 	$Sprite.frame = 0
-	$Sub.hide()
-	$ClickBlock.hide()
+	#$Sub.hide()
+	#$ClickBlock.hide()
 
 func _turn_ended():
 	$ClickBlock.show()
@@ -14,7 +14,7 @@ func _turn_ended():
 	play("fadeIn")
 	$Label.set_text(TranslationServer.translate("FADE_DAY") + " " + str(get_parent().gameState.turn))
 
-func _game_over(reason):
+func _game_over(reason=""):
 	$ClickBlock.show()
 	$Sub.show()
 	$Label.set_text(TranslationServer.translate("GAME_OVER"))

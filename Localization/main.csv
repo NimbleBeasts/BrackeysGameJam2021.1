@@ -71,4 +71,9 @@ EVENT_GOWATERFOOD_DESC,"Without water and food, the law of the desert has sealed
 EVENT_PAUSEDAY_TITLE,Resting day,Jour de repos,
 EVENT_PAUSEDAY_DESC,"Your men are exhausted, they offer to take a day's break. You have to move forward, but if you refuse, you risk riots soon. What do you do?","Vos hommes sont épuisés, ils proposent d'effectuer une journée de pause. Il faut avancer, mais si vous refusez, vous risquez des émeutes bientôt. Que faites-vous ?",
 EVENT_PAUSEDAY_YES,Accept,Accepter,
-EVENT_PAUSEDAY_NO,Refuse,Refuser
+EVENT_PAUSEDAY_NO,Refuse,Refuser,
+GAME_OVER_UNITS,"There is nothing left. Nothingness observes you but at the same time you are no longer there. All your men are dead, massacred, hungry, thirsty, injured. So the legacy of Trija is over.","Il n'y a plus rien. Le néant vous observe mais en même temps vous n'êtes plus là. Tous vos hommes sont morts, massacrés, affamés, assoiffés, accidentés. C'en est donc finit de l'héritage de Trija.",
+GAME_OVER_FOOD,"Without water and food, the law of the desert has sealed your fate and that of your men. Their loyalty led them to leave you the last rations of water and food.","Sans eau et sans nourriture, la loi du désert a scellé votre destin et celui de vos hommes. Leur loyauté les a poussé à vous laisser les dernières rations d'eau et de nourriture.",
+GAME_OVER_WATER,"Without water and food, the law of the desert has sealed your fate and that of your men. Their loyalty led them to leave you the last rations of water and food.","Sans eau et sans nourriture, la loi du désert a scellé votre destin et celui de vos hommes. Leur loyauté les a poussé à vous laisser les dernières rations d'eau et de nourriture.",
+GAME_OVER_FAITH,"Complaints, riots, desertion. These are the consequences of your poor management of the situation. You will forever be known as the traitor princess who abandoned her loyalists.","Plaintes, émeutes, désertion. Telles sont les conséquences de votre gestion lacunaire de la situation. Vous serez à jamais reconnu comme la princesse traitresse ayant abandonné ses loyaux.",
+GAME_OVER,Game Over,Vous êtes morts,
