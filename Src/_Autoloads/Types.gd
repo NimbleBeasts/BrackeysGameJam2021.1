@@ -3,7 +3,7 @@ extends Node
 enum Direction { Top, Right, Down, Left }
 enum GameStates {Menu, Game, Settings} 
 
-enum WindowType {Expedition = 0, Event = 1, Char = 2}
+enum WindowType {Expedition = 0, Event = 1, Char = 2, Move = 3}
 
 enum EventTypes {Expedition, Gameplay, TurnRandom}
 

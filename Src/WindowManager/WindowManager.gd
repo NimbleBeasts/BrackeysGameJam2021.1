@@ -7,6 +7,7 @@ const windowScenes = [
 	preload("res://Src/ExpeditionWindow/ExpeditionWindow.tscn"), 
 	preload("res://Src/EventWindow/EventWindow.tscn"),
 	preload("res://Src/CharacterWindow/CharacterWindow.tscn"),
+	preload("res://Src/MoveWindow/MoveWindow.tscn")
 ]
 
 var activeWindow = null

@@ -23,6 +23,7 @@ signal window_black_screen_hide()
 signal event_choice(type, id, choice) #Types.EventTypes
 
 signal move_next()
+signal move_update_gfx(curId, nextId) #Types.BiomeType
 
 #Dungeon Master. Turns, world events, etc.
 signal dice_roll_created(dice_roll_dice_roll)
@@ -33,6 +34,8 @@ signal left_location()
 const LEFT_LOCATION = "left_location"
 signal new_location_reached(new_location)
 const NEW_LOCATION_REACHED = "new_location_reached"
+signal turn_animated()
+const TURN_ANIMATED = "turn_animated"
 signal turn_ended()
 const TURN_ENDED = "turn_ended"
 signal turn_started()

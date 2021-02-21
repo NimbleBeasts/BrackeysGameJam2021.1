@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Ui/TopBar/Bg_3x.png" type="Texture" id=2]
 [ext_resource path="res://Assets/MainView/backgrounds.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Ui/TopBar/Icons.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Ui/MapDummy3x.png" type="Texture" id=5]
+[ext_resource path="res://Assets/MainView/MapLeft.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Ui/Frame3x.png" type="Texture" id=6]
 [ext_resource path="res://Src/Menu/InGame/WaterLabel.gd" type="Script" id=7]
 [ext_resource path="res://Src/Menu/InGame/FaithLabel.gd" type="Script" id=8]
@@ -22,14 +22,7 @@
 [ext_resource path="res://Src/Menu/InGame/UnitLabel.gd" type="Script" id=20]
 [ext_resource path="res://Assets/Fonts/NormalFontSmall13.tres" type="DynamicFont" id=21]
 [ext_resource path="res://Assets/Ui/TopBar/CounterBg_3x_hover.png" type="Texture" id=22]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends TextureButton
-
-
-func _pressed():
-	Events.emit_signal(Events.TURN_ENDED)
-"
+[ext_resource path="res://Assets/MainView/steps.png" type="Texture" id=23]
 
 [node name="GameMenu" type="Control"]
 anchor_right = 1.0
@@ -54,16 +47,6 @@ texture = ExtResource( 3 )
 centered = false
 hframes = 4
 
-[node name="MapDummy" type="TextureRect" parent="."]
-margin_left = 258.0
-margin_top = 255.0
-margin_right = 693.0
-margin_bottom = 453.0
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Label" type="Label" parent="."]
 margin_left = 256.0
 margin_top = 240.0
@@ -85,6 +68,7 @@ __meta__ = {
 }
 
 [node name="ButtonMusic" type="Button" parent="."]
+visible = false
 margin_left = 384.0
 margin_top = 88.0
 margin_right = 480.0
@@ -95,6 +79,7 @@ __meta__ = {
 }
 
 [node name="ButtonSound" type="Button" parent="."]
+visible = false
 margin_left = 384.0
 margin_top = 112.0
 margin_right = 480.0
@@ -103,6 +88,30 @@ text = "ToggleSound"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Map" type="Node2D" parent="."]
+position = Vector2( 258, 255 )
+scale = Vector2( 3, 3 )
+
+[node name="Next" type="Sprite" parent="Map"]
+position = Vector2( 72.9997, 7.62939e-06 )
+texture = ExtResource( 23 )
+centered = false
+hframes = 4
+frame = 1
+region_rect = Rect2( 0, 0, 33, 36 )
+
+[node name="Current" type="Sprite" parent="Map"]
+position = Vector2( 15, 7.62939e-06 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 23 )
+centered = false
+hframes = 4
+
+[node name="Left" type="Sprite" parent="Map"]
+scale = Vector2( 1, 1 )
+texture = ExtResource( 5 )
+centered = false
 
 [node name="TopBar" type="Control" parent="."]
 anchor_right = 1.0
@@ -258,6 +267,9 @@ texture_normal = ExtResource( 17 )
 texture_pressed = ExtResource( 10 )
 texture_hover = ExtResource( 10 )
 texture_disabled = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="Menu/MoveButton"]
 anchor_right = 1.0
@@ -277,7 +289,6 @@ texture_normal = ExtResource( 16 )
 texture_pressed = ExtResource( 18 )
 texture_hover = ExtResource( 18 )
 texture_disabled = ExtResource( 12 )
-script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -336,6 +347,8 @@ __meta__ = {
 [connection signal="button_up" from="ButtonSound" to="." method="_on_ButtonSound_button_up"]
 [connection signal="button_up" from="TopBar/UnitButton" to="." method="_on_UnitButton_button_up"]
 [connection signal="button_up" from="Menu/ExpButton" to="." method="_on_ExpButton_button_up"]
+[connection signal="button_up" from="Menu/MoveButton" to="." method="_on_MoveButton_button_up"]
+[connection signal="button_up" from="Menu/TurnButton" to="." method="_on_TurnButton_button_up"]
 [connection signal="button_up" from="EventSpawnButton" to="." method="_on_EventSpawnButton_button_up"]
 [connection signal="button_up" from="SacrificeButton" to="." method="_on_SacrificeButton_button_up"]
 [connection signal="button_up" from="SacrificeButton2" to="." method="_on_SacrificeButton2_button_up"]

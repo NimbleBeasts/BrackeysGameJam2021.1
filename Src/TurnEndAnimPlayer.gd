@@ -5,9 +5,10 @@ func _ready():
 	$Sprite.frame = 0
 
 func _turn_ended():
+	get_parent().gameState.turn += 1
+	Events.emit_signal("play_sound", "daypassing")
 	play("fadeIn")
-	#TODO: zach please add the turn number here
-	$Label.set_text(TranslationServer.translate("FADE_DAY") + " " + str(0))
+	$Label.set_text(TranslationServer.translate("FADE_DAY") + " " + str(get_parent().gameState.turn))
 	
 
 func _on_TurnEndAnimPlayer_animation_finished(anim_name):
@@ -16,5 +17,7 @@ func _on_TurnEndAnimPlayer_animation_finished(anim_name):
 			play("turn")
 		"turn":
 			play("fadeOut")
-		"fadeOut":
+			Events.emit_signal(Events.TURN_ANIMATED)
 			Events.emit_signal(Events.TURN_STARTED)
+		"fadeOut":
+			pass

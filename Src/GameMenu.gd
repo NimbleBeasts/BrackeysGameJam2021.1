@@ -4,11 +4,18 @@ onready var GameInstance = get_parent()
 
 func _ready():
 	$Label.set_text("Turn: " + str(GameInstance.gameState.turn))
+	
+	Events.connect("move_update_gfx", self, "updateBiome")
 
 
 func _unhandled_key_input(event):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		Events.emit_signal("menu_back")
+
+func updateBiome(curId, nextId):
+	$Map/Next.frame = nextId
+	$Map/Current.frame = curId
+	$Scenery.frame = curId
 
 
 func updateResourceGui(resourceType, val): #Types.ResourceType
@@ -21,10 +28,6 @@ func updateResourceGui(resourceType, val): #Types.ResourceType
 			$TopBar/Faith/Label.set_text(str(val))
 		_:
 			print("GameInstance.gd: Invalid Resource Type")
-
-func endTurn():
-	get_parent().gameState.turn += 1
-	$Label.set_text("Turn: " + str(GameInstance.gameState.turn))
 
 
 ###############################################################################
@@ -52,12 +55,14 @@ func _on_ExpButton_button_up():
 
 
 func _on_MoveButton_button_up():
-	pass # Replace with function body.
+	Events.emit_signal("play_sound", "menu_click")
+	Events.emit_signal("window_show", Types.WindowType.Move, null)
 
 
 func _on_TurnButton_button_up():
-	endTurn()
-
+	Events.emit_signal("play_sound", "menu_click")
+	Events.emit_signal(Events.TURN_ENDED)
+	
 
 func _on_EventSpawnButton_button_up():
 	#TODO: remove

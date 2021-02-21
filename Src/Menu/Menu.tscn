@@ -40,10 +40,10 @@ __meta__ = {
 }
 
 [node name="ButtonLanguage" type="TextureButton" parent="Main"]
-margin_left = 624.0
-margin_top = 32.0
-margin_right = 664.0
-margin_bottom = 56.0
+margin_left = 616.0
+margin_top = 424.0
+margin_right = 656.0
+margin_bottom = 448.0
 texture_hover = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -58,29 +58,17 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="ButtonContinue" type="TextureButton" parent="Main"]
+[node name="ButtonSettings" type="TextureButton" parent="Main"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -344.0
-margin_top = 312.0
-margin_right = -216.0
-margin_bottom = 336.0
-texture_normal = ExtResource( 6 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 4 )
-texture_disabled = ExtResource( 3 )
-
-[node name="Text" type="Label" parent="Main/ButtonContinue"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 5.0
-margin_right = -11.0
-margin_bottom = -3.0
-mouse_filter = 1
-text = "MENU_CONTINUE"
+margin_left = 304.0
+margin_top = 416.0
+margin_right = 344.0
+margin_bottom = 456.0
+texture_normal = ExtResource( 11 )
+texture_hover = ExtResource( 10 )
 __meta__ = {
-"_edit_lock_": true
+"_edit_use_anchors_": false
 }
 
 [node name="ButtonPlay" type="TextureButton" parent="Main"]
@@ -165,19 +153,6 @@ mouse_filter = 1
 text = "MENU_EXIT"
 __meta__ = {
 "_edit_lock_": true
-}
-
-[node name="ButtonSettings" type="TextureButton" parent="Main"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = 312.0
-margin_top = 24.0
-margin_right = 352.0
-margin_bottom = 64.0
-texture_normal = ExtResource( 11 )
-texture_hover = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
 }
 
 [node name="Settings" type="Control" parent="."]
@@ -458,11 +433,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="button_up" from="Main/ButtonLanguage" to="." method="_on_ButtonLanguage_button_up"]
-[connection signal="button_up" from="Main/ButtonContinue" to="." method="_on_ButtonPlay_button_up"]
+[connection signal="button_up" from="Main/ButtonSettings" to="." method="_on_ButtonSettings_button_up"]
 [connection signal="button_up" from="Main/ButtonPlay" to="." method="_on_ButtonPlay_button_up"]
 [connection signal="button_up" from="Main/ButtonCredits" to="." method="_on_ButtonCredits_button_up"]
 [connection signal="button_up" from="Main/ButtonExit" to="." method="_on_ButtonExit_button_up"]
-[connection signal="button_up" from="Main/ButtonSettings" to="." method="_on_ButtonSettings_button_up"]
 [connection signal="button_up" from="Settings/ButtonSound" to="." method="_on_ButtonSound_button_up"]
 [connection signal="button_up" from="Settings/ButtonMusic" to="." method="_on_ButtonMusic_button_up"]
 [connection signal="button_up" from="Settings/ButtonBack" to="." method="_on_ButtonBack_button_up"]

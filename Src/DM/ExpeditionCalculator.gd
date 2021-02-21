@@ -89,9 +89,22 @@ func project_cost(unit_count : int) -> Dictionary :
 	return cost
 
 func project_reward() -> Dictionary :
-	var rewards : Dictionary = {
-		"faith" : reward_faith[reward_faith.size() - 1],
-		"food" : reward_food[reward_food.size() - 1],
-		"water" : reward_water[reward_water.size() - 1]
-	}
+	var rewards : Dictionary = {}
+	
+	#To Zach's denfense, its not Zach's code
+	#His code was beautiful but cursed by an unchecked -1 index bug ;(
+	if reward_faith.size() - 1 < 0:
+		rewards["faith"] = 0
+	else:
+		rewards["faith"] = reward_faith[reward_faith.size() - 1]
+	
+	if reward_water.size() - 1 < 0:
+		rewards["water"] = 0
+	else:
+		rewards["water"] = reward_water[reward_water.size() - 1]
+	
+	if reward_food.size() - 1 < 0:
+		rewards["food"] = 0
+	else:
+		rewards["food"] = reward_food[reward_food.size() - 1]
 	return rewards
