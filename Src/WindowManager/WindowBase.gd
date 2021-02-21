@@ -30,7 +30,7 @@ func setActive(value = true):
 		$Bg.texture = ninePatchTextures[1]
 
 func focusWindow():
-	if can_move: emit_signal("focus_window", self)
+	emit_signal("focus_window", self)
 
 func _on_WindowBase_gui_input(event):
 	if event is InputEventMouseButton:
@@ -39,6 +39,8 @@ func _on_WindowBase_gui_input(event):
 
 func _on_Titlebar_gui_input(event):
 	#TODO: check if window is within the viewport rect + safety margin
+	if not can_move: return
+	
 	if event is InputEventMouseButton:
 		if event.pressed:
 			dragPosition = get_global_mouse_position() - rect_global_position
