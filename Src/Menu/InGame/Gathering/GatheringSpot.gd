@@ -21,18 +21,23 @@ func _init(location : Vector2 = Vector2(-1,-1), new_spot_type : int = -1) :
 	#Temporary modulation to show what type we are.
 	if spot_type == Types.ExpeditionSpots.LAKES : #LAKE
 		texture_normal = load(PATH+biome+"LakeNormal-export.png")
+		texture_hover = load(PATH+biome+"LakeHover.png")
 		type_name = "lakes"
 	elif spot_type == Types.ExpeditionSpots.HUNTING : #HUNTING
 		texture_normal = load(PATH+biome+"HuntNormal-export.png")
+		texture_hover = load(PATH+biome+"HuntHover.png")
 		type_name = "hunting"
 	elif spot_type == Types.ExpeditionSpots.RUINS : #RUINS
 		texture_normal = load(PATH+biome+"RuinsNormal-export.png")
+		texture_hover = load(PATH+biome+"RuinsHover.png")
 		type_name = "ruins"
 	elif spot_type == Types.ExpeditionSpots.BERRIES : #BERRIES
 		texture_normal = load(PATH+biome+"BerriesNormal-export.png")
+		texture_hover = load(PATH+biome+"BerriesHover.png")
 		type_name = "berries"
 	elif spot_type == Types.ExpeditionSpots.CREEKS : #Creek :
 		texture_normal = load(PATH+biome+"CreekNormal-export.png")
+		texture_hover = load(PATH+biome+"CreekHover.png")
 		type_name = "creeks"
 	elif spot_type == Types.ExpeditionSpots.HOME_BASE :
 		texture_normal = load(PATH+biome+"HomeNormal-export.png")
