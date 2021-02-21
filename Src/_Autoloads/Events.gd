@@ -24,6 +24,8 @@ signal event_choice(string_choice) #Types.EventTypes
 
 signal move_next()
 signal move_update_gfx(curId, nextId) #Types.BiomeType
+signal music_play_title_song()
+
 
 #Dungeon Master. Turns, world events, etc.
 signal dice_roll_created(dice_roll_dice_roll)
