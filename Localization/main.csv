@@ -13,68 +13,68 @@ CHAR_TITLE_SACRIFICE,"Sacrifice People","Sacrifice People","Menschenopfer"
 CHAR_TITLE_OVERVIEW,"Tribe Overview","Tribe Overview","Stammesübersicht"
 EXP_TITLE,"Expedition Route","Expedition Route","Expedition Route"
 MOVE_TITLE,"Move Camp","Move Camp","Weiterziehen"
-UNIT_PRINCESS_DESC,"It's you, the princess","C'est vous, la princesse",
-UNIT_SWORDMAN_DESC,"A mighty swordsman","Un épéiste habile",
-UNIT_CHIEFTAN_DESC,"A former state agent","Un ancien de l'administration",
-UNIT_PHILOSOPHER_DESC,"The philosopher","Le philosophe",
-UNIT_FARMER_DESC,"An humble farmer","Un humble fermier",
-UNIT_ORACLE_DESC,"The oracle","L'oracle",
-UNIT_TRAVELLER_DESC,"An experienced traveller","Un voyageur expérimenté",
-UNIT_MERCHANT_DESC,"A merchant","Une marchande",
-UNIT_HUSSARD_DESC,"An elite soldier","Une femme-soldat redoutable",
-UNIT_PRIEST_DESC,"A dedicated priest","Un prêtre motivé",
+UNIT_PRINCESS_DESC,"It's you, the princess","C'est vous, la princesse","Dies seid ihr, eure Hoheit"
+UNIT_SWORDMAN_DESC,"A mighty swordsman","Un épéiste habile","Ein mächtiger Krieger"
+UNIT_CHIEFTAN_DESC,"A former state agent","Un ancien de l'administration","Ein Ratsmitglied"
+UNIT_PHILOSOPHER_DESC,"The philosopher","Le philosophe","Ein Philosoph"
+UNIT_FARMER_DESC,"An humble farmer","Un humble fermier","Ein Farmer"
+UNIT_ORACLE_DESC,"The oracle","L'oracle","Ein Orakel"
+UNIT_TRAVELLER_DESC,"An experienced traveller","Un voyageur expérimenté","Ein erfahrener Reisender"
+UNIT_MERCHANT_DESC,"A merchant","Une marchande","Ein Händler"
+UNIT_HUSSARD_DESC,"An elite soldier","Une femme-soldat redoutable","Ein Elite-Krieger"
+UNIT_PRIEST_DESC,"A dedicated priest","Un prêtre motivé","Ein Priester"
 FADE_DAY,Day,Jour,Tag
 PLAY,"play","jouer","spielen"
 NEXT,"next","suivant","weiter"
 ACCEPT,"accept","accepter","akzeptieren"
 REJECT,"reject","rejeter","ablehnen"
-BACK,"back","retour",
-OFFOOD,food ration(s),ration(s) de nourriture,
-OFWATER,water ration(s),ration(s) d'eau,
-OFFAITH,point(s) of faith,point(s) de confiance,
-YOULOSTRES,You just lost,Vous venez de perdre,
-YOUGAINEDRES,You just got,Vous venez d'obtenir,
-DEADS,These men of yours just died:,Parmi vos hommes il y a de nouveau morts :,
-ARRIVALS,men just joined your camp.,hommes viennent de vous rejoindre.,
-ARRIVALONE,just joined your camp,vient de vous rejoindre.,
-RETURNING,just came back from an expedition,vient de revenir d'expédition.,
-GOINGOUT,just went out on an expedition,viennent de partir en expédition,
-LORESTART,"You are the Princess of Trija in exile. You and your last followers are on the run as the bloody armies of Baron Koryth chase you. Survive, advance and recruit and take advantage of new recruits, or die a traitor.","Vous êtes la princesse de Trija en exil. Vos derniers adeptes et vous êtes en fuite alors que les armées sanglantes du baron Koryth vous pourchassent. Survivez, avancez et recrutez et tirez parti de nouvelles recrues, ou mourez en traître.",
-TUTORIAL,Tutorial,Tutoriel,
-TUT0,"Resources such as food, water and faith are spent everyday by your crew and after some decisions. If they get to zero, you won't survive.","Les ressources telles que l'eau, la nourriture et la confiance sont dépensées tous les jours par votre campement et lors de vos décisions. S'ils tombent à zero, vous n'y survivrez pas.",
+BACK,"back","retour","zurück"
+OFFOOD,food ration(s),ration(s) de nourriture,Essensration(en)
+OFWATER,water ration(s),ration(s) d'eau,Wasserration(en)
+OFFAITH,point(s) of faith,point(s) de confiance,Glaubenspunkt(e)
+YOULOSTRES,You just lost,Vous venez de perdre,Ihr hab verloren:
+YOUGAINEDRES,You just got,Vous venez d'obtenir,Ihr habt erhalten:
+DEADS,These man of yours just died:,Parmi vos hommes il y a de nouveau morts :,Folgende Personen sind gestorben:
+ARRIVALS,man just joined your camp.,hommes viennent de vous rejoindre.,Menschen sind erschienen.
+ARRIVALONE,just joined your camp,vient de vous rejoindre.,ist dem Stamm beigetreten.
+RETURNING,just came back from an expedition,vient de revenir d'expédition.,kamen von einer Expedition zurück.
+GOINGOUT,just went out on an expedition,viennent de partir en expédition,gehen auf eine Expedition
+LORESTART,"You are the Princess of Trija in exile. You and your last followers are on the run as the bloody armies of Baron Koryth chase you. Survive, advance and recruit and take advantage of new recruits, or die a traitor.","Vous êtes la princesse de Trija en exil. Vos derniers adeptes et vous êtes en fuite alors que les armées sanglantes du baron Koryth vous pourchassent. Survivez, avancez et recrutez et tirez parti de nouvelles recrues, ou mourez en traître.","Sie sind Prinzessin von Trija im Exil. Sie und euer Stamm seid auf der Flucht vor der blutdürsternen Armee von Baron Koryth der euch verfolgt. Überlebe und erhalte stärke durch neue Rekruiten"
+TUTORIAL,Tutorial,Tutoriel,Tutorial
+TUT0,"Resources such as food, water and faith are spent everyday by your crew and after some decisions. If they get to zero, you won't survive.","Les ressources telles que l'eau, la nourriture et la confiance sont dépensées tous les jours par votre campement et lors de vos décisions. S'ils tombent à zero, vous n'y survivrez pas.","Rohstoffe wie Nahrung, Wasser und Glaube werden jeden Tag von deinem Stamm verbraucht. Wenn diese auf Null gehen habt ihr verloren"
 TUT1,"Resources such as food, water and faith can be obtained after expedition if at least 1 man comes back alive from one.","Les resources telles que la nourriture, l'eau et la confiance peuvent être obtenues en effectuant des expéditions, à condition qu'un homme au moins en revienne en vie.",
-TUT2,"Expeditions last many turns and involve one or many men. But the more people you send, the better they survive. Some types of men survive to some expeditions better than the others. Try to guess them.","Les expéditions durent plusieurs jours et impliquent une équipe d'un à plusieurs hommes. Plus vous en envoyez, plus ils auront de chances d'y survivre. Certains hommes sont meilleurs pour certaines expéditions que d'autres, essayez de les deviner.",
-EXPEDITION,"Start an expedition","Lancer une expédition",
-MOVE,"Migrate further","Migrer plus loin",
-ENDTURN,"Wait for tomorrow","Attendre demain",
-EVENT_SWORDBREAD_TITLE,"The sword and the bread","Le pain et le glaive",
-EVENT_SWORDBREAD_DESC,"As the rising sun barely begins to dazzle the camp like the rage of the Soul Eater, your men notice a procession of soldiers watching them from a hill. Their paraphernalia reminds you of Ketchak handicrafts. Fear not, these people may appear hostile, but they are also known to be friendly as long as you are safe. One of them approaches firmly, holding a spear in his left hand and swinging it over his shoulders. Attached at both ends are a sword on one side and a loaf of bread on the other. Seeing you approach he cheers in Ketchak tongue: «Hear, Princess of a faraway land! In the name of the friendship between our two peoples, I ask you to declare your intentions: War or comradeship? »","Alors que soleil levant commence à peine à éblouir le campement tel la rage du mange-Âme, vos hommes remarquent un cortège de soldats les observant depuis une colline. Leur attirail vous évoque l'artisanat Ketchak. Vous n'avez crainte, ce peuple peut paraître hostile, mais il est aussi connu pour s'avérer amical tant que vous ne présentez aucun danger. L'un d'entre eux s'approche fermement, tenant dans sa main gauche une lance qu'il maintient en balancier sur ses épaules. Attachés aux deux extrémités, sont d'un côté un glaive et de l'autre un pain. Vous voyant approcher il s'acclame en langue Ketchak :  «Oyez Princesse d'une contrée lointaine ! Au nom de l'amitié entre nos deux peuples, je vous prie de déclarer vos intentions : La guerre ou la camaraderie ? »",
-EVENT_SWORDBREAD_YES,"Taking the bread","Prendre le pain",
-EVENT_SWORDBREAD_NO,"Take the sword","Prendre l'épée",
-EVENT_SWORDBREAD_NO_PROMPT,"Choose those who will go to fight","Choissez ceux qui iront se battre",
-EVENT_JOINING_TITLE,"Newcomers","Nouveaux arrivants",
-EVENT_JOINING_DESC,"In the middle of the night, a swarming mass of poor people appears. No sooner do they perceive you than they raise the scarlet Trija banner. Survivors of the massacre! They approach you as supplicants and lend you allegiance.","Au beau milieu de la nuit, une masse grouillante pauvres gens apparaît. À peine vous apperçoivent-ils qu'ils font surgir l'étendard écarlate de Trija. Des rescapés du massacre ! Suppliants, ils s'approchent et vous prêtent allégiance.",
-EVENT_JOINING_YES,"recruit","recruter",
-EVENT_JOINING_NO_DICE_PROMPT_OBJECTIVE,"reject newcomers","les faire partir",
-EVENT_EXPEDITIONEND_TITLE,"End of expedition","Fin d'expédition",
-EVENT_EXPEDITIONEND_DESC,"Several days after leaving on an expedition, your men should return at any moment. You decide to wait all day, but if they are too late, then they are probably dead. Will they come back decorated with a thousand treasures, or will their fate be sealed by your impatience?","Plusieurs jours après être partis en expédition, vos hommes devraient revenir d'un instant à l'autre. Vous décidez de patienter toute la journée, mais s'ils tardent trop, alors c'est qu'ils sont surement morts. Reviendront-ils décorés de milles trésors, ou leur destin sera-t-il scellé par votre impatience ?",
-EVENT_EXPEDITIONEND_SUCCESS_BUTTON,"Here they come!","Ils arrivent !",
-EVENT_EXPEDITIONEND_FAILURE_BUTTON,"It is too late.","Il est trop tard.",
-EVENT_EXPEDITIONEND_SUCCESS_RESOURCES,"Your men brought you supplies.","Vos hommes vous ont ramené du ravitaillement.",
-EVENT_EXPEDITIONEND_CHARACTERS,"You check who came back from the expedition ... and who died there.","Vous vérifiez qui est revenu d'expédition ... et qui y a laissé la vie.",
-EVENT_ENEMYAPPROACHING_TITLE,"Enemy approaching","Ennemi en approche",
-EVENT_ENEMYAPPROACHING_DESC,"Your team of scouts share with you their concerns: the enemy is getting closer and closer. Yesterday they were at $previous_enemy_distance, but today they are at $enemy_distance.","Votre équipe d'éclaireurs vous font part de leurs inquiétudes : l'ennemi est proche, de plus en plus proche. Hier ils étaient à $previous_enemy_distance, mais aujourd'hui ils sont à $enemy_distance.",
-MINIGAME_DICE_PROMPT,"Roll $win-min-score or more to $objective","Faites $win-min-score ou plus pour $objective",
-EVENT_MOVINGEXPFAIL_TITLE,"Abandonned","Abandonnés",
-EVENT_MOVINGEXPFAIL_DESC,"By advancing the camp you managed to save yourself at the last minute. But at what cost? All the men you sent on the expedition do not seem to be coming back. They probably got lost and were massacred where they were.","En avançant le campement vous avez réussi à vous sauver à la dernière minute. Mais à quel prix ? Tous les hommes que vous avez envoyé en expédition ne semblent pas revenir. Ils se sont sûrement perdus et fait massacrer sur place.",
-EVENT_GOWATERFOOD_TITLE,"Starvation","Famine",
-EVENT_GOWATERFOOD_DESC,"Without water and food, the law of the desert has sealed your fate and that of your men. Their loyalty led them to leave you the last rations of water and food.","Sans eau et sans nourriture, la loi du désert a scellé votre destin et celui de vos hommes. Leur loyauté les a poussé à vous laisser les dernières rations d'eau et de nourriture.",
-EVENT_PAUSEDAY_TITLE,Resting day,Jour de repos,
-EVENT_PAUSEDAY_DESC,"Your men are exhausted, they offer to take a day's break. You have to move forward, but if you refuse, you risk riots soon. What do you do?","Vos hommes sont épuisés, ils proposent d'effectuer une journée de pause. Il faut avancer, mais si vous refusez, vous risquez des émeutes bientôt. Que faites-vous ?",
-EVENT_PAUSEDAY_YES,Accept,Accepter,
-EVENT_PAUSEDAY_NO,Refuse,Refuser,
-GAME_OVER_UNITS,"There is nothing left. Nothingness observes you but at the same time you are no longer there. All your men are dead, massacred, hungry, thirsty, injured. So the legacy of Trija is over.","Il n'y a plus rien. Le néant vous observe mais en même temps vous n'êtes plus là. Tous vos hommes sont morts, massacrés, affamés, assoiffés, accidentés. C'en est donc finit de l'héritage de Trija.",
-GAME_OVER_FOOD,"Without water and food, the law of the desert has sealed your fate and that of your men. Their loyalty led them to leave you the last rations of water and food.","Sans eau et sans nourriture, la loi du désert a scellé votre destin et celui de vos hommes. Leur loyauté les a poussé à vous laisser les dernières rations d'eau et de nourriture.",
-GAME_OVER_WATER,"Without water and food, the law of the desert has sealed your fate and that of your men. Their loyalty led them to leave you the last rations of water and food.","Sans eau et sans nourriture, la loi du désert a scellé votre destin et celui de vos hommes. Leur loyauté les a poussé à vous laisser les dernières rations d'eau et de nourriture.",
-GAME_OVER_FAITH,"Complaints, riots, desertion. These are the consequences of your poor management of the situation. You will forever be known as the traitor princess who abandoned her loyalists.","Plaintes, émeutes, désertion. Telles sont les conséquences de votre gestion lacunaire de la situation. Vous serez à jamais reconnu comme la princesse traitresse ayant abandonné ses loyaux.",
-GAME_OVER,Game Over,Vous êtes morts,
+TUT2,"Expeditions last many turns and involve one or many men. But the more people you send, the better they survive. Some types of men survive to some expeditions better than the others. Try to guess them.","Les expéditions durent plusieurs jours et impliquent une équipe d'un à plusieurs hommes. Plus vous en envoyez, plus ils auront de chances d'y survivre. Certains hommes sont meilleurs pour certaines expéditions que d'autres, essayez de les deviner.","Expeditionen können mehrere Tage andauern und benötigen eine Gruppe. Aber je mehr Leute du aussendest umso besser sind die Überlebenschancen. Manche Klassen sind besser für bestimmte Biome geeingnet als andere.
+EXPEDITION,"Start an expedition","Lancer une expédition","Expeditionsstart"
+MOVE,"Migrate further","Migrer plus loin","Weiterziehen"
+ENDTURN,"Wait for tomorrow","Attendre demain","Schlafen gehen"
+EVENT_SWORDBREAD_TITLE,"The sword and the bread","Le pain et le glaive","Das Schwert und das Brot"
+EVENT_SWORDBREAD_DESC,"As the rising sun barely begins to dazzle the camp like the rage of the Soul Eater, your men notice a procession of soldiers watching them from a hill. Their paraphernalia reminds you of Ketchak handicrafts. Fear not, these people may appear hostile, but they are also known to be friendly as long as you are safe. One of them approaches firmly, holding a spear in his left hand and swinging it over his shoulders. Attached at both ends are a sword on one side and a loaf of bread on the other. Seeing you approach he cheers in Ketchak tongue: «Hear, Princess of a faraway land! In the name of the friendship between our two peoples, I ask you to declare your intentions: War or comradeship? »","Alors que soleil levant commence à peine à éblouir le campement tel la rage du mange-Âme, vos hommes remarquent un cortège de soldats les observant depuis une colline. Leur attirail vous évoque l'artisanat Ketchak. Vous n'avez crainte, ce peuple peut paraître hostile, mais il est aussi connu pour s'avérer amical tant que vous ne présentez aucun danger. L'un d'entre eux s'approche fermement, tenant dans sa main gauche une lance qu'il maintient en balancier sur ses épaules. Attachés aux deux extrémités, sont d'un côté un glaive et de l'autre un pain. Vous voyant approcher il s'acclame en langue Ketchak :  «Oyez Princesse d'une contrée lointaine ! Au nom de l'amitié entre nos deux peuples, je vous prie de déclarer vos intentions : La guerre ou la camaraderie ? »","Als die aufgehende Sonne gerade beginnt, das Lager zu blenden wie die Wut des Seelenfressers, bemerken Ihre Männer eine Prozession von Soldaten, die sie von einem Hügel aus beobachten. Ihre Utensilien erinnern an die Handwerkskunst der Ketchak. Keine Angst, diese Leute mögen feindselig erscheinen, aber sie sind auch dafür bekannt, dass sie freundlich sind, solange Sie in Sicherheit sind. Einer von ihnen kommt zielstrebig auf Sie zu, hält einen Speer in der linken Hand und schwingt ihn über seine Schultern. An beiden Enden sind ein Schwert auf der einen und ein Laib Brot auf der anderen Seite befestigt. Als er Sie näherkommen sieht, jubelt er in der Ketchaksprache: «Höre, Prinzessin aus einem fernen Land! Im Namen der Freundschaft zwischen unseren beiden Völkern bitte ich dich, deine Absichten zu erklären: Krieg oder Kameradschaft?»"
+EVENT_SWORDBREAD_YES,"Taking the bread","Prendre le pain","Nimm das Brot"
+EVENT_SWORDBREAD_NO,"Take the sword","Prendre l'épée","Nimm das Schwert"
+EVENT_SWORDBREAD_NO_PROMPT,"Choose those who will go to fight","Choissez ceux qui iront se battre","Wähle wer kämpfen soll"
+EVENT_JOINING_TITLE,"Newcomers","Nouveaux arrivants","Neuankömmlinge"
+EVENT_JOINING_DESC,"In the middle of the night, a swarming mass of poor people appears. No sooner do they perceive you than they raise the scarlet Trija banner. Survivors of the massacre! They approach you as supplicants and lend you allegiance.","Au beau milieu de la nuit, une masse grouillante pauvres gens apparaît. À peine vous apperçoivent-ils qu'ils font surgir l'étendard écarlate de Trija. Des rescapés du massacre ! Suppliants, ils s'approchent et vous prêtent allégiance.","Mitten in der Nacht erscheint eine wimmelnde Masse armer Menschen. Kaum haben sie dich wahrgenommen, erheben sie das scharlachrote Trija-Banner. Überlebende des Massakers! Sie nähern sich dir als Bittsteller und geloben dir Gefolgschaft."
+EVENT_JOINING_YES,"recruit","recruter","Rekrutieren"
+EVENT_JOINING_NO_DICE_PROMPT_OBJECTIVE,"reject newcomers","les faire partir","Ablehnen"
+EVENT_EXPEDITIONEND_TITLE,"End of expedition","Fin d'expédition","Ende der Expedition"
+EVENT_EXPEDITIONEND_DESC,"Several days after leaving on an expedition, your men should return at any moment. You decide to wait all day, but if they are too late, then they are probably dead. Will they come back decorated with a thousand treasures, or will their fate be sealed by your impatience?","Plusieurs jours après être partis en expédition, vos hommes devraient revenir d'un instant à l'autre. Vous décidez de patienter toute la journée, mais s'ils tardent trop, alors c'est qu'ils sont surement morts. Reviendront-ils décorés de milles trésors, ou leur destin sera-t-il scellé par votre impatience ?","Mehrere Tage nach dem Aufbruch zu einer Expedition sollten Ihre Männer jeden Moment zurückkehren. Sie beschließen, den ganzen Tag zu warten, aber wenn sie zu spät kommen, dann sind sie wahrscheinlich tot. Werden sie mit tausend Schätzen geschmückt zurückkommen, oder wird ihr Schicksal durch Ihre Ungeduld besiegelt sein?"
+EVENT_EXPEDITIONEND_SUCCESS_BUTTON,"Here they come!","Ils arrivent !","Hier kommen sie"
+EVENT_EXPEDITIONEND_FAILURE_BUTTON,"It is too late.","Il est trop tard.","Es ist zu spät"
+EVENT_EXPEDITIONEND_SUCCESS_RESOURCES,"Your men brought you supplies.","Vos hommes vous ont ramené du ravitaillement.","Eure Truppe hat euch Vorräte gebracht"
+EVENT_EXPEDITIONEND_CHARACTERS,"You check who came back from the expedition ... and who died there.","Vous vérifiez qui est revenu d'expédition ... et qui y a laissé la vie.","Ihr prüft wer zurück kam ... und wer dort starb."
+EVENT_ENEMYAPPROACHING_TITLE,"Enemy approaching","Ennemi en approche","Der Feind rückt näher"
+EVENT_ENEMYAPPROACHING_DESC,"Your team of scouts share with you their concerns: the enemy is getting closer and closer. Yesterday they were at $previous_enemy_distance, but today they are at $enemy_distance.","Votre équipe d'éclaireurs vous font part de leurs inquiétudes : l'ennemi est proche, de plus en plus proche. Hier ils étaient à $previous_enemy_distance, mais aujourd'hui ils sont à $enemy_distance.","Ihr Spähtrupp teilt Ihnen seine Bedenken mit: Der Feind kommt immer näher. Gestern waren sie auf $previous_enemy_distance, aber heute sind sie auf $enemy_distance."
+MINIGAME_DICE_PROMPT,"Roll $win-min-score or more to $objective","Faites $win-min-score ou plus pour $objective","Würfel $win-min-score oder mehr um $objective"
+EVENT_MOVINGEXPFAIL_TITLE,"Abandonned","Abandonnés","Fehlgeschlagen"
+EVENT_MOVINGEXPFAIL_DESC,"By advancing the camp you managed to save yourself at the last minute. But at what cost? All the men you sent on the expedition do not seem to be coming back. They probably got lost and were massacred where they were.","En avançant le campement vous avez réussi à vous sauver à la dernière minute. Mais à quel prix ? Tous les hommes que vous avez envoyé en expédition ne semblent pas revenir. Ils se sont sûrement perdus et fait massacrer sur place.","Durch das Vorrücken des Lagers haben Sie sich in letzter Minute gerettet. Aber zu welchem Preis? Alle Männer, die Sie auf die Expedition geschickt haben, scheinen nicht zurückzukommen. Wahrscheinlich haben sie sich verlaufen und wurden dort, wo sie waren, massakriert."
+EVENT_GOWATERFOOD_TITLE,"Starvation","Famine","Verhungern"
+EVENT_GOWATERFOOD_DESC,"Without water and food, the law of the desert has sealed your fate and that of your men. Their loyalty led them to leave you the last rations of water and food.","Sans eau et sans nourriture, la loi du désert a scellé votre destin et celui de vos hommes. Leur loyauté les a poussé à vous laisser les dernières rations d'eau et de nourriture.","Ohne Wasser und Nahrung hat das Gesetz der Wüste Ihr Schicksal und das Ihrer Männer besiegelt. Ihre Loyalität hat sie dazu gebracht, Ihnen die letzten Rationen an Wasser und Nahrung zu überlassen."
+EVENT_PAUSEDAY_TITLE,Resting day,Jour de repos,Ruhetag
+EVENT_PAUSEDAY_DESC,"Your men are exhausted, they offer to take a day's break. You have to move forward, but if you refuse, you risk riots soon. What do you do?","Vos hommes sont épuisés, ils proposent d'effectuer une journée de pause. Il faut avancer, mais si vous refusez, vous risquez des émeutes bientôt. Que faites-vous ?","Ihre Männer sind erschöpft, sie bieten an, einen Tag Pause zu machen. Sie müssen weitermachen, aber wenn Sie ablehnen, riskieren Sie bald Unruhen. Was sollen Sie tun?"
+EVENT_PAUSEDAY_YES,Accept,Accepter,Akzeptieren
+EVENT_PAUSEDAY_NO,Refuse,Refuser,Ablehnen
+GAME_OVER_UNITS,"There is nothing left. Nothingness observes you but at the same time you are no longer there. All your men are dead, massacred, hungry, thirsty, injured. So the legacy of Trija is over.","Il n'y a plus rien. Le néant vous observe mais en même temps vous n'êtes plus là. Tous vos hommes sont morts, massacrés, affamés, assoiffés, accidentés. C'en est donc finit de l'héritage de Trija.","Es ist nichts mehr da. Das Nichts beobachtet Sie, aber gleichzeitig sind Sie nicht mehr da. Alle deine Männer sind tot, massakriert, hungrig, durstig, verletzt. Das Vermächtnis von Trija ist also vorbei."
+GAME_OVER_FOOD,"Without water and food, the law of the desert has sealed your fate and that of your men. Their loyalty led them to leave you the last rations of water and food.","Sans eau et sans nourriture, la loi du désert a scellé votre destin et celui de vos hommes. Leur loyauté les a poussé à vous laisser les dernières rations d'eau et de nourriture.","Ohne Wasser und Nahrung hat das Gesetz der Wüste Ihr Schicksal und das Ihrer Männer besiegelt. Ihre Loyalität hat sie dazu gebracht, Ihnen die letzten Rationen an Wasser und Nahrung zu überlassen."
+GAME_OVER_WATER,"Without water and food, the law of the desert has sealed your fate and that of your men. Their loyalty led them to leave you the last rations of water and food.","Sans eau et sans nourriture, la loi du désert a scellé votre destin et celui de vos hommes. Leur loyauté les a poussé à vous laisser les dernières rations d'eau et de nourriture.","Ohne Wasser und Nahrung hat das Gesetz der Wüste Ihr Schicksal und das Ihrer Männer besiegelt. Ihre Loyalität hat sie dazu gebracht, Ihnen die letzten Rationen an Wasser und Nahrung zu überlassen."
+GAME_OVER_FAITH,"Complaints, riots, desertion. These are the consequences of your poor management of the situation. You will forever be known as the traitor princess who abandoned her loyalists.","Plaintes, émeutes, désertion. Telles sont les conséquences de votre gestion lacunaire de la situation. Vous serez à jamais reconnu comme la princesse traitresse ayant abandonné ses loyaux.","Beschwerden, Unruhen, Fahnenflucht. Das sind die Konsequenzen Eures schlechten Managements der Situation. Ihr werdet für immer als die Verräterprinzessin bekannt sein, die ihre Loyalisten im Stich gelassen hat."
+GAME_OVER,Game Over,Vous êtes morts,Game Over
