@@ -52,9 +52,9 @@ func buttonAction(action):
 	match action:
 		# Back to Route Selection
 		ButtonActionTypes.BackToExpedition:
-			Events.emit_signal(Events.WINDOW_SHOW, Types.WindowType.Expedition)
-			Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
+			Events.emit_signal(Events.EXPEDITION_BACKED)
 			Events.emit_signal("play_sound", "menu_click")
+			get_parent().queue_free()
 
 		# Expedition Start
 		ButtonActionTypes.StartExpedition:
@@ -64,6 +64,7 @@ func buttonAction(action):
 				Events.emit_signal("play_sound", "menu_click_positive")
 				ug.set_temp_slotted_units(ug.get_units_by_ids(list))
 				Events.emit_signal(Events.EXPEDITION_CONFIRMED)
+				Events.emit_signal(Events.EXPEDITION_AFTER_CONFIRMED)
 				get_parent().queue_free()
 			#TODO: use list data and start expedition
 

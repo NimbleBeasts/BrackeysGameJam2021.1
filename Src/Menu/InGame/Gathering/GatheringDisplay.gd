@@ -13,7 +13,11 @@ func _update_point(_no_use_arg = null) -> void :
 	emit_signal("day_cost_update", val["day_cost"])
 	$Label2.text = TEXT % [val["food"],val["water"],val["day_cost"], rew["faith"], rew["food"], rew["water"]]
 
+func clear() -> void :
+	show()
+	$Label2.text = TEXT % ["","","","","",""]
 
 func _ready():
+	Events.connect(Events.EXPEDITION_AFTER_CONFIRMED, self, "clear")
 	Events.connect(Events.GATHER_POINT_ADDED, self, "_update_point")	
 	Events.connect(Events.GATHER_POINT_REMOVED, self, "_update_point")

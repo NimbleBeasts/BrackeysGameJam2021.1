@@ -42,6 +42,10 @@ signal turn_started()
 const TURN_STARTED = "turn_started"
 
 #Gathering
+signal expedition_after_confirmed()
+const EXPEDITION_AFTER_CONFIRMED = "expedition_after_confirmed"
+signal expedition_backed()
+const EXPEDITION_BACKED = "expedition_backed"
 signal expedition_cancelled()
 const EXPEDITION_CANCELLED = "expedition_cancelled"
 signal expedition_confirmed()
