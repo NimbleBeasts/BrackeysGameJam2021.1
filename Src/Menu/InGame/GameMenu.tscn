@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Src/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ui/TopBar/Bg_3x.png" type="Texture" id=2]
@@ -23,6 +23,8 @@
 [ext_resource path="res://Assets/Fonts/NormalFontSmall13.tres" type="DynamicFont" id=21]
 [ext_resource path="res://Assets/Ui/TopBar/CounterBg_3x_hover.png" type="Texture" id=22]
 [ext_resource path="res://Assets/MainView/steps.png" type="Texture" id=23]
+[ext_resource path="res://Src/Menu/InGame/EnemyArmy.gd" type="Script" id=24]
+[ext_resource path="res://Src/Menu/InGame/TurnCount.gd" type="Script" id=25]
 
 [node name="GameMenu" type="Control"]
 anchor_right = 1.0
@@ -53,7 +55,32 @@ margin_top = 364.069
 margin_right = 239.497
 margin_bottom = 387.069
 custom_fonts/font = ExtResource( 21 )
+text = "Turn: 0"
+align = 1
+script = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyArmyText" type="Label" parent="."]
+margin_left = 296.329
+margin_top = 233.265
+margin_right = 375.329
+margin_bottom = 256.265
+custom_fonts/font = ExtResource( 21 )
+text = "Migrate before:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemyArmy" type="Label" parent="."]
+margin_left = 413.329
+margin_top = 233.265
+margin_right = 492.329
+margin_bottom = 256.265
+custom_fonts/font = ExtResource( 21 )
 text = "Hello Level"
+script = ExtResource( 24 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

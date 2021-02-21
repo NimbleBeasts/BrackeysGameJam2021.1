@@ -3,8 +3,6 @@ extends Control
 onready var GameInstance = get_parent()
 
 func _ready():
-	$Label.set_text("Turn: " + str(GameInstance.gameState.turn))
-	
 	Events.connect("move_update_gfx", self, "updateBiome")
 
 
