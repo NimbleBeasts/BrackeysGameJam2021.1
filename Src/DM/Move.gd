@@ -34,5 +34,6 @@ func move_next():
 	next_index += 1
 	if next_index >= biome_array.size():
 		next_index = 0
-
+	
+	yield(get_tree().create_timer(2.0), "timeout") #ugliest thing on earth
 	Events.emit_signal("move_update_gfx", biome_array[current_index], biome_array[next_index])

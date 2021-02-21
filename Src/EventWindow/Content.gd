@@ -22,12 +22,15 @@ func setup(event): #{"type": type, "id": key, "entry": entry}
 	if data.action.type == "yesno":
 		# YesNo Choice
 		$BaseButtonPink.show()
-		$BaseButtonPink.buttonText = "No"
-		$BaseButtonGreen.buttonText = "Yes"
-	else:
+		$BaseButtonPink.buttonText = tr(data.action["yes"].text)
+		$BaseButtonGreen.buttonText = tr(data.action["no"].text)
+	elif data.action.type == "yes":
 		# Ok Button Only
 		$BaseButtonPink.hide()
-		$BaseButtonGreen.buttonText = "Ok"
+		var oktext = "NEXT"
+		if data.action["yes"] != "scripted":
+			data.action["yes"].text
+		$BaseButtonGreen.buttonText = tr(oktext)
 
 func _on_BaseButtonPink_button_up():
 	Events.emit_signal("event_choice", "no")

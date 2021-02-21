@@ -36,6 +36,37 @@
     }
   },
   {
+    "id": "pauseday",
+    "title": "EVENT_PAUSEDAY_TITLE",
+    "thumbnail": "thumbnail-5.png",
+    "desc": "EVENT_PAUSEDAY_DESC",
+    "action": {
+      "type": "yesno",
+      "yes": {
+        "text": "EVENT_PAUSEDAY_YES",
+        "consequences": [
+          {
+            "type": "resources",
+            "faith": 100,
+            "food": 0,
+            "water": 0
+          }
+        ]
+      },
+      "no": {
+        "text": "EVENT_SWORDBREAD_NO",
+        "consequences": [
+          {
+            "type": "resources",
+            "faith": -100,
+            "food": 0,
+            "water": 0
+          }
+        ]
+      }
+    }
+  },
+  {
     "id": "joining",
     "title": "EVENT_JOINING_TITLE",
     "thumbnail": "thumbnail-1.png",
