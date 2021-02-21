@@ -30,7 +30,7 @@ func create_new_group():
 	units[pid].available = false
 	for _i in range(0,19) :
 # warning-ignore:return_value_discarded
-		add_unit_by_chance()
+		add_unit_by_chance(false)
 	
 	#Lock the first unit into being used.
 	temp_slotted_units.append(units[0])
@@ -45,9 +45,13 @@ func add_unit_by_name(unitName : String) -> int:
 	return (units.size() - 1)
 
 # Create a new unit by chance
-func add_unit_by_chance() -> int:
+func add_unit_by_chance(show_fb = true) -> int:
 	var unit : Unit = Unit.new()
 	unit.set_by_chance()
+	
+	if show_fb:
+		var payload = {"text":unit.name+" "+tr("ARRIVALONE"), "meaning":"neutral"}
+		Events.emit_signal("window_show", Types.WindowType.ResFb, payload)
 	
 	units.append(unit)
 	available_units.append(unit)
@@ -135,6 +139,17 @@ func retrieve_temp_slotted_units() -> Array :
 func return_units(returning_units : Array) -> void :
 	available_units += returning_units
 	Events.emit_signal(Events.UNITS_RETURNED, returning_units)
+	
+	var names = ""
+	var count = 0
+	for unit in returning_units:
+		names += unit.name
+		if count != len(returning_units)-1:
+			names += ", "
+		count += 1
+	var payload = {"text":str(names)+" "+tr("RETURNING"), "meaning":"positive"}
+	Events.emit_signal("window_show", Types.WindowType.ResFb, payload)
+	
 	Events.emit_signal(Events.UNITS_AVAILABLE_CHANGED, available_units)
 
 func temp_slot_units(units_temp_slot : Array) -> void :
@@ -142,4 +157,16 @@ func temp_slot_units(units_temp_slot : Array) -> void :
 	for unit in units_temp_slot :
 		assert(units.has(unit))
 	temp_slotted_units = units_temp_slot
+	
+	var names = ""
+	var count = 0
+	for unit in units_temp_slot:
+		names += unit.name
+		if count != len(units_temp_slot)-1:
+			names += ", "
+		count += 1
+	var payload = {"text":str(names)+" "+tr("GOINGOUT"), "meaning":"neutral"}
+	if len(names) > 0:
+		Events.emit_signal("window_show", Types.WindowType.ResFb, payload)
+	
 	Events.emit_signal(Events.UNITS_TEMP_SLOTTED, temp_slotted_units)

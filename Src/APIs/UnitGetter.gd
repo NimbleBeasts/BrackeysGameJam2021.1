@@ -28,6 +28,8 @@ func get_temp_slotted_units_count() -> int :
 
 func gift_units(unit_count : int) -> void :
 	unit_handler.gift_units(unit_count)
+	var payload = {"text":str(unit_count)+" "+tr("ARRIVALS"), "meaning":"neutral"}
+	Events.emit_signal("window_show", Types.WindowType.ResFb, payload)
 
 func kill_units(units_to_kill : Array) -> void :
 	unit_handler.kill_units(units_to_kill)
