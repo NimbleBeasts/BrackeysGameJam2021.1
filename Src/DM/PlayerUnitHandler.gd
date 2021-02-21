@@ -10,7 +10,7 @@ var available_units : Array = []
 
 
 #How many units you have in total.
-var unit_count : int = 20 setget  ,get_unit_count
+var unit_count : int = 6 setget  ,get_unit_count
 
 #How many units are in a temporary holding position.
 var temp_slotted_units : Array = []
@@ -28,7 +28,7 @@ func _ready() -> void :
 func create_new_group():
 	var pid = add_unit_by_name("princess")
 	units[pid].available = false
-	for _i in range(0,19) :
+	for _i in range(0,unit_count) :
 # warning-ignore:return_value_discarded
 		add_unit_by_chance(false)
 	

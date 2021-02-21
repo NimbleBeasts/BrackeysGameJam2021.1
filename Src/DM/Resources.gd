@@ -3,17 +3,17 @@ class_name ResourcesHandler
 
 
 #How much a unit costs per turn in food and water.
-export(int) var unit_faith_gained = 5
-export(int) var unit_food_cost = 10
-export(int) var unit_water_cost = 10
+export(int) var unit_faith_gained = -1
+export(int) var unit_food_cost = 5
+export(int) var unit_water_cost = 5
 
 #The dungeon master has everything I need.
 onready var dm : Node = get_parent()
 
-var energy : int = 10000 setget set_energy
-var faith : int = 10000 setget set_faith
-var food : int = 10000 setget set_food
-var water : int = 10000 setget set_water
+var energy : int = 500 setget set_energy
+var faith : int = 500 setget set_faith
+var food : int = 500 setget set_food
+var water : int = 500 setget set_water
 
 func _init():
 	Types.resources_getter.resources_handler = self
