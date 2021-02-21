@@ -13,7 +13,7 @@ func _enter_new_location() -> void :
 	Events.emit_signal(Events.NEW_LOCATION_REACHED, new_location)
 
 func _game_lost() -> void :
-	get_tree().quit()
+	get_tree().change_scene("res://Src/GameManager.tscn")
 
 var ready_already_done : bool = false
 func _ready():

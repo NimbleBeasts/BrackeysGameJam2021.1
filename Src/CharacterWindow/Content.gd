@@ -36,7 +36,11 @@ func setup(type):
 			greenButtonAction = ButtonActionTypes.Sacrifice
 			unitList = Global.DM.puh.get_units_available_array()
 			$Title.set_text(TranslationServer.translate("CHAR_TITLE_SACRIFICE"))
-		_:
+			
+			#End game if there are no available units left.
+			if ug.get_available_units_count() <= 1 :
+				Events.emit_signal(Events.GAME_LOST)
+		
 			print("CharacterWindow.gd: setup unknown type")
 
 	for i in range(unitList.size()):
