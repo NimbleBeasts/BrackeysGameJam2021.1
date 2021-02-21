@@ -14,8 +14,9 @@ func roll_chances() -> int :
 	var chances : int = (randi() % (possible_events.size() + 4)) - 4
 	if chances < 0 :
 		return 1
-	Events.emit_signal("window_show", Types.WindowType.Event, {"eventType": Types.EventTypes.TurnRandom, "id":  chances})
-	
+	if chances >= possible_events.size() :
+		chances = possible_events.size() - 1
 	eg.set_event(possible_events[chances])
+	Events.emit_signal("window_show", Types.WindowType.Event, {"eventType": Types.EventTypes.TurnRandom, "id":  chances})
 	
 	return 0

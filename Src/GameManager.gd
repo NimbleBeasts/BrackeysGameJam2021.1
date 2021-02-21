@@ -4,6 +4,8 @@ var state = Types.GameStates.Menu
 var levelNode = null
 
 func _ready():
+	randomize()
+	
 	# Set Viewport Sizes to Project Settings
 	$gameViewport/Viewport.size = Vector2(ProjectSettings.get_setting("display/window/size/width"), ProjectSettings.get_setting("display/window/size/height"))
 	$menuViewport/Viewport.size = Vector2(ProjectSettings.get_setting("display/window/size/width"), ProjectSettings.get_setting("display/window/size/height"))

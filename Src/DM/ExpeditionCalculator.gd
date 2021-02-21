@@ -37,6 +37,9 @@ func clear() -> void :
 	traveled.append(0)
 	current_food_cost = 0
 	current_water_cost = 0
+	reward_faith = PoolIntArray()
+	reward_food = PoolIntArray()
+	reward_water = PoolIntArray()
 	Events.emit_signal(Events.GATHER_POINT_CALCULATED, current_food_cost, current_water_cost)
 
 func point_added(spot : GatheringSpot) -> void :

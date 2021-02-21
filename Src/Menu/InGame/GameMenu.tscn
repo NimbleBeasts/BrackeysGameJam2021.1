@@ -48,10 +48,10 @@ centered = false
 hframes = 4
 
 [node name="Label" type="Label" parent="."]
-margin_left = 160.497
-margin_top = 364.069
-margin_right = 239.497
-margin_bottom = 387.069
+margin_left = 332.248
+margin_top = -2.45192
+margin_right = 411.248
+margin_bottom = 20.5481
 custom_fonts/font = ExtResource( 21 )
 text = "Hello Level"
 __meta__ = {
@@ -59,11 +59,11 @@ __meta__ = {
 }
 
 [node name="ButtonBack" type="Button" parent="."]
-margin_left = 26.2047
-margin_top = 366.0
-margin_right = 90.2047
-margin_bottom = 386.0
-text = "BACK"
+margin_left = 384.0
+margin_top = 64.0
+margin_right = 448.0
+margin_bottom = 84.0
+text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -239,7 +239,6 @@ margin_left = 24.0
 margin_top = 248.0
 margin_right = 246.0
 margin_bottom = -24.0
-mouse_filter = 2
 
 [node name="ExpButton" type="TextureButton" parent="Menu"]
 margin_right = 216.0
@@ -255,10 +254,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Menu/ExpButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 63.25
-margin_top = -2.25
-margin_right = -0.75
-margin_bottom = -2.25
+margin_left = 64.0
 custom_fonts/font = ExtResource( 21 )
 text = "EXPEDITION"
 valign = 1
@@ -279,10 +275,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Menu/MoveButton"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 64.25
-margin_top = -4.0
-margin_right = 0.25
-margin_bottom = -4.0
+margin_left = 64.0
 custom_fonts/font = ExtResource( 21 )
 text = "MOVE"
 valign = 1
@@ -307,8 +300,6 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 64.0
-margin_top = -3.06763
-margin_bottom = -3.06763
 custom_fonts/font = ExtResource( 21 )
 text = "ENDTURN"
 valign = 1
