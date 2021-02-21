@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/enemy_approaching_final.ogg-3534e1692a552500f0ad5f4c9df29e11.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/music/enemy_approaching_final.ogg"
+dest_files=[ "res://.import/enemy_approaching_final.ogg-3534e1692a552500f0ad5f4c9df29e11.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

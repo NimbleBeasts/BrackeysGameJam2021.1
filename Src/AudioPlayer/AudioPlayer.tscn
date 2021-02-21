@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Assets/Audio/title.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Audio/music/title_final.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Src/AudioPlayer/AudioPlayer.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Audio/select_neutral.wav" type="AudioStream" id=3]
 [ext_resource path="res://Assets/Audio/select_positive.wav" type="AudioStream" id=4]
@@ -13,6 +13,35 @@
 [ext_resource path="res://Assets/Audio/faith_gain.wav" type="AudioStream" id=11]
 [ext_resource path="res://Assets/Audio/food_lost.wav" type="AudioStream" id=12]
 [ext_resource path="res://Assets/Audio/food_gained.wav" type="AudioStream" id=13]
+
+[sub_resource type="Animation" id=1]
+resource_name = "switchTrack"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -80.0, 0.0 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "switchTrackCallback"
+} ]
+}
 
 [node name="AudioPlayer" type="Node2D"]
 script = ExtResource( 2 )
@@ -64,4 +93,7 @@ bus = "Sound"
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 bus = "Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Music"]
+anims/switchTrack = SubResource( 1 )
 [connection signal="finished" from="Music" to="." method="_on_Music_finished"]

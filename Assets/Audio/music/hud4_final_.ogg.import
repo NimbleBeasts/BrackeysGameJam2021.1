@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hud4_final_.ogg-db338a16858e020420ac3298260752b8.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/music/hud4_final_.ogg"
+dest_files=[ "res://.import/hud4_final_.ogg-db338a16858e020420ac3298260752b8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

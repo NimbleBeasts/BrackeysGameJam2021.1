@@ -1,9 +1,22 @@
 extends Node2D
 
+const music = [
+	preload("res://Assets/Audio/music/enemy_approaching_final.ogg"),
+	preload("res://Assets/Audio/music/hud2_final.ogg"),
+	preload("res://Assets/Audio/music/hud3_final.ogg"),
+	preload("res://Assets/Audio/music/hud4_final_.ogg"),
+]
+
+const titleMusic = preload("res://Assets/Audio/music/title_final.ogg")
+const gameOverMusic = preload("res://Assets/Audio/music/game_over_final.ogg")
+
+
 func _ready():
 	# Event Hooks
 	Events.connect_signal("play_sound", self, "_playSound")
 	Events.connect_signal("switch_music", self, "_switchMusic")
+	
+	Events.connect_signal("turn_started", self, "nextTrack")
 	
 	# Init Start Music
 	_switchMusic(Global.userConfig.music) 
@@ -51,3 +64,10 @@ func _playSound(sound: String, _volume : float = 1.0, _pos : Vector2 = Vector2(0
 # Music Loop?
 func _on_Music_finished():
 	$Music.play()
+
+func nextTrack():
+	$Music/AnimationPlayer.play("switchTrack")
+
+func switchTrackCallback():
+	$Music.stream = music[randi() % music.size()]
+	print($Music.stream)

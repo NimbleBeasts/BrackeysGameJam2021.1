@@ -42,4 +42,4 @@ func _on_TurnEndAnimPlayer_animation_finished(anim_name):
 			Events.emit_signal(Events.TURN_ANIMATED)
 			Events.emit_signal(Events.TURN_STARTED)
 		"fadeOut":
-			pass
+			$ClickBlock.hide()
