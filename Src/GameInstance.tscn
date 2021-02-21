@@ -127,7 +127,6 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 centered = false
 hframes = 27
-frame = 12
 
 [node name="Label" type="Label" parent="TurnEndAnimPlayer"]
 modulate = Color( 1, 1, 1, 0 )

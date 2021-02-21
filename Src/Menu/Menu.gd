@@ -32,6 +32,7 @@ func switchTo(to):
 
 	match to:
 		MenuState.Main:
+			Events.emit_signal("music_play_title_song")
 			$Main.show()
 		MenuState.Settings:
 			updateSettings()

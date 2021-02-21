@@ -17,6 +17,8 @@ func _ready():
 	Events.connect_signal("switch_music", self, "_switchMusic")
 	
 	Events.connect_signal("turn_started", self, "nextTrack")
+	Events.connect_signal("music_play_title_song", self, "titleSong")
+	Events.connect("game_lost", self, "gameOver")
 	
 	# Init Start Music
 	_switchMusic(Global.userConfig.music) 
@@ -71,3 +73,9 @@ func nextTrack():
 func switchTrackCallback():
 	$Music.stream = music[randi() % music.size()]
 	print($Music.stream)
+
+func titleSong():
+	$Music.stream = titleMusic
+
+func gameOverMusic():
+	$Music.stream = gameOverMusic
