@@ -15,6 +15,16 @@ _global_script_classes=[ {
 "path": "res://Src/DiceRolls/DiceRoll.gd"
 }, {
 "base": "Node",
+"class": "EnemyArmyGetter",
+"language": "GDScript",
+"path": "res://Src/APIs/EnemyArmyGetter.gd"
+}, {
+"base": "Node",
+"class": "EnemyArmyHandler",
+"language": "GDScript",
+"path": "res://Src/DM/EnemyArmy.gd"
+}, {
+"base": "Node",
 "class": "EventHandler",
 "language": "GDScript",
 "path": "res://Src/DM/Events.gd"
@@ -96,6 +106,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "DiceRoll": "",
+"EnemyArmyGetter": "",
+"EnemyArmyHandler": "",
 "EventHandler": "",
 "EventsGetter": "",
 "ExpeditionCalculator": "",

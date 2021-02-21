@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Src/GameMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Ui/TopBar/Bg_3x.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://Assets/Ui/TopBar/CounterBg_3x_hover.png" type="Texture" id=22]
 [ext_resource path="res://Assets/MainView/steps.png" type="Texture" id=23]
 [ext_resource path="res://Src/Menu/InGame/EnemyArmy.gd" type="Script" id=24]
+[ext_resource path="res://Src/Menu/InGame/TurnCount.gd" type="Script" id=25]
 
 [node name="GameMenu" type="Control"]
 anchor_right = 1.0
@@ -54,7 +55,9 @@ margin_top = -2.45192
 margin_right = 411.248
 margin_bottom = 20.5481
 custom_fonts/font = ExtResource( 21 )
-text = "Hello Level"
+text = "Turn: 0"
+align = 1
+script = ExtResource( 25 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
