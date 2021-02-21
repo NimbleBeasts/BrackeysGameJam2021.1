@@ -54,6 +54,7 @@ func handle_result_play(minigame : Dictionary) -> void :
 		handle_consequence(minigame["lose-consequences"])
 
 func handle_result_resource(result : Dictionary) -> void :
+	# TODO : show resource gain/loss window
 	rg.gift_faith(result["faith"])
 	rg.gift_food(result["food"])
 	rg.gift_water(result["water"])

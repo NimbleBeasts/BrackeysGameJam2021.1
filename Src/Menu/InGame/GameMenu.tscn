@@ -260,8 +260,9 @@ margin_top = -2.25
 margin_right = -0.75
 margin_bottom = -2.25
 custom_fonts/font = ExtResource( 21 )
-text = "Expedition"
+text = "EXPEDITION"
 valign = 1
+autowrap = true
 
 [node name="MoveButton" type="TextureButton" parent="Menu"]
 margin_top = 56.0
@@ -283,8 +284,9 @@ margin_top = -4.0
 margin_right = 0.25
 margin_bottom = -4.0
 custom_fonts/font = ExtResource( 21 )
-text = "Move"
+text = "MOVE"
 valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -308,8 +310,9 @@ margin_left = 64.0
 margin_top = -3.06763
 margin_bottom = -3.06763
 custom_fonts/font = ExtResource( 21 )
-text = "End Turn"
+text = "ENDTURN"
 valign = 1
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
