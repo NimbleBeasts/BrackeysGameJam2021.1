@@ -5,4 +5,5 @@
 [resource]
 outline_color = Color( 0.960784, 1, 0.909804, 1 )
 use_filter = true
+extra_spacing_bottom = -5
 font_data = ExtResource( 1 )

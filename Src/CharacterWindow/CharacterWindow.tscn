@@ -45,14 +45,12 @@ margin_left = 212.939
 margin_top = 278.052
 margin_right = 302.94
 margin_bottom = 305.052
-buttonText = "Text"
 
 [node name="BaseButtonPink" parent="Content" index="2" instance=ExtResource( 4 )]
 margin_left = 122.939
 margin_top = 278.052
 margin_right = 212.939
 margin_bottom = 305.052
-buttonText = "Text"
 
 [node name="CheckList" parent="Content" index="3" instance=ExtResource( 7 )]
 margin_left = 5.9395
@@ -68,10 +66,12 @@ centered = false
 hframes = 10
 
 [node name="DummyLabel" type="Label" parent="Content" index="5"]
-margin_left = 156.438
-margin_top = 62.3062
-margin_right = 292.438
-margin_bottom = 110.306
+visible = false
+margin_left = 153.999
+margin_top = 53.6308
+margin_right = 289.999
+margin_bottom = 101.631
+custom_fonts/font = ExtResource( 9 )
 
 [node name="Title" type="Label" parent="Content" index="6"]
 margin_left = 7.0

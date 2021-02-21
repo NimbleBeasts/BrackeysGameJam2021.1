@@ -13,42 +13,43 @@ CHAR_TITLE_SACRIFICE,"Sacrifice People","Sacrifice People","Menschenopfer"
 CHAR_TITLE_OVERVIEW,"Tribe Overview","Tribe Overview","Stammesübersicht"
 EXP_TITLE,"Expedition Route","Expedition Route","Expedition Route"
 MOVE_TITLE,"Move Camp","Move Camp","Weiterziehen"
-UNIT_PRINCESS_DESC,"dummy text","dummy text","dummy text1"
-UNIT_SWORDMAN_DESC,"dummy text","dummy text","dummy text2"
-UNIT_CHIEFTAN_DESC,"dummy text","dummy text","dummy text3"
-UNIT_PHILOSOPHER_DESC,"dummy text","dummy text","dummy text4"
-UNIT_FARMER_DESC,"dummy text","dummy text","dummy text5"
-UNIT_ORACLE_DESC,"dummy text","dummy text","dummy text6"
-UNIT_TRAVELLER_DESC,"dummy text","dummy text","dummy text7"
-UNIT_MERCHANT_DESC,"dummy text","dummy text","dummy text8"
-UNIT_HUSSARD_DESC,"dummy text","dummy text","dummy text9"
-UNIT_PRIEST_DESC,"dummy text","dummy text","dummy text"
+UNIT_PRINCESS_DESC,"It's you, the princess","C'est vous, la princesse",
+UNIT_SWORDMAN_DESC,"A mighty swordsman","Un épéiste habile",
+UNIT_CHIEFTAN_DESC,"A former state agent","Un ancien de l'administration",
+UNIT_PHILOSOPHER_DESC,"The philosopher","Le philosophe",
+UNIT_FARMER_DESC,"An humble farmer","Un humble fermier",
+UNIT_ORACLE_DESC,"The oracle","L'oracle",
+UNIT_TRAVELLER_DESC,"An experienced traveller","Un voyageur expérimenté",
+UNIT_MERCHANT_DESC,"A merchant","Une marchande",
+UNIT_HUSSARD_DESC,"An elite soldier","Une femme-soldat redoutable",
+UNIT_PRIEST_DESC,"A dedicated priest","Un prêtre motivé",
 FADE_DAY,Day,Jour,Tag
 PLAY,"play","jouer","spielen"
 NEXT,"next","suivant","weiter"
 ACCEPT,"accept","accepter","akzeptieren"
 REJECT,"reject","rejeter","ablehnen"
-EVENT_SWORDBREAD_TITLE,"The sword and the bread","Le pain et le glaive","dummy text"
-EVENT_SWORDBREAD_DESC,"As the rising sun barely begins to dazzle the camp like the rage of the Soul Eater, your men notice a procession of soldiers watching them from a hill. Their paraphernalia reminds you of Ketchak handicrafts. Fear not, these people may appear hostile, but they are also known to be friendly as long as you are safe. One of them approaches firmly, holding a spear in his left hand and swinging it over his shoulders. Attached at both ends are a sword on one side and a loaf of bread on the other. Seeing you approach he cheers in Ketchak tongue: «Hear, Princess of a faraway land! In the name of the friendship between our two peoples, I ask you to declare your intentions: War or comradeship? »","Alors que soleil levant commence à peine à éblouir le campement tel la rage du mange-Âme, vos hommes remarquent un cortège de soldats les observant depuis une colline. Leur attirail vous évoque l'artisanat Ketchak. Vous n'avez crainte, ce peuple peut paraître hostile, mais il est aussi connu pour s'avérer amical tant que vous ne présentez aucun danger. L'un d'entre eux s'approche fermement, tenant dans sa main gauche une lance qu'il maintient en balancier sur ses épaules. Attachés aux deux extrémités, sont d'un côté un glaive et de l'autre un pain. Vous voyant approcher il s'acclame en langue Ketchak :  «Oyez Princesse d'une contrée lointaine ! Au nom de l'amitié entre nos deux peuples, je vous prie de déclarer vos intentions : La guerre ou la camaraderie ? »","dummy text"
-EVENT_SWORDBREAD_YES,"Taking the bread","Prendre le pain","dummy text"
-EVENT_SWORDBREAD_NO,"Take the sword","Prendre l'épée","dummy text"
-EVENT_SWORDBREAD_NO_PROMPT,"Choose those who will go to fight","Choissez ceux qui iront se battre","dummy text"
-EVENT_JOINING_TITLE,"Newcomers","Nouveaux arrivants","dummy text"
-EVENT_JOINING_DESC,"In the middle of the night, a swarming mass of poor people appears. No sooner do they perceive you than they raise the scarlet Trija banner. Survivors of the massacre! They approach you as supplicants and lend you allegiance.","Au beau milieu de la nuit, une masse grouillante pauvres gens apparaît. À peine vous apperçoivent-ils qu'ils font surgir l'étendard écarlate de Trija. Des rescapés du massacre ! Suppliants, ils s'approchent et vous prêtent allégiance.","dummy text"
-EVENT_JOINING_YES,"recruit","recruter","dummy text"
-EVENT_JOINING_NO_DICE_PROMPT_OBJECTIVE,"reject newcomers","les faire partir","dummy text"
-EVENT_EXPEDITIONEND_TITLE,"End of expedition","Fin d'expédition","dummy text"
-EVENT_EXPEDITIONEND_DESC,"Several days after leaving on an expedition, your men should return at any moment. You decide to wait all day, but if they are too late, then they are probably dead. Will they come back decorated with a thousand treasures, or will their fate be sealed by your impatience?","Plusieurs jours après être partis en expédition, vos hommes devraient revenir d'un instant à l'autre. Vous décidez de patienter toute la journée, mais s'ils tardent trop, alors c'est qu'ils sont surement morts. Reviendront-ils décorés de milles trésors, ou leur destin sera-t-il scellé par votre impatience ?","dummy text"
-EVENT_EXPEDITIONEND_SUCCESS_BUTTON,"Here they come!","Ils arrivent !","dummy text"
-EVENT_EXPEDITIONEND_FAILURE_BUTTON,"It is too late.","Il est trop tard.","dummy text"
-EVENT_EXPEDITIONEND_SUCCESS_RESOURCES,"Your men brought you supplies.","Vos hommes vous ont ramené du ravitaillement.","dummy text"
-EVENT_EXPEDITIONEND_CHARACTERS,"You check who came back from the expedition ... and who died there.","Vous vérifiez qui est revenu d'expédition ... et qui y a laissé la vie.","dummy text"
-EVENT_ENEMYAPPROACHING_TITLE,"Enemy approaching","Ennemi en approche","dummy text"
-EVENT_ENEMYAPPROACHING_DESC,"Your team of scouts share with you their concerns: the enemy is getting closer and closer. Yesterday they were at $previous_enemy_distance, but today they are at $enemy_distance.","Votre équipe d'éclaireurs vous font part de leurs inquiétudes : l'ennemi est proche, de plus en plus proche. Hier ils étaient à $previous_enemy_distance, mais aujourd'hui ils sont à $enemy_distance.","dummy text"
-MINIGAME_DICE_PROMPT,"Roll $win-min-score or more to $objective","Faites $win-min-score ou plus pour $objective","dummy text"
-EVENT_MOVINGEXPFAIL_TITLE,"Abandonned","Abandonnés","dummy text"
-EVENT_MOVINGEXPFAIL_DESC,"By advancing the camp you managed to save yourself at the last minute. But at what cost? All the men you sent on the expedition do not seem to be coming back. They probably got lost and were massacred where they were.","En avançant le campement vous avez réussi à vous sauver à la dernière minute. Mais à quel prix ? Tous les hommes que vous avez envoyé en expédition ne semblent pas revenir. Ils se sont sûrement perdus et fait massacrer sur place.","dummy text"
-EVENT_GOWATERFOOD_TITLE,"Starvation","Famine","dummy text"
-EVENT_GOWATERFOOD_DESC,"Without water and food, the law of the desert has sealed your fate and that of your men. Their loyalty led them to leave you the last rations of water and food.","Sans eau et sans nourriture, la loi du désert a scellé votre destin et celui de vos hommes. Leur loyauté les a poussé à vous laisser les dernières rations d'eau et de nourriture.","dummy text"
-EVENT_GOFAITH_TITLE,"dummy text","dummy text","dummy text"
-EVENT_GOENEMY_TITLE,"dummy text","dummy text","dummy text"
+BACK,"back","retour",
+EVENT_SWORDBREAD_TITLE,"The sword and the bread","Le pain et le glaive",
+EVENT_SWORDBREAD_DESC,"As the rising sun barely begins to dazzle the camp like the rage of the Soul Eater, your men notice a procession of soldiers watching them from a hill. Their paraphernalia reminds you of Ketchak handicrafts. Fear not, these people may appear hostile, but they are also known to be friendly as long as you are safe. One of them approaches firmly, holding a spear in his left hand and swinging it over his shoulders. Attached at both ends are a sword on one side and a loaf of bread on the other. Seeing you approach he cheers in Ketchak tongue: «Hear, Princess of a faraway land! In the name of the friendship between our two peoples, I ask you to declare your intentions: War or comradeship? »","Alors que soleil levant commence à peine à éblouir le campement tel la rage du mange-Âme, vos hommes remarquent un cortège de soldats les observant depuis une colline. Leur attirail vous évoque l'artisanat Ketchak. Vous n'avez crainte, ce peuple peut paraître hostile, mais il est aussi connu pour s'avérer amical tant que vous ne présentez aucun danger. L'un d'entre eux s'approche fermement, tenant dans sa main gauche une lance qu'il maintient en balancier sur ses épaules. Attachés aux deux extrémités, sont d'un côté un glaive et de l'autre un pain. Vous voyant approcher il s'acclame en langue Ketchak :  «Oyez Princesse d'une contrée lointaine ! Au nom de l'amitié entre nos deux peuples, je vous prie de déclarer vos intentions : La guerre ou la camaraderie ? »",
+EVENT_SWORDBREAD_YES,"Taking the bread","Prendre le pain",
+EVENT_SWORDBREAD_NO,"Take the sword","Prendre l'épée",
+EVENT_SWORDBREAD_NO_PROMPT,"Choose those who will go to fight","Choissez ceux qui iront se battre",
+EVENT_JOINING_TITLE,"Newcomers","Nouveaux arrivants",
+EVENT_JOINING_DESC,"In the middle of the night, a swarming mass of poor people appears. No sooner do they perceive you than they raise the scarlet Trija banner. Survivors of the massacre! They approach you as supplicants and lend you allegiance.","Au beau milieu de la nuit, une masse grouillante pauvres gens apparaît. À peine vous apperçoivent-ils qu'ils font surgir l'étendard écarlate de Trija. Des rescapés du massacre ! Suppliants, ils s'approchent et vous prêtent allégiance.",
+EVENT_JOINING_YES,"recruit","recruter",
+EVENT_JOINING_NO_DICE_PROMPT_OBJECTIVE,"reject newcomers","les faire partir",
+EVENT_EXPEDITIONEND_TITLE,"End of expedition","Fin d'expédition",
+EVENT_EXPEDITIONEND_DESC,"Several days after leaving on an expedition, your men should return at any moment. You decide to wait all day, but if they are too late, then they are probably dead. Will they come back decorated with a thousand treasures, or will their fate be sealed by your impatience?","Plusieurs jours après être partis en expédition, vos hommes devraient revenir d'un instant à l'autre. Vous décidez de patienter toute la journée, mais s'ils tardent trop, alors c'est qu'ils sont surement morts. Reviendront-ils décorés de milles trésors, ou leur destin sera-t-il scellé par votre impatience ?",
+EVENT_EXPEDITIONEND_SUCCESS_BUTTON,"Here they come!","Ils arrivent !",
+EVENT_EXPEDITIONEND_FAILURE_BUTTON,"It is too late.","Il est trop tard.",
+EVENT_EXPEDITIONEND_SUCCESS_RESOURCES,"Your men brought you supplies.","Vos hommes vous ont ramené du ravitaillement.",
+EVENT_EXPEDITIONEND_CHARACTERS,"You check who came back from the expedition ... and who died there.","Vous vérifiez qui est revenu d'expédition ... et qui y a laissé la vie.",
+EVENT_ENEMYAPPROACHING_TITLE,"Enemy approaching","Ennemi en approche",
+EVENT_ENEMYAPPROACHING_DESC,"Your team of scouts share with you their concerns: the enemy is getting closer and closer. Yesterday they were at $previous_enemy_distance, but today they are at $enemy_distance.","Votre équipe d'éclaireurs vous font part de leurs inquiétudes : l'ennemi est proche, de plus en plus proche. Hier ils étaient à $previous_enemy_distance, mais aujourd'hui ils sont à $enemy_distance.",
+MINIGAME_DICE_PROMPT,"Roll $win-min-score or more to $objective","Faites $win-min-score ou plus pour $objective",
+EVENT_MOVINGEXPFAIL_TITLE,"Abandonned","Abandonnés",
+EVENT_MOVINGEXPFAIL_DESC,"By advancing the camp you managed to save yourself at the last minute. But at what cost? All the men you sent on the expedition do not seem to be coming back. They probably got lost and were massacred where they were.","En avançant le campement vous avez réussi à vous sauver à la dernière minute. Mais à quel prix ? Tous les hommes que vous avez envoyé en expédition ne semblent pas revenir. Ils se sont sûrement perdus et fait massacrer sur place.",
+EVENT_GOWATERFOOD_TITLE,"Starvation","Famine",
+EVENT_GOWATERFOOD_DESC,"Without water and food, the law of the desert has sealed your fate and that of your men. Their loyalty led them to leave you the last rations of water and food.","Sans eau et sans nourriture, la loi du désert a scellé votre destin et celui de vos hommes. Leur loyauté les a poussé à vous laisser les dernières rations d'eau et de nourriture.",
+EVENT_GOFAITH_TITLE,,,
+EVENT_GOENEMY_TITLE,,,
