@@ -1,5 +1,7 @@
 extends Control
 
+signal day_cost_update(day_cost)
+
 var points : int = 0
 
 func _ready():
@@ -19,3 +21,7 @@ func free_myself() -> void :
 
 func remove_pressed() -> void :
 	Events.emit_signal(Events.GATHER_POINT_REMOVED)
+
+
+func _on_GatheringDisplay_day_cost_update(day_cost):
+	emit_signal("day_cost_update", day_cost)

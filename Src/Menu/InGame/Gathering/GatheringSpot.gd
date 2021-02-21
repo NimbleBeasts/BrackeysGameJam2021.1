@@ -12,31 +12,31 @@ var type_name : String = ""
 
 func _init(location : Vector2 = Vector2(-1,-1), new_spot_type : int = -1) :
 	expand = true
-	rect_min_size = Vector2( 20,20)
+	rect_min_size = Vector2( 36,36)
 	
 	location_in_grid = location
 	spot_type = new_spot_type
 	#Temporary modulation to show what type we are.
 	if spot_type == Types.ExpeditionSpots.LAKES : #LAKE
-		texture_normal = load(PATH+biome+"LakeNormal.png")
+		texture_normal = load(PATH+biome+"LakeNormal-export.png")
 		type_name = "lakes"
 	elif spot_type == Types.ExpeditionSpots.HUNTING : #HUNTING
-		texture_normal = load(PATH+biome+"HuntNormal.png")
+		texture_normal = load(PATH+biome+"HuntNormal-export.png")
 		type_name = "hunting"
 	elif spot_type == Types.ExpeditionSpots.RUINS : #RUINS
-		texture_normal = load(PATH+biome+"RuinsNormal.png")
+		texture_normal = load(PATH+biome+"RuinsNormal-export.png")
 		type_name = "ruins"
 	elif spot_type == Types.ExpeditionSpots.BERRIES : #BERRIES
-		texture_normal = load(PATH+biome+"BerriesNormal.png")
+		texture_normal = load(PATH+biome+"BerriesNormal-export.png")
 		type_name = "berries"
 	elif spot_type == Types.ExpeditionSpots.CREEKS : #Creek :
-		texture_normal = load(PATH+biome+"CreekNormal.png")
+		texture_normal = load(PATH+biome+"CreekNormal-export.png")
 		type_name = "creeks"
 	elif spot_type == Types.ExpeditionSpots.HOME_BASE :
-		texture_normal = load(PATH+biome+"HomeNormal.png")
+		texture_normal = load(PATH+biome+"HomeNormal-export.png")
 		disabled = true
 	else :
-		texture_normal = load(PATH+biome+"RegNormal.png")
+		texture_normal = load(PATH+biome+"RegNormal-export.png")
 		disabled = true
 	
 	

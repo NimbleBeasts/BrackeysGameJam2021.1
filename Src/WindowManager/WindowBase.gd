@@ -4,6 +4,7 @@ class_name WindowBase
 signal focus_window
 
 export(Types.WindowType) var windowType = Types.WindowType.Expedition
+export(bool) var can_move = true
 
 const ninePatchTextures = [
 	preload("res://Assets/Ui/Window9Patch_3x.png"),
@@ -29,7 +30,7 @@ func setActive(value = true):
 		$Bg.texture = ninePatchTextures[1]
 
 func focusWindow():
-	emit_signal("focus_window", self)
+	if can_move: emit_signal("focus_window", self)
 
 func _on_WindowBase_gui_input(event):
 	if event is InputEventMouseButton:

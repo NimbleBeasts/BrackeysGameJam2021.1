@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Src/Menu/InGame/Gathering/GridContainer.gd" type="Script" id=1]
 [ext_resource path="res://Src/Menu/InGame/Gathering/PathHighlight.gd" type="Script" id=2]
 [ext_resource path="res://Src/Menu/InGame/Gathering/GatheringPopup.gd" type="Script" id=3]
 [ext_resource path="res://Src/WindowManager/BaseButtonPink.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Src/Menu/InGame/Gathering/GatheringDisplay.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Fonts/NormalFontSmall13.tres" type="DynamicFont" id=6]
 
 [node name="GatheringPopup" type="Control"]
 anchor_right = 1.0
@@ -31,6 +32,10 @@ anchor_left = 0.2
 anchor_top = 0.1
 anchor_right = 0.8
 anchor_bottom = 0.9
+margin_left = -57.963
+margin_top = -24.9233
+margin_right = -57.963
+margin_bottom = -24.9233
 custom_constants/separation = 0
 alignment = 1
 script = ExtResource( 1 )
@@ -43,16 +48,22 @@ anchor_left = 0.36
 anchor_top = 0.9
 anchor_right = 0.36
 anchor_bottom = 0.9
+margin_left = -29.8057
+margin_top = 5.79218
+margin_right = 60.1943
+margin_bottom = 32.7922
 grow_horizontal = 2
 grow_vertical = 2
-buttonText = "Text"
 
 [node name="GatheringDisplay" type="VBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_top = 0.1
 anchor_right = 1.0
 anchor_bottom = 0.1
-margin_left = 10.0
+margin_left = -49.459
+margin_top = -25.1941
+margin_right = 27.541
+margin_bottom = 161.806
 mouse_filter = 2
 script = ExtResource( 5 )
 __meta__ = {
@@ -60,8 +71,9 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="GatheringDisplay"]
-margin_right = 86.0
-margin_bottom = 167.0
+margin_right = 77.0
+margin_bottom = 187.0
+custom_fonts/font = ExtResource( 6 )
 text = "Cost per unit:
 Food: 
 Water: 
@@ -72,3 +84,4 @@ Rewards:
 faith: 
 food: 
 water: "
+[connection signal="day_cost_update" from="GatheringDisplay" to="." method="_on_GatheringDisplay_day_cost_update"]

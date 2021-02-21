@@ -4,7 +4,7 @@ class_name ExpeditionGenerator
 
 var grid : Array = []
 
-export var expedition_grid_size : Vector2 = Vector2(9,9)
+export var expedition_grid_size : Vector2 = Vector2(7,7)
 
 func _ready():
 	Types.grid_getter.set_expedition_generator(self)

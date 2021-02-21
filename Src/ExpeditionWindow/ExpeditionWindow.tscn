@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Src/WindowManager/WindowBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/ExpeditionWindow/ExpTitle.png" type="Texture" id=2]
@@ -8,14 +8,20 @@
 [ext_resource path="res://Src/Menu/InGame/Gathering/GatheringPopup.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Ui/WindowInner9Patch_3x.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Fonts/TitleFont24.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Src/ExpeditionWindow/Time.gd" type="Script" id=9]
 
 [node name="ExpeditionWindow" instance=ExtResource( 1 )]
 margin_left = -289.0
 margin_top = -186.0
 margin_right = 287.0
 margin_bottom = 186.0
+can_move = false
+
+[node name="Bg" parent="." index="0"]
+margin_right = -161.0
 
 [node name="Content" parent="." index="2"]
+margin_right = -160.0
 script = ExtResource( 5 )
 green_signal = "expedition_confirmed"
 red_signal = "expedition_cancelled"
@@ -25,7 +31,11 @@ red_args = [  ]
 anchor_top = 0.12
 anchor_right = 0.8
 anchor_bottom = 0.88
-margin_left = 3.0
+margin_left = 2.6875
+margin_top = -3.2025
+margin_right = -239.113
+margin_bottom = -194.922
+rect_scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 patch_margin_left = 6
 patch_margin_top = 6
@@ -62,6 +72,7 @@ custom_fonts/font = ExtResource( 8 )
 text = "0"
 align = 1
 valign = 1
+script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -71,14 +82,12 @@ margin_left = 325.29
 margin_top = 344.453
 margin_right = 415.29
 margin_bottom = 371.453
-buttonText = "Text"
 
 [node name="BaseButtonPink" parent="Content" index="5" instance=ExtResource( 4 )]
 margin_left = 235.29
 margin_top = 344.453
 margin_right = 325.29
 margin_bottom = 371.453
-buttonText = "Text"
 
 [node name="DummyLabel" type="Label" parent="Content" index="6"]
 margin_left = 12.0
@@ -93,6 +102,9 @@ __meta__ = {
 anchor_top = 0.12
 anchor_right = 0.8
 anchor_bottom = 0.88
-margin_top = -26.0
-margin_bottom = -26.0
+margin_left = 4.26398
+margin_top = 3.66953
+margin_right = 4.26398
+margin_bottom = 3.66949
 [connection signal="button_up" from="Content/BaseButtonPink" to="Content" method="_on_BaseButtonPink_button_up"]
+[connection signal="day_cost_update" from="Content/GatheringPopup" to="Content/Time" method="_on_GatheringPopup_day_cost_update"]
