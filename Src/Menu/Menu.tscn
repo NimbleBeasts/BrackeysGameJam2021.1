@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Src/Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menu/MenuScreen.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/Ui/Window9Patch_3x.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Ui/WindowInner9Patch_3x.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Fonts/MenuFont2x.tres" type="DynamicFont" id=14]
+[ext_resource path="res://Assets/Fonts/NormalFontSmall13.tres" type="DynamicFont" id=15]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -91,15 +92,13 @@ __meta__ = {
 [node name="Text" type="Label" parent="Main/ButtonPlay"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 5.0
-margin_right = -28.0
-margin_bottom = -3.0
+margin_left = 2.90266
+margin_top = -1.31585
+margin_right = -29.0973
+margin_bottom = -2.31585
 mouse_filter = 1
+custom_fonts/font = ExtResource( 15 )
 text = "MENU_PLAY"
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="ButtonCredits" type="TextureButton" parent="Main"]
 anchor_left = 0.5
@@ -120,15 +119,13 @@ __meta__ = {
 [node name="Text" type="Label" parent="Main/ButtonCredits"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 5.0
-margin_right = -27.0
-margin_bottom = -3.0
+margin_left = 2.90266
+margin_top = -1.31585
+margin_right = -9.09737
+margin_bottom = -2.31585
 mouse_filter = 1
+custom_fonts/font = ExtResource( 15 )
 text = "MENU_CREDITS"
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="ButtonExit" type="TextureButton" parent="Main"]
 self_modulate = Color( 1, 0.411765, 0.411765, 1 )
@@ -150,15 +147,13 @@ __meta__ = {
 [node name="Text" type="Label" parent="Main/ButtonExit"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 5.0
-margin_right = -28.0
-margin_bottom = -3.0
+margin_left = 2.90266
+margin_top = -1.31584
+margin_right = -29.0973
+margin_bottom = -2.31584
 mouse_filter = 1
+custom_fonts/font = ExtResource( 15 )
 text = "MENU_EXIT"
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Settings" type="Control" parent="."]
 visible = false

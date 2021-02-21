@@ -71,8 +71,8 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="GatheringDisplay"]
-margin_right = 77.0
-margin_bottom = 187.0
+margin_right = 101.0
+margin_bottom = 257.0
 custom_fonts/font = ExtResource( 6 )
 text = "Cost per unit:
 Food: 

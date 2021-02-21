@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Ui/BaseButton/Pink_3x1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Ui/BaseButton/Pink_3x4.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Ui/BaseButton/Pink_3x2.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Ui/BaseButton/Pink_3x3.png" type="Texture" id=4]
 [ext_resource path="res://Src/WindowManager/BaseButton.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Fonts/NormalFontSmall13.tres" type="DynamicFont" id=6]
 
 [node name="BaseButtonPink" type="TextureButton"]
 margin_right = 90.0
@@ -21,6 +22,11 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 0.198425
+margin_top = -3.77008
+margin_right = 0.198425
+margin_bottom = -3.77008
+custom_fonts/font = ExtResource( 6 )
 text = "Text"
 align = 1
 valign = 1

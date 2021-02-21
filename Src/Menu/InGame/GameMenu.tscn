@@ -48,10 +48,11 @@ centered = false
 hframes = 4
 
 [node name="Label" type="Label" parent="."]
-margin_left = 256.0
-margin_top = 240.0
-margin_right = 328.0
-margin_bottom = 254.0
+margin_left = 332.248
+margin_top = -2.45192
+margin_right = 411.248
+margin_bottom = 20.5481
+custom_fonts/font = ExtResource( 21 )
 text = "Hello Level"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -103,13 +104,11 @@ region_rect = Rect2( 0, 0, 33, 36 )
 
 [node name="Current" type="Sprite" parent="Map"]
 position = Vector2( 15, 7.62939e-06 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 23 )
 centered = false
 hframes = 4
 
 [node name="Left" type="Sprite" parent="Map"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 centered = false
 
@@ -177,7 +176,7 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Icon" type="Sprite" parent="TopBar/Faith"]
-position = Vector2( 15, 12 )
+position = Vector2( 13.8081, 11.9885 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 centered = false
@@ -256,6 +255,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 64.0
+custom_fonts/font = ExtResource( 21 )
 text = "Expedition"
 valign = 1
 
@@ -275,6 +275,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 64.0
+custom_fonts/font = ExtResource( 21 )
 text = "Move"
 valign = 1
 __meta__ = {
@@ -297,6 +298,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 64.0
+custom_fonts/font = ExtResource( 21 )
 text = "End Turn"
 valign = 1
 __meta__ = {
