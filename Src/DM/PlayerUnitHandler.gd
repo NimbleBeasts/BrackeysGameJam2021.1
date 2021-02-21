@@ -143,4 +143,3 @@ func temp_slot_units(units_temp_slot : Array) -> void :
 		assert(units.has(unit))
 	temp_slotted_units = units_temp_slot
 	Events.emit_signal(Events.UNITS_TEMP_SLOTTED, temp_slotted_units)
-

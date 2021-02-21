@@ -10,6 +10,8 @@ var location_in_grid : Vector2 = Vector2(-1,-1) setget set_location, get_locatio
 var spot_type : int = -1 setget set_spot_type, get_spot_type
 var type_name : String = ""
 
+var last_spot : GatheringSpot = null
+
 func _init(location : Vector2 = Vector2(-1,-1), new_spot_type : int = -1) :
 	expand = true
 	rect_min_size = Vector2( 36,36)
@@ -43,11 +45,19 @@ func _init(location : Vector2 = Vector2(-1,-1), new_spot_type : int = -1) :
 	if new_spot_type == Types.ExpeditionSpots.HOME_BASE :
 		Events.emit_signal(Events.GATHER_HOME_CREATED, self)
 	
+	#Prevent bug from letting us spam one spot.
+	Events.connect(Events.GATHER_POINT_ADDED, self, "spot_added")
+	Events.connect(Events.GATHER_POINT_REMOVED, self, "spot_added")
+	Events.connect(Events.EXPEDITION_CONFIRMED, self, "spot_added")
+	
 	#Make sure values of the location are correct.
 	assert(location_in_grid.x >= 0 && location_in_grid.y >= 0)
 
 #If the player presses me, add one point to the path.
 func _pressed() -> void :
+	if last_spot == self :
+		return
+	
 	#You are suppose to set the location in the grid for this button.
 	assert(location_in_grid != Vector2(-1,-1))
 	
@@ -89,3 +99,6 @@ func get_spot_type() -> int :
 
 func set_spot_type(new_spot_type : int) -> void :
 	spot_type = new_spot_type
+
+func spot_added(new_spot : GatheringSpot = null) -> void :
+	last_spot = new_spot
