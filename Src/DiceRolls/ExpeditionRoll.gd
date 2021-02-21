@@ -19,6 +19,17 @@ var water_return : int = 0
 #Kill units on expedition player leaves.
 func _init():
 	Events.connect(Events.LEFT_LOCATION, self, "kill_all_units")
+	Events.connect(Events.LEFT_LOCATION, self, "move_fail")
+
+func move_fail() -> void :
+	var data = {
+		"eventType": Types.EventTypes.Gameplay,
+		"payload": {
+			
+		},
+		"id": Data.getEventIdByName(Types.EventTypes.Gameplay, "on_moving_expedition_fail")
+	}
+	Events.emit_signal("window_show", Types.WindowType.Event, data)
 
 func kill_all_units() -> void :
 	ug.kill_units(units_on_expedition)
