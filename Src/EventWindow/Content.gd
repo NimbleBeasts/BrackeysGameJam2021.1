@@ -22,8 +22,8 @@ func setup(event): #{"type": type, "id": key, "entry": entry}
 	if data.action.type == "yesno":
 		# YesNo Choice
 		$BaseButtonPink.show()
-		$BaseButtonPink.buttonText = tr(data.action["yes"].text)
-		$BaseButtonGreen.buttonText = tr(data.action["no"].text)
+		$BaseButtonPink.buttonText = tr(data.action["no"].text)
+		$BaseButtonGreen.buttonText = tr(data.action["yes"].text)
 	elif data.action.type == "yes":
 		# Ok Button Only
 		$BaseButtonPink.hide()
