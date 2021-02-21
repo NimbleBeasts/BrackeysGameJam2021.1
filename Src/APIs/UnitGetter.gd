@@ -31,6 +31,15 @@ func gift_units(unit_count : int) -> void :
 
 func kill_units(units_to_kill : Array) -> void :
 	unit_handler.kill_units(units_to_kill)
+	var names = ""
+	var count = 0
+	for unit in units_to_kill:
+		names += unit.name
+		if count != len(units_to_kill)-1:
+			names += ", "
+		count += 1
+	var payload = {"text":tr("DEADS")+" "+str(names), "meaning":"negative"}
+	Events.emit_signal("window_show", Types.WindowType.ResFb, payload)
 
 func retrieve_temp_slotted_units() -> Array :
 	return unit_handler.retrieve_temp_slotted_units()

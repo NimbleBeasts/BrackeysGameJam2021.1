@@ -12,6 +12,7 @@ func roll_chances() -> int :
 	
 	#2 out of 5 nothing happens.
 	var chances : int = (randi() % (possible_events.size() + 4)) - 4
+	print("CHANCES: "+str(chances))
 	if chances < 0 :
 		return 1
 	if chances >= possible_events.size() :

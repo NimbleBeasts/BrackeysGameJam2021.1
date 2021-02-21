@@ -14,11 +14,6 @@ func setup(event): #{"type": type, "id": key, "entry": entry}
 	id = event.id
 	type = event.type
 	var data = event.entry
-	
-	print(TranslationServer.get_loaded_locales())
-	print(tr("UNIT_PRIEST_DESC"))
-	print(tr("EVENT_EXPEDITIONEND_TITLE"))
-	print(tr(str(data.title)))
 
 	$TitleLabel.set_text(TranslationServer.translate(data.title))
 	$TitleImage.texture = load("res://Assets/EventWindow/" + str(data.thumbnail))

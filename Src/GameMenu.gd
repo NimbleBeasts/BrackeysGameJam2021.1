@@ -103,5 +103,5 @@ func _on_UnitButton_button_up():
 
 
 func _on_spawnfeeback_button_up():
-	Events.emit_signal("window_show", Types.WindowType.ResFb, {"text":"blablabla"})
+	Events.emit_signal("window_show", Types.WindowType.ResFb, {"text":"blablabla", "meaning":"positive"})
 
