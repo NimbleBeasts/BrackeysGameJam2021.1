@@ -54,7 +54,7 @@
         ]
       },
       "no": {
-        "text": "EVENT_SWORDBREAD_NO",
+        "text": "EVENT_PAUSEDAY_NO",
         "consequences": [
           {
             "type": "resources",

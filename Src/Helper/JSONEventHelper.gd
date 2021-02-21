@@ -19,8 +19,9 @@ const SACRIFICE = "sacrifice"
 const RESOURCE = "resources"
 
 func handle_choice(event : Dictionary, yes_or_no : String) -> void :
-	var con : Array = event[ACTION][yes_or_no][CON]
-	handle_consequence(con)
+	if event.has(ACTION):
+		var con : Array = event[ACTION][yes_or_no][CON]
+		handle_consequence(con)
 
 func handle_consequence(con : Array) -> void :
 	for result in con :

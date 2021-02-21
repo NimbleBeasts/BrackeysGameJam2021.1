@@ -46,6 +46,17 @@ func _ready():
 
 
 func _turn_started() -> void :
+	print("TURN STARTED")
+	
+	var data = {
+		"eventType": Types.EventTypes.Gameplay,
+		"payload": {
+			
+		},
+		"id": Data.getEventIdByName(Types.EventTypes.Gameplay, "on_enemy_approaching")
+	}
+	Events.emit_signal("window_show", Types.WindowType.Event, data)
+	
 	#Go through nodes that need to finish processing
 	#and see if they complete succesfully. If not succesful, game ends.
 	for node in turn_ended_processing :
