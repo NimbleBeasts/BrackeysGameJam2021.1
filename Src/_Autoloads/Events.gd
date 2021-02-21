@@ -87,6 +87,9 @@ const UNITS_UNAVAILABLE_CHANGED = "units_unavailable_changed"
 signal water_changed(int_new_water_value)
 const WATER_CHANGED = "water_changed"
 
+signal enemy_army_days_changed(int_new_days)
+const ENEMY_ARMY_DAYS_CHANGED = "enemy_army_days_changed"
+
 # Sound
 signal play_sound(sound, volume, pos)
 

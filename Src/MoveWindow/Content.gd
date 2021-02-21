@@ -24,6 +24,7 @@ func _on_BaseButtonGreen_button_up():
 		Types.resources_getter.use_water(120)
 		Types.resources_getter.use_food(80)
 		Events.emit_signal("move_next")
+		Events.emit_signal(Events.LEFT_LOCATION)
 		Events.emit_signal(Events.TURN_ENDED)
 		Events.emit_signal("window_close", get_parent())
 		Events.emit_signal("play_sound", "menu_click_positive")
