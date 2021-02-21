@@ -316,6 +316,56 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="EventSpawnButton" type="Button" parent="."]
+margin_left = 40.0
+margin_top = 72.0
+margin_right = 112.0
+margin_bottom = 104.0
+text = "Spawn Event"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SacrificeButton" type="Button" parent="."]
+margin_left = 40.0
+margin_top = 112.0
+margin_right = 135.0
+margin_bottom = 144.0
+text = "Char Window"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SacrificeButton2" type="Button" parent="."]
+margin_left = 40.0
+margin_top = 152.0
+margin_right = 135.0
+margin_bottom = 184.0
+text = "Sacrifice"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SacrificeButton3" type="Button" parent="."]
+margin_left = 39.4054
+margin_top = 193.028
+margin_right = 134.405
+margin_bottom = 225.028
+text = "spawn feeback"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UnitsInBase" type="Button" parent="."]
+margin_left = 496.0
+margin_top = 160.0
+margin_right = 641.0
+margin_bottom = 192.0
+text = "Call Expedition Event"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="button_up" from="ButtonBack" to="." method="_on_ButtonBack_button_up"]
 [connection signal="button_up" from="ButtonMusic" to="." method="_on_ButtonMusic_button_up"]
 [connection signal="button_up" from="ButtonSound" to="." method="_on_ButtonSound_button_up"]
@@ -323,3 +373,8 @@ __meta__ = {
 [connection signal="button_up" from="Menu/ExpButton" to="." method="_on_ExpButton_button_up"]
 [connection signal="button_up" from="Menu/MoveButton" to="." method="_on_MoveButton_button_up"]
 [connection signal="button_up" from="Menu/TurnButton" to="." method="_on_TurnButton_button_up"]
+[connection signal="button_up" from="EventSpawnButton" to="." method="_on_EventSpawnButton_button_up"]
+[connection signal="button_up" from="SacrificeButton" to="." method="_on_SacrificeButton_button_up"]
+[connection signal="button_up" from="SacrificeButton2" to="." method="_on_SacrificeButton2_button_up"]
+[connection signal="button_up" from="SacrificeButton3" to="." method="_on_spawnfeeback_button_up"]
+[connection signal="button_up" from="UnitsInBase" to="." method="_on_UnitsInBase_button_up"]

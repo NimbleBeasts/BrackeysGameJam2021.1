@@ -37,13 +37,13 @@ func get_food() -> int :
 func get_water() -> int :
 	return water
 
-func gift_faith(faith_amount : int) -> void :
+func gift_faith(faith_amount : int, reason = "") -> void :
 	set_faith(faith + faith_amount)
 
-func gift_food(food_amount : int) -> void :
+func gift_food(food_amount : int, reason = "") -> void :
 	set_food(food + food_amount)
 
-func gift_water(water_amount : int) -> void :
+func gift_water(water_amount : int, reason = "") -> void :
 	set_water(water + water_amount)
 
 #Calculate how much food is used based on unit amount.
@@ -64,30 +64,30 @@ func turn_end_test() -> bool :
 	#Let dungeon master know I am finished processing turn end.
 	return true
 
-func use_faith(faith_amount : int) -> void :
+func use_faith(faith_amount : int, reason = "") -> void :
 	set_faith(faith - faith_amount)
 
-func use_food(food_amout : int) -> void :
+func use_food(food_amout : int, reason = "") -> void :
 	set_food(food - food_amout)
 
-func use_water(water_amount : int) -> void :
+func use_water(water_amount : int, reason = "") -> void :
 	set_water(water - water_amount)
 
-func set_energy(energy_value : int) -> void :
+func set_energy(energy_value : int, reason = "") -> void :
 	energy = energy_value
 	Events.emit_signal(Events.ENERGY_CHANGED, energy)
 
-func set_faith(faith_value : int) -> void :
+func set_faith(faith_value : int, reason = "") -> void :
 	faith = faith_value
 	Events.emit_signal(Events.FAITH_CHANGED, faith)
 
-func set_food(food_value : int) -> void :
+func set_food(food_value : int, reason = "") -> void :
 	if food_value <= 0 :
 		get_tree().quit()
 	food = food_value
 	Events.emit_signal(Events.FOOD_CHANGED, food)
 
-func set_water(water_value : int) -> void :
+func set_water(water_value : int, reason = "") -> void :
 	if water_value <=  0 :
 		get_tree().quit()
 	water = water_value

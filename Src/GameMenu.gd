@@ -100,3 +100,8 @@ func _on_UnitsInBase_button_up():
 func _on_UnitButton_button_up():
 	Events.emit_signal("play_sound", "menu_click")
 	Events.emit_signal("window_show", Types.WindowType.Char, Types.CharEventType.Overview)
+
+
+func _on_spawnfeeback_button_up():
+	Events.emit_signal("window_show", Types.WindowType.ResFb, {"text":"blablabla"})
+

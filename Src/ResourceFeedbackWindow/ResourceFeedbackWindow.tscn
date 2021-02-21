@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/EventWindow/EventsBg_3x.png" type="Texture" id=1]
+[ext_resource path="res://Src/ResourceFeedbackWindow/Content.gd" type="Script" id=2]
+[ext_resource path="res://Src/WindowManager/BaseButtonGreen.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Src/WindowManager/WindowBase.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Fonts/NormalFontSmall13.tres" type="DynamicFont" id=8]
+
+[node name="ResourceFeedbackWindow" instance=ExtResource( 5 )]
+margin_left = -150.47
+margin_top = -87.3836
+margin_right = 154.53
+margin_bottom = 64.6164
+windowType = 4
+
+[node name="Content" parent="." index="2"]
+script = ExtResource( 2 )
+
+[node name="BaseButtonGreen" parent="Content" index="0" instance=ExtResource( 4 )]
+margin_left = 215.339
+margin_top = 123.883
+margin_right = 305.339
+margin_bottom = 150.883
+
+[node name="TextureRect" type="TextureRect" parent="Content" index="1"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 4.0
+margin_right = 415.0
+margin_bottom = 339.0
+rect_scale = Vector2( 0.724, 0.354 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DescriptionText" type="RichTextLabel" parent="Content" index="2"]
+margin_left = 8.0
+margin_top = 3.0
+margin_right = 299.0
+margin_bottom = 117.0
+custom_fonts/normal_font = ExtResource( 8 )
+bbcode_enabled = true
+bbcode_text = "Description text goes here"
+text = "Description text goes here"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_up" from="Content/BaseButtonGreen" to="Content" method="_on_BaseButtonGreen_button_up"]

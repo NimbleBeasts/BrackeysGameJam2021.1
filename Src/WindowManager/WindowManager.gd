@@ -7,7 +7,8 @@ const windowScenes = [
 	preload("res://Src/ExpeditionWindow/ExpeditionWindow.tscn"), 
 	preload("res://Src/EventWindow/EventWindow.tscn"),
 	preload("res://Src/CharacterWindow/CharacterWindow.tscn"),
-	preload("res://Src/MoveWindow/MoveWindow.tscn")
+	preload("res://Src/MoveWindow/MoveWindow.tscn"),
+	preload("res://Src/ResourceFeedbackWindow/ResourceFeedbackWindow.tscn")
 ]
 
 var activeWindow = null
@@ -35,6 +36,8 @@ func showWindow(type, payload = null): #Types.WindowType
 			if payload.has("payload"):
 				data.payload = payload.payload
 		Types.WindowType.Char:
+			data = payload
+		Types.WindowType.ResFb:
 			data = payload
 
 	var window = _spawnWindow(type, data)
