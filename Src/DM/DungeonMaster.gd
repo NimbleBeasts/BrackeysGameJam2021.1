@@ -13,6 +13,7 @@ func _enter_new_location() -> void :
 	var new_location = $Expedition/ExpeditionGenerator.generate_expedition()
 	Events.emit_signal(Events.NEW_LOCATION_REACHED, new_location)
 
+
 func _game_lost() -> void :
 	get_tree().change_scene("res://Src/GameManager.tscn")
 
