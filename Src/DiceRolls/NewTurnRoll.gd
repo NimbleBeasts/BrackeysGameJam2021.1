@@ -12,7 +12,6 @@ func roll_chances() -> int :
 	
 	#2 out of 5 nothing happens.
 	var chances : int = (randi() % (possible_events.size() + 4)) - 4
-	chances = 1
 	if chances < 0 :
 		return 1
 	Events.emit_signal("window_show", Types.WindowType.Event, {"eventType": Types.EventTypes.TurnRandom, "id":  chances})
