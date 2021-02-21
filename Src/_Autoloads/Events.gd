@@ -20,7 +20,7 @@ const WINDOW_CLOSE = "window_close"
 signal window_black_screen_show()
 signal window_black_screen_hide()
 
-signal event_choice(type, id, choice) #Types.EventTypes
+signal event_choice(string_choice) #Types.EventTypes
 
 signal move_next()
 signal move_update_gfx(curId, nextId) #Types.BiomeType
@@ -68,7 +68,7 @@ signal faith_changed(int_new_faith_value)
 const FAITH_CHANGED = "faith_changed"
 signal food_changed(int_new_food_value)
 const FOOD_CHANGED = "food_changed"
-signal units_available_changed(int_num_of_available_units)
+signal units_available_changed(array_of_available_units)
 const UNITS_AVAILABLE_CHANGED = "units_available_changed"
 signal units_killed(array_killed_units)
 const UNITS_KILLED = "units_killed"

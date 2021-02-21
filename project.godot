@@ -15,6 +15,16 @@ _global_script_classes=[ {
 "path": "res://Src/DiceRolls/DiceRoll.gd"
 }, {
 "base": "Node",
+"class": "EventHandler",
+"language": "GDScript",
+"path": "res://Src/DM/Events.gd"
+}, {
+"base": "Node",
+"class": "EventsGetter",
+"language": "GDScript",
+"path": "res://Src/APIs/EventsGetter.gd"
+}, {
+"base": "Node",
 "class": "ExpeditionCalculator",
 "language": "GDScript",
 "path": "res://Src/DM/ExpeditionCalculator.gd"
@@ -38,6 +48,11 @@ _global_script_classes=[ {
 "class": "GridGetter",
 "language": "GDScript",
 "path": "res://Src/APIs/GridGetter.gd"
+}, {
+"base": "Node",
+"class": "JSONEventHelper",
+"language": "GDScript",
+"path": "res://Src/Helper/JSONEventHelper.gd"
 }, {
 "base": "DiceRoll",
 "class": "NewTurnRoll",
@@ -81,11 +96,14 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "DiceRoll": "",
+"EventHandler": "",
+"EventsGetter": "",
 "ExpeditionCalculator": "",
 "ExpeditionGenerator": "",
 "ExpeditionsRoll": "",
 "GatheringSpot": "",
 "GridGetter": "",
+"JSONEventHelper": "",
 "NewTurnRoll": "",
 "PlayerUnitHandler": "",
 "PlayerUnitsBase": "",

@@ -51,6 +51,7 @@ func add_unit_by_chance() -> int:
 	
 	units.append(unit)
 	available_units.append(unit)
+	Events.emit_signal(Events.UNITS_AVAILABLE_CHANGED, available_units)
 	unit_count += 1
 	
 	return 0
@@ -68,6 +69,15 @@ func get_units_all_array():
 
 func get_unit_count() -> int :
 	return units.size()
+
+func get_units_by_ids(ids : Array) -> Array :
+	var return_array : Array = []
+	for unit in available_units :
+		for id in ids :
+			if unit.uid == id :
+				return_array.append(unit)
+	
+	return return_array
 
 func get_units_present() -> int :
 	return get_available_units_count()

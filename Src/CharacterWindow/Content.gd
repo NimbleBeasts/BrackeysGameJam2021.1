@@ -1,5 +1,7 @@
 extends Control
 
+var ug : UnitGetter = Types.unit_getter
+
 var unitList = null
 
 enum ButtonActionTypes {BackToExpedition, StartExpedition, Sacrifice, Close}
@@ -66,6 +68,7 @@ func buttonAction(action):
 			else:
 				Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
 				Events.emit_signal("play_sound", "menu_click")
+				#ug.kill_units(ug.get_units_by_ids(unitList))
 		_:
 			Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
 			Events.emit_signal("play_sound", "menu_click")

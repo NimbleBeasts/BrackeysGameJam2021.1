@@ -45,5 +45,8 @@ anchor_bottom = 1.0
 margin_top = 22.0
 margin_bottom = 22.0
 mouse_filter = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="gui_input" from="." to="." method="_on_WindowBase_gui_input"]
 [connection signal="gui_input" from="TitleBar" to="." method="_on_Titlebar_gui_input"]

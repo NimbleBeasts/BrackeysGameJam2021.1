@@ -63,7 +63,7 @@ func roll_chances() -> int :
 		ug.return_units(units_on_expedition)
 		data["payload"]["changes"]["water"] = water_return
 		data["payload"]["changes"]["food"] = food_return
-		data["payload"]["changes"]["faith"]
+		data["payload"]["changes"]["faith"] = faith_return
 		data["payload"]["success"] = true
 
 	Events.emit_signal("window_show", Types.WindowType.Event, data)

@@ -39,3 +39,4 @@ enum ResourceType {Water = 0, Food, Faith}
 var grid_getter : GridGetter = GridGetter.new()
 var unit_getter : UnitGetter = UnitGetter.new()
 var resources_getter : ResourcesGetter = ResourcesGetter.new()
+var events_getter : EventsGetter = EventsGetter.new()

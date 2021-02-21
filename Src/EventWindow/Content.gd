@@ -22,7 +22,7 @@ func setup(event): #{"type": type, "id": key, "entry": entry}
 
 	$TitleLabel.set_text(TranslationServer.translate(data.title))
 	$TitleImage.texture = load("res://Assets/EventWindow/" + str(data.thumbnail))
-	$DescriptionText.bbcode_text = TranslationServer.translate(data.desc) + "\nData: " + str(event)
+	$DescriptionText.bbcode_text = TranslationServer.translate(data.desc) + "\n"
 	
 	if data.action.type == "yesno":
 		# YesNo Choice
@@ -35,10 +35,10 @@ func setup(event): #{"type": type, "id": key, "entry": entry}
 		$BaseButtonGreen.buttonText = "Ok"
 
 func _on_BaseButtonPink_button_up():
-	Events.emit_signal("event_choice", type, id, "no")
+	Events.emit_signal("event_choice", "no")
 	Events.emit_signal("window_close", get_parent())
 
 func _on_BaseButtonGreen_button_up():
-	Events.emit_signal("event_choice", type, id, "yes")
+	Events.emit_signal("event_choice", "yes")
 	Events.emit_signal("window_close", get_parent())
 	
