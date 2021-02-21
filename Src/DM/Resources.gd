@@ -80,6 +80,9 @@ func turn_end_test() -> bool :
 	return true
 
 func use_faith (faith_amount : int, reason = "") -> void :
+	if faith_amount < 0: 
+		gift_faith(-1*faith_amount, reason)
+		return
 	set_faith(faith - faith_amount)
 	var payload = {"text":tr("YOULOSTRES")+" "+str(faith_amount)+" "+tr("OFFAITH"), "meaning":"negative"}
 	Events.emit_signal("window_show", Types.WindowType.ResFb, payload)
