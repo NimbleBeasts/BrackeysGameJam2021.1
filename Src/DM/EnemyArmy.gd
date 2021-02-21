@@ -1,7 +1,7 @@
 extends Node
 class_name EnemyArmyHandler
 
-var counter : int = 18
+var counter : int = 10
 
 func _init():
 	Types.enemy_army_getter.handler = self
@@ -24,4 +24,4 @@ func get_days_left() -> int :
 
 func reset() -> void :
 	Events.emit_signal(Events.ENEMY_ARMY_DAYS_CHANGED, counter)
-	counter = 20
+	counter = 11

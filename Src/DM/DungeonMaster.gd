@@ -4,6 +4,7 @@ extends Node
 onready var puh : PlayerUnitHandler = $PlayerUnitHandler
 onready var res = $Resources
 onready var move = $Move
+onready var army = $EnemyArmy
 
 onready var turn_ended_processing = [res]
 

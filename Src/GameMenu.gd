@@ -4,7 +4,10 @@ onready var GameInstance = get_parent()
 
 func _ready():
 	Events.connect("move_update_gfx", self, "updateBiome")
+	Events.connect(Events.ENEMY_ARMY_DAYS_CHANGED, self, "updateArmyCounter")
 
+func updateArmyCounter(val):
+	$TurnLeftLabel.set_text(str(val))
 
 func _unhandled_key_input(event):
 	if Input.is_key_pressed(KEY_ESCAPE):
