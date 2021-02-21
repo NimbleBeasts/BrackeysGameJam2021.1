@@ -150,7 +150,9 @@ margin_top = 259.0
 margin_right = -59.0
 margin_bottom = 348.0
 custom_fonts/normal_font = ExtResource( 9 )
-text = "Without water and food, the law of the desert has sealed your fate and that of your men. Their loyalty led them to leave you the last rations of water and food."
+bbcode_enabled = true
+bbcode_text = "text"
+text = "text"
 __meta__ = {
 "_edit_use_anchors_": false
 }
