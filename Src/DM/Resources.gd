@@ -100,16 +100,18 @@ func set_energy(energy_value : int, reason = "") -> void :
 
 func set_faith(faith_value : int, reason = "") -> void :
 	faith = faith_value
+	if faith_value <= 0:
+		Events.emit_signal(Events.GAME_LOST, Types.GameOverType.Faith)
 	Events.emit_signal(Events.FAITH_CHANGED, faith)
 
 func set_food(food_value : int, reason = "") -> void :
-	if food_value <= 0 :
-		get_tree().quit()
 	food = food_value
+	if food_value <= 0 :
+		Events.emit_signal(Events.GAME_LOST, Types.GameOverType.Food)
 	Events.emit_signal(Events.FOOD_CHANGED, food)
 
 func set_water(water_value : int, reason = "") -> void :
-	if water_value <=  0 :
-		get_tree().quit()
 	water = water_value
+	if water_value <=  0 :
+		Events.emit_signal(Events.GAME_LOST, Types.GameOverType.Water)
 	Events.emit_signal(Events.WATER_CHANGED, water)

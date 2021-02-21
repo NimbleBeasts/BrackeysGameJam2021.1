@@ -39,7 +39,7 @@ func setup(type):
 			
 			#End game if there are no available units left.
 			if ug.get_available_units_count() <= 1 :
-				Events.emit_signal(Events.GAME_LOST)
+				Events.emit_signal(Events.GAME_LOST, Types.GameOverType.Units)
 		
 			print("CharacterWindow.gd: setup unknown type")
 
