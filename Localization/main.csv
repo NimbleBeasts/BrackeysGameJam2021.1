@@ -2,7 +2,7 @@ keys,en,fr,de
 TEST_ENTRY,"en","fr","de"
 MENU_PLAY,"Play","Jouer","Spielen"
 MENU_CONTINUE,"Continue","Continuer","Fortsetzen"
-MENU_CREDITS,"Credits","Contributeur","Mitwirkende"
+MENU_CREDITS,"Credits","L'équipe","Mitwirkende"
 MENU_EXIT,"Exit","Sortie","Beenden"
 MENU_OK,"Ok","Ok","Ok"
 MENU_SACRIFICE,"Sacrifice","Sacrifice","Opfern"
