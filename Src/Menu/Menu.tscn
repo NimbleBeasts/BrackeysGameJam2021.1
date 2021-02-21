@@ -40,10 +40,10 @@ __meta__ = {
 }
 
 [node name="ButtonLanguage" type="TextureButton" parent="Main"]
-margin_left = 616.0
-margin_top = 424.0
-margin_right = 656.0
-margin_bottom = 448.0
+margin_left = 669.473
+margin_top = 399.06
+margin_right = 709.473
+margin_bottom = 423.06
 texture_hover = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -61,10 +61,10 @@ __meta__ = {
 [node name="ButtonSettings" type="TextureButton" parent="Main"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = 304.0
-margin_top = 416.0
-margin_right = 344.0
-margin_bottom = 456.0
+margin_left = 308.756
+margin_top = 430.557
+margin_right = 348.756
+margin_bottom = 470.557
 texture_normal = ExtResource( 11 )
 texture_hover = ExtResource( 10 )
 __meta__ = {
@@ -72,12 +72,14 @@ __meta__ = {
 }
 
 [node name="ButtonPlay" type="TextureButton" parent="Main"]
+self_modulate = Color( 0.203922, 1, 0.647059, 1 )
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -344.0
-margin_top = 344.0
-margin_right = -216.0
-margin_bottom = 368.0
+margin_left = -347.782
+margin_top = 167.823
+margin_right = -219.782
+margin_bottom = 191.823
+rect_scale = Vector2( 1.33, 1.33 )
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 4 )
@@ -102,10 +104,11 @@ __meta__ = {
 [node name="ButtonCredits" type="TextureButton" parent="Main"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -344.0
-margin_top = 392.0
-margin_right = -216.0
-margin_bottom = 416.0
+margin_left = -347.735
+margin_top = 213.566
+margin_right = -219.735
+margin_bottom = 237.566
+rect_scale = Vector2( 1.33, 1.33 )
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 4 )
@@ -128,12 +131,14 @@ __meta__ = {
 }
 
 [node name="ButtonExit" type="TextureButton" parent="Main"]
+self_modulate = Color( 1, 0.411765, 0.411765, 1 )
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -344.0
-margin_top = 424.0
-margin_right = -216.0
-margin_bottom = 448.0
+margin_left = -347.704
+margin_top = 438.652
+margin_right = -219.704
+margin_bottom = 462.652
+rect_scale = Vector2( 1.33, 1.33 )
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 4 )
@@ -407,6 +412,7 @@ __meta__ = {
 }
 
 [node name="Copyright" type="RichTextLabel" parent="."]
+modulate = Color( 1, 1, 1, 0.47451 )
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
