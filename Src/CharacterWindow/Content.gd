@@ -4,6 +4,9 @@ var ug : UnitGetter = Types.unit_getter
 
 var unitList = null
 
+#List of ids.
+var selected_array : Array = []
+
 enum ButtonActionTypes {BackToExpedition, StartExpedition, Sacrifice, Close}
 
 var greenButtonAction = ButtonActionTypes.Close
@@ -59,6 +62,9 @@ func buttonAction(action):
 				Events.emit_signal("play_sound", "menu_click_negative")
 			else:
 				Events.emit_signal("play_sound", "menu_click_positive")
+				ug.set_temp_slotted_units(ug.get_units_by_ids(list))
+				Events.emit_signal(Events.EXPEDITION_CONFIRMED)
+				get_parent().queue_free()
 			#TODO: use list data and start expedition
 
 		# Sacrifice
@@ -68,7 +74,7 @@ func buttonAction(action):
 			else:
 				Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
 				Events.emit_signal("play_sound", "menu_click")
-				#ug.kill_units(ug.get_units_by_ids(unitList))
+				ug.kill_units(ug.get_units_by_ids(list))
 		_:
 			Events.emit_signal(Events.WINDOW_CLOSE, get_parent())
 			Events.emit_signal("play_sound", "menu_click")

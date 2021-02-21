@@ -23,7 +23,7 @@ margin_right = -161.0
 [node name="Content" parent="." index="2"]
 margin_right = -160.0
 script = ExtResource( 5 )
-green_signal = "expedition_confirmed"
+green_signal = "expedition_planned"
 red_signal = "expedition_cancelled"
 red_args = [  ]
 
@@ -82,12 +82,14 @@ margin_left = 325.29
 margin_top = 344.453
 margin_right = 415.29
 margin_bottom = 371.453
+buttonText = "Text"
 
 [node name="BaseButtonPink" parent="Content" index="5" instance=ExtResource( 4 )]
 margin_left = 235.29
 margin_top = 344.453
 margin_right = 325.29
 margin_bottom = 371.453
+buttonText = "Text"
 
 [node name="DummyLabel" type="Label" parent="Content" index="6"]
 margin_left = 12.0

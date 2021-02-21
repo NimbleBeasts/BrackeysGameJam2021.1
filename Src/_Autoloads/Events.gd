@@ -46,6 +46,8 @@ signal expedition_cancelled()
 const EXPEDITION_CANCELLED = "expedition_cancelled"
 signal expedition_confirmed()
 const EXPEDITION_CONFIRMED = "expedition_confirmed"
+signal expedition_planned()
+const EXPEDITION_PLANNED = "expedition_planned"
 signal expedition_started()
 const EXPEDITION_STARTED = "expedition_started"
 signal gather_home_created(gatherspot_home_base)

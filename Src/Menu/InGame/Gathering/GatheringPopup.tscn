@@ -54,6 +54,7 @@ margin_right = 60.1943
 margin_bottom = 32.7922
 grow_horizontal = 2
 grow_vertical = 2
+buttonText = "Text"
 
 [node name="GatheringDisplay" type="VBoxContainer" parent="."]
 anchor_left = 1.0
@@ -84,4 +85,3 @@ Rewards:
 faith: 
 food: 
 water: "
-[connection signal="day_cost_update" from="GatheringDisplay" to="." method="_on_GatheringDisplay_day_cost_update"]

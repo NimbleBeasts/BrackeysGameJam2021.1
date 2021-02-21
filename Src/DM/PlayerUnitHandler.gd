@@ -106,7 +106,7 @@ func kill_units(units_to_kill : Array) -> void :
 			units.remove(units.find(unit))
 		if av_has :
 			av_changed = true
-			available_units.remove(unit)
+			available_units.remove(available_units.find(unit))
 		unit.queue_free()
 	
 	if av_changed :

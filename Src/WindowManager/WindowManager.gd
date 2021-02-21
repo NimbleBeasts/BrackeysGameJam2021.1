@@ -13,9 +13,13 @@ const windowScenes = [
 var activeWindow = null
 
 
+func _expedition_planned() -> void :
+	_spawnWindow(Types.WindowType.Char, Types.CharEventType.Expedition)
+
 func _ready():
 	# Window Management
 	Events.connect(Events.WINDOW_SHOW, self, "showWindow")
+	Events.connect(Events.EXPEDITION_PLANNED, self, "_expedition_planned")
 	Events.connect(Events.WINDOW_CLOSE, self, "closeWindow")
 
 
