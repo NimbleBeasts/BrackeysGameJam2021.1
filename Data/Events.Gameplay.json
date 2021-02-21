@@ -34,5 +34,57 @@
         "consequences": "scripted"
       }
     }
+  },
+  {
+    "id": "on_gameover_water",
+    "title": "EVENT_GOWATERFOOD_TITLE",
+    "thumbnail": "thumbnail-5.png",
+    "desc": "EVENT_GOWATERFOOD_DESC",
+    "action": {
+      "type": "yes",
+      "yes": {
+        "text": "NEXT",
+        "consequences": "scripted"
+      }
+    }
+  },
+  {
+    "id": "on_gameover_food",
+    "title": "EVENT_GOWATERFOOD_TITLE",
+    "thumbnail": "thumbnail-5.png",
+    "desc": "EVENT_GOWATERFOOD_DESC",
+    "action": {
+      "type": "yes",
+      "yes": {
+        "text": "NEXT",
+        "consequences": "scripted"
+      }
+    }
+  },
+  {
+    "id": "on_gameover_faith",
+    "title": "EVENT_GOFAITH_TITLE",
+    "thumbnail": "thumbnail-6.png",
+    "desc": "EVENT_GOFAITH_DESC",
+    "action": {
+      "type": "yes",
+      "yes": {
+        "text": "NEXT",
+        "consequences": "scripted"
+      }
+    }
+  },
+  {
+    "id": "on_gameover_enemy",
+    "title": "EVENT_GOENEMY_TITLE",
+    "thumbnail": "thumbnail-4.png",
+    "desc": "EVENT_GOENEMY_DESC",
+    "action": {
+      "type": "yes",
+      "yes": {
+        "text": "NEXT",
+        "consequences": "scripted"
+      }
+    }
   }
 ]

@@ -48,3 +48,7 @@ EVENT_ENEMYAPPROACHING_DESC,"Your team of scouts share with you their concerns: 
 MINIGAME_DICE_PROMPT,"Roll $win-min-score or more to $objective","Faites $win-min-score ou plus pour $objective","dummy text"
 EVENT_MOVINGEXPFAIL_TITLE,"Abandonned","Abandonnés","dummy text"
 EVENT_MOVINGEXPFAIL_DESC,"By advancing the camp you managed to save yourself at the last minute. But at what cost? All the men you sent on the expedition do not seem to be coming back. They probably got lost and were massacred where they were.","En avançant le campement vous avez réussi à vous sauver à la dernière minute. Mais à quel prix ? Tous les hommes que vous avez envoyé en expédition ne semblent pas revenir. Ils se sont sûrement perdus et fait massacrer sur place.","dummy text"
+EVENT_GOWATERFOOD_TITLE,"Starvation","Famine","dummy text"
+EVENT_GOWATERFOOD_DESC,"Without water and food, the law of the desert has sealed your fate and that of your men. Their loyalty led them to leave you the last rations of water and food.","Sans eau et sans nourriture, la loi du désert a scellé votre destin et celui de vos hommes. Leur loyauté les a poussé à vous laisser les dernières rations d'eau et de nourriture.","dummy text"
+EVENT_GOFAITH_TITLE,"dummy text","dummy text","dummy text"
+EVENT_GOENEMY_TITLE,"dummy text","dummy text","dummy text"

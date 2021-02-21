@@ -99,6 +99,9 @@ margin_bottom = -2.31585
 mouse_filter = 1
 custom_fonts/font = ExtResource( 15 )
 text = "MENU_PLAY"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ButtonCredits" type="TextureButton" parent="Main"]
 anchor_left = 0.5
